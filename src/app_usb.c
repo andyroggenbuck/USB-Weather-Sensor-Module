@@ -281,8 +281,36 @@ void APP_USB_USBDeviceEventHandler
 // *****************************************************************************
 
 
-/* TODO:  Add any necessary local functions.
+/*
+ ****************************************************
+ * This function is called in every step of the     *
+ * application state machine.                       *
+ ****************************************************
 */
+
+bool APP_USB_StateReset(void)
+{
+    /* This function returns true if the device was reset */
+
+    bool retVal;
+
+    if(app_usbData.isConfigured == false)
+    {
+        app_usbData.state = APP_USB_STATE_WAIT_FOR_CONFIGURATION;
+        app_usbData.readTransferHandle = USB_DEVICE_CDC_TRANSFER_HANDLE_INVALID;
+        app_usbData.writeTransferHandle =
+                USB_DEVICE_CDC_TRANSFER_HANDLE_INVALID;
+        app_usbData.isReadComplete = true;
+        app_usbData.isWriteComplete = true;
+        retVal = true;
+    }
+    else
+    {
+        retVal = false;
+    }
+
+    return(retVal);
+}
 
 
 // *****************************************************************************
@@ -304,11 +332,38 @@ void APP_USB_Initialize ( void )
     /* Place the App state machine in its initial state. */
     app_usbData.state = APP_USB_STATE_INIT;
 
+    /* Device Layer Handle  */
+    app_usbData.deviceHandle = USB_DEVICE_HANDLE_INVALID ;
 
+    /* Device configured status */
+    app_usbData.isConfigured = false;
 
-    /* TODO: Initialize your application's state machine and other
-     * parameters.
-     */
+    /* Initial get line coding state */
+    app_usbData.getLineCodingData.dwDTERate = 9600;
+    app_usbData.getLineCodingData.bParityType = 0;
+    app_usbData.getLineCodingData.bParityType = 0;
+    app_usbData.getLineCodingData.bDataBits = 8;
+
+    /* Read Transfer Handle */
+    app_usbData.readTransferHandle = USB_DEVICE_CDC_TRANSFER_HANDLE_INVALID;
+
+    /* Write Transfer Handle */
+    app_usbData.writeTransferHandle = USB_DEVICE_CDC_TRANSFER_HANDLE_INVALID;
+
+    /* Initialize the read complete flag */
+    app_usbData.isReadComplete = true;
+
+    /*Initialize the write complete flag*/
+    app_usbData.isWriteComplete = true;
+
+    /* Reset other flags */
+    app_usbData.sofEventHasOccurred = false;
+
+    /* Set up the read buffer */
+    app_usbData.cdcReadBuffer = &cdcReadBuffer[0];
+
+    /* Set up the read buffer */
+    app_usbData.cdcWriteBuffer = &cdcWriteBuffer[0];
 }
 
 
@@ -322,43 +377,202 @@ void APP_USB_Initialize ( void )
 
 void APP_USB_Tasks ( void )
 {
+    /* Update the application state machine based
+     * on the current state 
+     */
 
     /* Check the application's current state. */
     switch ( app_usbData.state )
     {
         /* Application's initial state. */
         case APP_USB_STATE_INIT:
-        {
-            bool appInitialized = true;
 
+            /* Open the device layer */
+            
 
-            if (appInitialized)
+            if(app_usbData.deviceHandle != USB_DEVICE_HANDLE_INVALID)
             {
+                /* Register a callback with device layer to get event 
+                 * notification (for end point 0) 
+                 */
 
-                app_usbData.state = APP_USB_STATE_SERVICE_TASKS;
+
+                app_usbData.state = APP_USB_STATE_WAIT_FOR_CONFIGURATION;
             }
+            else
+            {
+                /* The Device Layer is not ready to be opened. We should try
+                 * again later. 
+                 */
+            }
+
             break;
-        }
 
-        case APP_USB_STATE_SERVICE_TASKS:
-        {
+        case APP_USB_STATE_WAIT_FOR_CONFIGURATION:
+
+            /* Check if the device was configured */
+            if(app_usbData.isConfigured)
+            {
+                /* If the device is configured then lets start reading */
+                app_usbData.state = APP_USB_STATE_SCHEDULE_READ;
+            }
+            
+            break;
+
+        case APP_USB_STATE_SCHEDULE_READ:
+
+            if(APP_USB_StateReset())
+            {
+                break;
+            }
+
+            /* If a read is complete, then schedule a read
+             * else wait for the current read to complete 
+             */
+            app_usbData.state = APP_USB_STATE_WAIT_FOR_READ_COMPLETE;
+            
+            if(app_usbData.isReadComplete == true)
+            {
+                app_usbData.isReadComplete = false;
+                app_usbData.readTransferHandle = 
+                        USB_DEVICE_CDC_TRANSFER_HANDLE_INVALID;
+
+                /* Schedule read */
+                
+                
+                if(app_usbData.readTransferHandle ==
+                        USB_DEVICE_CDC_TRANSFER_HANDLE_INVALID)
+                {
+                    app_usbData.state = APP_USB_STATE_ERROR;
+                break;
+                }
+            }
 
             break;
-        }
 
-        /* TODO: implement your application state machine.*/
+        case APP_USB_STATE_WAIT_FOR_READ_COMPLETE:
+
+            if(APP_USB_StateReset())
+            {
+                break;
+            }
+
+            /* Check if a character was received, The isReadComplete flag gets 
+             * updated in the CDC event handler. 
+             */
+            if(app_usbData.isReadComplete)
+            {
+                app_usbData.state = APP_USB_STATE_SCHEDULE_WRITE;
+            }
+
+            break;
 
 
-        /* The default state should never be executed. */
+        case APP_USB_STATE_SCHEDULE_WRITE:
+
+            if(APP_USB_StateReset())
+            {
+                break;
+            }
+
+            /* Process received data and check if 
+             * data matches a command and then process it.
+             * Only the first character is considered.
+             */
+            switch (app_usbData.cdcReadBuffer[0])
+            {
+                /* h,H - Menu Command */
+                case 'h':
+                case 'H':
+                    app_usbData.isCommand = true;
+                    app_usbData.numBytesWrite =
+                            sprintf((char*)app_usbData.cdcWriteBuffer,
+                            "Getting Started Menu:\r\n"
+                            "1 - Toggle board LED\r\n"
+                            "2 - Read switch state\r\n"
+                            "h - Show this menu\r\n");
+                    
+                    break;
+                
+                /* 1 - Led Toggle Command */
+                case '1':
+                    app_usbData.isCommand = true;
+                    app_usbData.numBytesWrite =
+                        sprintf((char*)app_usbData.cdcWriteBuffer,
+                            "Toggled LED State\r\n");
+                    
+                    LED_Set();
+                    
+                    
+                    break;
+                
+                /* 2 - Read Switch State */
+                case '2':
+                    app_usbData.isCommand = true;
+                    if (1) // CHANGE THIS to check if pin is high
+                    {
+                        app_usbData.numBytesWrite = 
+                            sprintf((char*)app_usbData.cdcWriteBuffer,
+                            "The switch is pressed\r\n");
+                    }
+                    else
+                        app_usbData.numBytesWrite = 
+                            sprintf((char*)app_usbData.cdcWriteBuffer,
+                            "The switch is not pressed\r\n");
+                    
+                    break;
+                               
+                /* Do nothing */
+                default:
+                    /* Clear command flag */
+                    app_usbData.isCommand = false;
+                    
+                    break;
+            }
+            
+            /* Schedule write only if a valid command was processed */
+            if(app_usbData.isCommand)
+            {
+                app_usbData.isWriteComplete = false;
+                app_usbData.writeTransferHandle =
+                        USB_DEVICE_CDC_TRANSFER_HANDLE_INVALID;
+                
+                /* Schedule write */
+                
+                
+                app_usbData.state = APP_USB_STATE_WAIT_FOR_WRITE_COMPLETE;
+            }
+            else
+            {
+                app_usbData.state = APP_USB_STATE_SCHEDULE_READ;
+            }
+
+            break;
+
+        case APP_USB_STATE_WAIT_FOR_WRITE_COMPLETE:
+
+            if(APP_USB_StateReset())
+            {
+                break;
+            }
+
+            /* Check if a character was sent. The isWriteComplete
+             * flag gets updated in the CDC event handler 
+             */
+
+            if(app_usbData.isWriteComplete == true)
+            {
+                app_usbData.state = APP_USB_STATE_SCHEDULE_READ;
+            }
+
+            break;
+
+        case APP_USB_STATE_ERROR:
         default:
-        {
-            /* TODO: Handle error in application's state machine. */
+            
             break;
-        }
     }
 }
-
-
 /*******************************************************************************
  End of File
  */

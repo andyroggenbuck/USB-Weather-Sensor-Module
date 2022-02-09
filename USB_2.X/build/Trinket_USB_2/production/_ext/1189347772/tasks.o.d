@@ -101,7 +101,8 @@ build/Trinket_USB_2/production/_ext/1189347772/tasks.o: \
  ../src/config/Trinket_USB_2/osal/osal.h \
  ../src/config/Trinket_USB_2/osal/osal_definitions.h \
  ../src/config/Trinket_USB_2/osal/osal_impl_basic.h \
- ../src/config/Trinket_USB_2/system/debug/sys_debug.h ../src/app_usb.h
+ ../src/config/Trinket_USB_2/system/debug/sys_debug.h ../src/app_usb.h \
+ ../src/config/Trinket_USB_2/definitions.h
 
 ../src/config/Trinket_USB_2/configuration.h:
 
@@ -310,3 +311,5 @@ build/Trinket_USB_2/production/_ext/1189347772/tasks.o: \
 ../src/config/Trinket_USB_2/system/debug/sys_debug.h:
 
 ../src/app_usb.h:
+
+../src/config/Trinket_USB_2/definitions.h:

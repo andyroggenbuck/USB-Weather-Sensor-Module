@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <executable name="dist/Trinket_USB_2/production/USB_2.X.production.elf">
+  <executable name="dist/Trinket_USB_2/debug/USB_2.X.debug.elf">
     <memory name="program">
       <units>bytes</units>
       <length>262144</length>
-      <used>13688</used>
-      <free>248456</free>
+      <used>13692</used>
+      <free>248452</free>
     </memory>
     <memory name="data">
       <units>bytes</units>

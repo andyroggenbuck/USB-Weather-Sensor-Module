@@ -501,7 +501,7 @@ void APP_USB_Tasks ( void )
                         sprintf((char*)app_usbData.cdcWriteBuffer,
                             "Toggled LED State\r\n");
                     
-                    LED_Set();
+                    LED_Toggle();
                     
                     
                     break;
@@ -509,7 +509,7 @@ void APP_USB_Tasks ( void )
                 /* 2 - Read Switch State */
                 case '2':
                     app_usbData.isCommand = true;
-                    if (1) // CHANGE THIS to check if pin is high
+                    if ( BUTTON_Get() )
                     {
                         app_usbData.numBytesWrite = 
                             sprintf((char*)app_usbData.cdcWriteBuffer,

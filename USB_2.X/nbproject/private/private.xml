@@ -3,9 +3,22 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/andy_/HarmonyProjects/USB_2/firmware/src/USB_example_files/app_usb.c</file>
-            <file>file:/C:/Users/andy_/HarmonyProjects/USB_2/firmware/src/app_usb.c</file>
             <file>file:/C:/Users/andy_/HarmonyProjects/USB_2/firmware/src/main.c</file>
+            <file>file:/C:/Users/andy_/HarmonyProjects/USB_2/firmware/src/app_usb.c</file>
+            <file>file:/C:/Users/andy_/HarmonyProjects/USB_2/firmware/src/app_usb.h</file>
+            <file>file:/C:/Users/andy_/HarmonyProjects/USB_2/firmware/src/config/Trinket_USB_2/peripheral/port/plib_port.h</file>
+            <file>file:/C:/Users/andy_/HarmonyProjects/USB_2/firmware/src/config/Trinket_USB_2/driver/usb/usbfsv1/src/drv_usbfsv1.c</file>
+            <file>file:/C:/Users/andy_/HarmonyProjects/USB_2/firmware/src/config/Trinket_USB_2/initialization.c</file>
+            <file>file:/C:/Users/andy_/HarmonyProjects/USB_2/firmware/src/config/Trinket_USB_2/peripheral/port/plib_port.c</file>
+            <file>file:/C:/Users/andy_/HarmonyProjects/USB_2/firmware/src/config/Trinket_USB_2/peripheral/clock/plib_clock.c</file>
+            <file>file:/C:/Users/andy_/HarmonyProjects/USB_2/firmware/src/config/Trinket_USB_2/peripheral/nvmctrl/plib_nvmctrl.c</file>
+            <file>file:/C:/Users/andy_/HarmonyProjects/USB_2/firmware/src/config/Trinket_USB_2/peripheral/evsys/plib_evsys.c</file>
+            <file>file:/C:/Users/andy_/HarmonyProjects/USB_2/firmware/src/config/Trinket_USB_2/driver/usb/usbfsv1/src/drv_usbfsv1_device.c</file>
+            <file>file:/C:/Users/andy_/HarmonyProjects/USB_2/firmware/src/config/Trinket_USB_2/tasks.c</file>
+            <file>file:/C:/Users/andy_/HarmonyProjects/USB_2/firmware/src/config/Trinket_USB_2/usb/src/usb_device.c</file>
+            <file>file:/C:/Users/andy_/HarmonyProjects/USB_2/firmware/src/config/Trinket_USB_2/usb/usb_device.h</file>
+            <file>file:/C:/Users/andy_/HarmonyProjects/USB_2/firmware/src/config/Trinket_USB_2/usb/usb_chapter_9.h</file>
+            <file>file:/C:/Users/andy_/HarmonyProjects/USB_2/firmware/src/config/Trinket_USB_2/usb/src/usb_device_local.h</file>
         </group>
     </open-files>
 </project-private>

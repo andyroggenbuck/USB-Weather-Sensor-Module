@@ -83,13 +83,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 8E76B0609233122F5E1694614CEC13B1
-- generatedChecksum: F98C2793507D5B5707D70B6B9758D45D
+- generatedChecksum: 841EC33EFBE34BA10824445B91E3BDD1
   logicalPath: config/Trinket_USB_2/peripheral/port
   name: plib_port.c
   physicalPath: peripheral/port
   security: NON_SECURE
   type: SOURCE
-  userChecksum: F98C2793507D5B5707D70B6B9758D45D
+  userChecksum: 841EC33EFBE34BA10824445B91E3BDD1
 - generatedChecksum: 2645E564BD945DAED1424FD8D7B39330
   logicalPath: config/Trinket_USB_2
   name: startup_xc32.c
@@ -552,13 +552,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: AE3541D9EB0BC86EE90AC03EA3E1339F
-- generatedChecksum: 404563377005C50E53012211EA789431
+- generatedChecksum: 8212DF18DE1726ECED9FF3560374DFD3
   logicalPath: config/Trinket_USB_2/peripheral/port
   name: plib_port.h
   physicalPath: peripheral/port
   security: NON_SECURE
   type: HEADER
-  userChecksum: 404563377005C50E53012211EA789431
+  userChecksum: 8212DF18DE1726ECED9FF3560374DFD3
 - generatedChecksum: 482E54FA91E3C975FBC8AEE336572A05
   logicalPath: packs/ATSAMD21E18A_DFP/component
   name: pm.h

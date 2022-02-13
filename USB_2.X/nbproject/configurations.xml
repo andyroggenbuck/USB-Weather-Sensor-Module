@@ -173,6 +173,7 @@
         </logicalFolder>
       </logicalFolder>
       <itemPath>../src/app_usb.h</itemPath>
+      <itemPath>../../../../Dropbox/My PC (DESKTOP-50ID7O5)/Documents/School/Ferris/2022 Spring/EEET 428 - Senior Project/Getting Started with USB/firmware/src/common.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -265,6 +266,7 @@
   </logicalFolder>
   <sourceRootList>
     <Elem>../src</Elem>
+    <Elem>../../../../Dropbox/My PC (DESKTOP-50ID7O5)/Documents/School/Ferris/2022 Spring/EEET 428 - Senior Project/Getting Started with USB/firmware/src</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>

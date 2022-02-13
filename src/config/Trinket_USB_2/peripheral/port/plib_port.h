@@ -92,6 +92,14 @@
 #define USB_LED_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 10U)) & 0x01U)
 #define USB_LED_PIN                  PORT_PIN_PA10
 
+/*** Macros for USB_DM pin ***/
+#define USB_DM_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 24U)) & 0x01U)
+#define USB_DM_PIN                  PORT_PIN_PA24
+
+/*** Macros for USB_DP pin ***/
+#define USB_DP_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 25U)) & 0x01U)
+#define USB_DP_PIN                  PORT_PIN_PA25
+
 // *****************************************************************************
 /* PORT Group
 

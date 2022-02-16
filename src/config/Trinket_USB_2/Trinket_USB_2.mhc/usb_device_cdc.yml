@@ -17,7 +17,7 @@ children:
           - type: Dynamic
             attributes: {id: usb_device_cdc_0, value: '2'}
           - type: User
-            attributes: {value: '3'}
+            attributes: {value: '2'}
       - type: Integer
         attributes: {id: CONFIG_USB_DEVICE_FUNCTION_BULK_OUT_ENDPOINT_NUMBER}
         children:

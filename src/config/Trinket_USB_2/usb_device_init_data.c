@@ -193,7 +193,7 @@ const uint8_t fullSpeedConfigurationDescriptor[]=
 
     0x07,                                                   // Size of this descriptor
     USB_DESCRIPTOR_ENDPOINT,                                // Endpoint Descriptor
-    3 | USB_EP_DIRECTION_IN,                                // EndpointAddress ( EP3 IN )
+    2 | USB_EP_DIRECTION_IN,                                // EndpointAddress ( EP2 IN )
     0x02,                                                   // Attributes type of EP (BULK)
     0x40, 0x00,                                             // Max packet size of this EP
     0x00,                                                   // Interval (in ms)

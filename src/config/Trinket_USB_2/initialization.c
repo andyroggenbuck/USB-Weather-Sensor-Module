@@ -134,6 +134,25 @@ const DRV_USBFSV1_INIT drvUSBInit =
 // Section: System Initialization
 // *****************************************************************************
 // *****************************************************************************
+// <editor-fold defaultstate="collapsed" desc="SYS_TIME Initialization Data">
+
+const SYS_TIME_PLIB_INTERFACE sysTimePlibAPI = {
+    .timerCallbackSet = (SYS_TIME_PLIB_CALLBACK_REGISTER)TC3_TimerCallbackRegister,
+    .timerStart = (SYS_TIME_PLIB_START)TC3_TimerStart,
+    .timerStop = (SYS_TIME_PLIB_STOP)TC3_TimerStop,
+    .timerFrequencyGet = (SYS_TIME_PLIB_FREQUENCY_GET)TC3_TimerFrequencyGet,
+    .timerPeriodSet = (SYS_TIME_PLIB_PERIOD_SET)TC3_Timer16bitPeriodSet,
+    .timerCompareSet = (SYS_TIME_PLIB_COMPARE_SET)TC3_Timer16bitCompareSet,
+    .timerCounterGet = (SYS_TIME_PLIB_COUNTER_GET)TC3_Timer16bitCounterGet,
+};
+
+const SYS_TIME_INIT sysTimeInitData =
+{
+    .timePlib = &sysTimePlibAPI,
+    .hwTimerIntNum = TC3_IRQn,
+};
+
+// </editor-fold>
 
 
 
@@ -172,8 +191,11 @@ void SYS_Initialize ( void* data )
 
     EVSYS_Initialize();
 
+    TC3_TimerInitialize();
 
 
+
+    sysObj.sysTime = SYS_TIME_Initialize(SYS_TIME_INDEX_0, (SYS_MODULE_INIT *)&sysTimeInitData);
 
 	/* Initialize USB Driver */ 
     sysObj.drvUSBFSV1Object = DRV_USBFSV1_Initialize(DRV_USBFSV1_INDEX_0, (SYS_MODULE_INIT *) &drvUSBInit);	
@@ -186,6 +208,7 @@ void SYS_Initialize ( void* data )
 
 
     APP_USB_Initialize();
+    APP_SENSOR_Initialize();
 
 
     NVIC_Initialize();

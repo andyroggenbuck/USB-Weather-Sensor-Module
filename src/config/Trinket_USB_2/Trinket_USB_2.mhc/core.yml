@@ -217,6 +217,20 @@ children:
       - type: Dynamic
         attributes: {id: core, value: 'false'}
   - type: Boolean
+    attributes: {id: GCLK_ID_27_CHEN}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: 'true'}
+  - type: Integer
+    attributes: {id: GCLK_ID_27_FREQ}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '48000000'}
+  - type: Boolean
     attributes: {id: GCLK_ID_6_CHEN}
     children:
     - type: Values
@@ -293,6 +307,27 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: '0x1200'}
+  - type: Boolean
+    attributes: {id: NVIC_18_0_ENABLE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: 'true'}
+  - type: String
+    attributes: {id: NVIC_18_0_HANDLER}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: TC3_TimerInterruptHandler}
+  - type: Boolean
+    attributes: {id: NVIC_18_0_HANDLER_LOCK}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: 'true'}
   - type: Boolean
     attributes: {id: NVIC_7_0_ENABLE}
     children:
@@ -531,6 +566,13 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: '0x7f'}
+  - type: String
+    attributes: {id: PM_APBC_INITIAL_VALUE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '0x10800'}
   - type: Boolean
     attributes: {id: PORT_GROUP_0}
     children:
@@ -699,6 +741,48 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: '1000'}
+  - type: Boolean
+    attributes: {id: TC3_CLOCK_ENABLE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: tc3, value: 'true'}
+  - type: Integer
+    attributes: {id: TC3_CLOCK_FREQUENCY}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '48000000'}
+  - type: Boolean
+    attributes: {id: TC3_INTERRUPT_ENABLE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: tc3, value: 'true'}
+  - type: Boolean
+    attributes: {id: TC3_INTERRUPT_ENABLE_UPDATE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: 'false'}
+  - type: String
+    attributes: {id: TC3_INTERRUPT_HANDLER}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: tc3, value: TC3_TimerInterruptHandler}
+  - type: Boolean
+    attributes: {id: TC3_INTERRUPT_HANDLER_LOCK}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: tc3, value: 'true'}
   - type: Boolean
     attributes: {id: USB_CLOCK_ENABLE}
     children:

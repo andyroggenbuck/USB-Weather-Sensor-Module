@@ -90,6 +90,9 @@ void SYS_Tasks ( void )
         /* Call Application task APP_USB. */
     APP_USB_Tasks();
 
+    /* Call Application task APP_SENSOR. */
+    APP_SENSOR_Tasks();
+
 
 
 

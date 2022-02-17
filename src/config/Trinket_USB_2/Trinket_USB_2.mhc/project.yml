@@ -1,4 +1,11 @@
 files:
+- generatedChecksum: CB95AAEB607809FE175FF5E112D29952
+  logicalPath: ''
+  name: app_sensor.c
+  physicalPath: ../..
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: CB95AAEB607809FE175FF5E112D29952
 - generatedChecksum: null
   logicalPath: ''
   name: app_usb.c
@@ -27,20 +34,20 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 0D18A719A1E40A8875895284967F66D0
-- generatedChecksum: 51886EF33B594824056342DDF804D38B
+- generatedChecksum: 302CF3E1C5DB721F9C60C44B570F1F3D
   logicalPath: config/Trinket_USB_2
   name: initialization.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 51886EF33B594824056342DDF804D38B
-- generatedChecksum: 606F697BD7762C4E9A92337E388FF5FC
+  userChecksum: 302CF3E1C5DB721F9C60C44B570F1F3D
+- generatedChecksum: 42B408BB49F31E4BE10BF5F94955652C
   logicalPath: config/Trinket_USB_2
   name: interrupts.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 606F697BD7762C4E9A92337E388FF5FC
+  userChecksum: 42B408BB49F31E4BE10BF5F94955652C
 - generatedChecksum: 6513F2461B8F476B68CA73906086047F
   logicalPath: config/Trinket_USB_2
   name: libc_syscalls.c
@@ -55,13 +62,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: null
-- generatedChecksum: F92103A2CCAF23702A976AEFD590921F
+- generatedChecksum: 50CA4566400C9C0444AE87F8CBB94676
   logicalPath: config/Trinket_USB_2/peripheral/clock
   name: plib_clock.c
   physicalPath: peripheral/clock
   security: NON_SECURE
   type: SOURCE
-  userChecksum: F92103A2CCAF23702A976AEFD590921F
+  userChecksum: 50CA4566400C9C0444AE87F8CBB94676
 - generatedChecksum: C3ECDED3D6301DB0DE622293ED615D21
   logicalPath: config/Trinket_USB_2/peripheral/evsys
   name: plib_evsys.c
@@ -69,13 +76,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: C3ECDED3D6301DB0DE622293ED615D21
-- generatedChecksum: B9BC886ADE741D0F7B364C11ED90AB2A
+- generatedChecksum: 8EDBD11AC04CBDD406B71DA244B1A5A0
   logicalPath: config/Trinket_USB_2/peripheral/nvic
   name: plib_nvic.c
   physicalPath: peripheral/nvic
   security: NON_SECURE
   type: SOURCE
-  userChecksum: B9BC886ADE741D0F7B364C11ED90AB2A
+  userChecksum: 8EDBD11AC04CBDD406B71DA244B1A5A0
 - generatedChecksum: 8E76B0609233122F5E1694614CEC13B1
   logicalPath: config/Trinket_USB_2/peripheral/nvmctrl
   name: plib_nvmctrl.c
@@ -90,6 +97,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 841EC33EFBE34BA10824445B91E3BDD1
+- generatedChecksum: B285057CBD62E175895157B837862224
+  logicalPath: config/Trinket_USB_2/peripheral/tc
+  name: plib_tc3.c
+  physicalPath: peripheral/tc
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: B285057CBD62E175895157B837862224
 - generatedChecksum: 2645E564BD945DAED1424FD8D7B39330
   logicalPath: config/Trinket_USB_2
   name: startup_xc32.c
@@ -104,13 +118,20 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 02C3C1B519E59992810626BB6098CF56
-- generatedChecksum: DEDEAD5833B0A3A671C4F15FA5726268
+- generatedChecksum: 83BDE663A1AAB20C9E52263F22E2ED3C
+  logicalPath: config/Trinket_USB_2/system/time
+  name: sys_time.c
+  physicalPath: system/time/src
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: 83BDE663A1AAB20C9E52263F22E2ED3C
+- generatedChecksum: D1B72F2A56C59D75D41AA6B39B5A55B6
   logicalPath: config/Trinket_USB_2
   name: tasks.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: DEDEAD5833B0A3A671C4F15FA5726268
+  userChecksum: D1B72F2A56C59D75D41AA6B39B5A55B6
 - generatedChecksum: BCCEF5B801FFD0CF22D0B454D2F25F1F
   logicalPath: config/Trinket_USB_2/usb/src
   name: usb_device.c
@@ -174,6 +195,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 35ABE5A146EF291395FAEFB4F1B44003
+- generatedChecksum: 4410C2A1AD9E05AFC8C504B9A8A1B815
+  logicalPath: ''
+  name: app_sensor.h
+  physicalPath: ../..
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 4410C2A1AD9E05AFC8C504B9A8A1B815
 - generatedChecksum: null
   logicalPath: ''
   name: app_usb.h
@@ -237,13 +265,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 52F91AC0727F2311EDA0E3BAA7719A9F
-- generatedChecksum: A7DB2BBED55EAE1338842A70D21AE5B6
+- generatedChecksum: 379851D29239C9A818BF2177DC8B1CC7
   logicalPath: config/Trinket_USB_2
   name: configuration.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: A7DB2BBED55EAE1338842A70D21AE5B6
+  userChecksum: 379851D29239C9A818BF2177DC8B1CC7
 - generatedChecksum: CCBD23918BE14943EA128B0D552031C5
   logicalPath: packs/CMSIS/CMSIS/Core/Include
   name: core_cm0plus.h
@@ -265,13 +293,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 2AD9700A41DC94A60C663A17CEDB2703
-- generatedChecksum: 6E05CE469033514F3894A7F861580CBD
+- generatedChecksum: B879BF418CE5A2A770AF064C945EDD27
   logicalPath: config/Trinket_USB_2
   name: definitions.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: 6E05CE469033514F3894A7F861580CBD
+  userChecksum: B879BF418CE5A2A770AF064C945EDD27
 - generatedChecksum: 4821302AA348DF2D25B60299A468C2D7
   logicalPath: config/Trinket_USB_2
   name: device.h
@@ -433,13 +461,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 4017D6C4D2082CB4A87FEFE5411B6559
-- generatedChecksum: D2211CC5E45DC2B5D3C90065C239B4BD
+- generatedChecksum: 2261B2EF79364D1F27694094C45F5BAE
   logicalPath: config/Trinket_USB_2
   name: interrupts.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: D2211CC5E45DC2B5D3C90065C239B4BD
+  userChecksum: 2261B2EF79364D1F27694094C45F5BAE
 - generatedChecksum: 47E760D36E42A7B436306A9CB4E72A0E
   logicalPath: packs/CMSIS/CMSIS/Core/Include
   name: mpu_armv7.h
@@ -559,6 +587,20 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 8212DF18DE1726ECED9FF3560374DFD3
+- generatedChecksum: 0DE96936AB21998A284FA176F870E596
+  logicalPath: config/Trinket_USB_2/peripheral/tc
+  name: plib_tc3.h
+  physicalPath: peripheral/tc
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 0DE96936AB21998A284FA176F870E596
+- generatedChecksum: 6DBEAF7BD42014F5492374805406687A
+  logicalPath: config/Trinket_USB_2/peripheral/tc
+  name: plib_tc_common.h
+  physicalPath: peripheral/tc
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 6DBEAF7BD42014F5492374805406687A
 - generatedChecksum: 482E54FA91E3C975FBC8AEE336572A05
   logicalPath: packs/ATSAMD21E18A_DFP/component
   name: pm.h
@@ -706,6 +748,27 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 00278F169FFB0CBBAB3A68B5D647F093
+- generatedChecksum: 466D676839280C0E7FC2CC6F78BA6EE9
+  logicalPath: config/Trinket_USB_2/system/time
+  name: sys_time.h
+  physicalPath: system/time
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 466D676839280C0E7FC2CC6F78BA6EE9
+- generatedChecksum: 125CB4EFA4E80BCD6041E8AC22F2E2FC
+  logicalPath: config/Trinket_USB_2/system/time
+  name: sys_time_definitions.h
+  physicalPath: system/time
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 125CB4EFA4E80BCD6041E8AC22F2E2FC
+- generatedChecksum: 62F39464265EC34979649F761FB4FE57
+  logicalPath: config/Trinket_USB_2/system/time
+  name: sys_time_local.h
+  physicalPath: system/time/src
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 62F39464265EC34979649F761FB4FE57
 - generatedChecksum: 486AC61EE71D8D443C426AD68798A33A
   logicalPath: packs/ATSAMD21E18A_DFP/component
   name: sysctrl.h

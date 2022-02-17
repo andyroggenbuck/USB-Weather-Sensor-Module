@@ -50,6 +50,9 @@ extern "C" {
 // *****************************************************************************
 #define APP_USB_READ_BUFFER_SIZE    512
 #define APP_USB_WRITE_BUFFER_SIZE   512
+    
+/* global flag variable */
+bool usbWriteReady;
 
 // *****************************************************************************
 /* Application states

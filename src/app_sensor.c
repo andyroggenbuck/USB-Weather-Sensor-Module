@@ -30,6 +30,7 @@
 #include "app_sensor.h"
 #include "configuration.h"
 #include "definitions.h"
+#include "app_usb.h"
 
 // *****************************************************************************
 // *****************************************************************************
@@ -131,6 +132,9 @@ void APP_SENSOR_Tasks ( void )
         /* Application's initial state. */
         case APP_SENSOR_STATE_INIT:
         {
+            /* Clear USB write ready flag */
+            usbWriteReady = false;
+            
             /* Register Timer Expiry Event Handler with 
             * Time System Service. 
             */
@@ -138,7 +142,8 @@ void APP_SENSOR_Tasks ( void )
                 APP_SENSOR_TimerEventHandler, 0,
                 (1000*APP_SENSOR_SAMPLING_RATE_IN_HZ), 
                 SYS_TIME_PERIODIC);
-
+            
+            /* check for valid time handle */
             if (app_sensorData.sysTimeHandle != SYS_TIME_HANDLE_INVALID)
             {
                 app_sensorData.state = APP_SENSOR_STATE_WAIT_FOR_TIMER;
@@ -147,7 +152,11 @@ void APP_SENSOR_Tasks ( void )
             {
                 app_sensorData.state = APP_SENSOR_STATE_ERROR;
             }
-            break;
+            
+            /* Enable ADC converter */
+            ADC_Enable();
+            
+            break;            
         }
 
         case APP_SENSOR_STATE_WAIT_FOR_TIMER:
@@ -163,9 +172,22 @@ void APP_SENSOR_Tasks ( void )
         
         case APP_SENSOR_STATE_READ_SENSORS:
         {
+            /* start A/D conversion */
+            ADC_ConversionStart();
             
+            /* wait for conversion to finish */
+            while( !ADC_ConversionStatusGet() );
+            
+            app_sensorData.rawADval = ADC_ConversionResultGet();
+            
+            app_sensorData.temperature = (float) app_sensorData.rawADval * 223 / 4096;
             
             LED_Toggle();
+            
+            
+            
+            /* set USB write ready flag */
+            usbWriteReady = true;
             
             /* go wait for timer again */
             app_sensorData.state = APP_SENSOR_STATE_WAIT_FOR_TIMER;

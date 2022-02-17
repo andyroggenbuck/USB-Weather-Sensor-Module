@@ -379,6 +379,8 @@ void APP_USB_Initialize ( void )
 
 void APP_USB_Tasks ( void )
 {
+    extern bool usbWriteReady;
+    
     /* Update the application state machine based
      * on the current state 
      */
@@ -464,10 +466,10 @@ void APP_USB_Tasks ( void )
                 break;
             }
 
-            /* Check if a character was received, The isReadComplete flag gets 
-             * updated in the CDC event handler. 
+            /* Check if a character was received or sensor flag is set.
+             * The isReadComplete flag gets updated in the CDC event handler. 
              */
-            if(app_usbData.isReadComplete)
+            if(app_usbData.isReadComplete || usbWriteReady)
             {
                 app_usbData.state = APP_USB_STATE_SCHEDULE_WRITE;
             }
@@ -481,66 +483,80 @@ void APP_USB_Tasks ( void )
             {
                 break;
             }
-
-            /* Process received data and check if 
-             * data matches a command and then process it.
-             * Only the first character is considered.
-             */
-            switch (app_usbData.cdcReadBuffer[0])
-            {
-                /* h,H - Menu Command */
-                case 'h':
-                case 'H':
-                    app_usbData.isCommand = true;
-                    app_usbData.numBytesWrite =
-                            sprintf((char*)app_usbData.cdcWriteBuffer,
-                            "Getting Started Menu:\r\n"
-                            "1 - Toggle board LED\r\n"
-                            "2 - Read switch state\r\n"
-                            "h - Show this menu\r\n");
-                    
-                    break;
-                
-                /* 1 - Led Toggle Command */
-                case '1':
-                    app_usbData.isCommand = true;
-                    app_usbData.numBytesWrite =
-                        sprintf((char*)app_usbData.cdcWriteBuffer,
-                            "Toggled LED State\r\n");
-                    
-                    LED_Toggle();
-                    
-                    
-                    break;
-                
-                /* 2 - Read Switch State */
-                case '2':
-                    app_usbData.isCommand = true;
-                    if ( BUTTON_Get() )
-                    {
-                        app_usbData.numBytesWrite = 
-                            sprintf((char*)app_usbData.cdcWriteBuffer,
-                            "The switch is pressed\r\n");
-                    }
-                    else
-                        app_usbData.numBytesWrite = 
-                            sprintf((char*)app_usbData.cdcWriteBuffer,
-                            "The switch is not pressed\r\n");
-                    
-                    break;
-                               
-                /* Do nothing */
-                default:
-                    /* Clear command flag */
-                    app_usbData.isCommand = false;
-                    
-                    break;
-            }
             
+            if(usbWriteReady)
+            {
+                usbWriteReady = false;
+                app_usbData.isCommand = true;
+                        
+                /* write sensor values to USB write buffer */
+                app_usbData.numBytesWrite = sprintf(
+                            (char*)app_usbData.cdcWriteBuffer,
+                            "%4.2g\r\n",
+                            app_sensorData.temperature);
+            }
+            else
+            {
+                /* Process received data and check if 
+                 * data matches a command and then process it.
+                 * Only the first character is considered.
+                 */
+                switch (app_usbData.cdcReadBuffer[0])
+                {
+                    /* h,H - Menu Command */
+                    case 'h':
+                    case 'H':
+                        app_usbData.isCommand = true;
+                        app_usbData.numBytesWrite =
+                                sprintf((char*)app_usbData.cdcWriteBuffer,
+                                "Getting Started Menu:\r\n"
+                                "1 - Toggle board LED\r\n"
+                                "2 - Read switch state\r\n"
+                                "h - Show this menu\r\n");
+
+                        break;
+
+                    /* 1 - Led Toggle Command */
+                    case '1':
+                        app_usbData.isCommand = true;
+                        app_usbData.numBytesWrite =
+                            sprintf((char*)app_usbData.cdcWriteBuffer,
+                                "Toggled LED State\r\n");
+
+                        LED_Toggle();
+
+
+                        break;
+
+                    /* 2 - Read Switch State */
+                    case '2':
+                        app_usbData.isCommand = true;
+                        if ( BUTTON_Get() )
+                        {
+                            app_usbData.numBytesWrite = 
+                                sprintf((char*)app_usbData.cdcWriteBuffer,
+                                "The switch is pressed\r\n");
+                        }
+                        else
+                            app_usbData.numBytesWrite = 
+                                sprintf((char*)app_usbData.cdcWriteBuffer,
+                                "The switch is not pressed\r\n");
+
+                        break;
+
+                    /* Do nothing */
+                    default:
+                        /* Clear command flag */
+                        app_usbData.isCommand = false;
+
+                        break;
+                }
+            }
             /* Schedule write only if a valid command was processed */
             if(app_usbData.isCommand)
             {
                 app_usbData.isWriteComplete = false;
+                app_usbData.isCommand = false;
                 app_usbData.writeTransferHandle =
                         USB_DEVICE_CDC_TRANSFER_HANDLE_INVALID;
                 

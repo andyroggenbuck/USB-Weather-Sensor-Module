@@ -87,8 +87,10 @@ typedef struct
     /* The application's current state */
     APP_SENSOR_STATES state;
     SYS_TIME_HANDLE sysTimeHandle;
-    volatile bool isTimerExpired;    
-    int8_t temperature;
+    volatile bool isTimerExpired;  
+    volatile bool usbWriteReady;
+    float temperature;
+    int16_t rawADval;
 
     /* TODO: Define any additional data used by the application. */
 

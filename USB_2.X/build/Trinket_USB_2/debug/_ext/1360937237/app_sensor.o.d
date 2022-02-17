@@ -1,5 +1,5 @@
-build/Trinket_USB_2/production/_ext/1189347772/initialization.o: \
- ../src/config/Trinket_USB_2/initialization.c \
+build/Trinket_USB_2/debug/_ext/1360937237/app_sensor.o: \
+ ../src/app_sensor.c ../src/app_sensor.h \
  ../src/config/Trinket_USB_2/configuration.h \
  ../src/config/Trinket_USB_2/user.h ../src/config/Trinket_USB_2/device.h \
  ../src/packs/ATSAMD21E18A_DFP/samd21e18a.h \
@@ -66,21 +66,22 @@ build/Trinket_USB_2/production/_ext/1189347772/initialization.o: \
  ../src/config/Trinket_USB_2/device_cache.h \
  ../src/config/Trinket_USB_2/toolchain_specifics.h \
  ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h \
- ../src/config/Trinket_USB_2/definitions.h \
- ../src/config/Trinket_USB_2/usb/usb_device_cdc.h \
- ../src/config/Trinket_USB_2/configuration.h \
- ../src/config/Trinket_USB_2/usb/usb_common.h \
- ../src/config/Trinket_USB_2/usb/usb_chapter_9.h \
- ../src/config/Trinket_USB_2/usb/usb_device.h \
+ ../src/config/Trinket_USB_2/system/time/sys_time.h \
  ../src/config/Trinket_USB_2/system/system.h \
  ../src/config/Trinket_USB_2/system/system_common.h \
  ../src/config/Trinket_USB_2/system/system_module.h \
  ../src/config/Trinket_USB_2/system/system_common.h \
- ../src/config/Trinket_USB_2/driver/driver_common.h \
- ../src/config/Trinket_USB_2/driver/usb/drv_usb.h \
+ ../src/config/Trinket_USB_2/system/time/sys_time_definitions.h \
  ../src/config/Trinket_USB_2/system/int/sys_int.h \
  ../src/config/Trinket_USB_2/device.h \
  ../src/config/Trinket_USB_2/system/int/sys_int_mapping.h \
+ ../src/config/Trinket_USB_2/definitions.h \
+ ../src/config/Trinket_USB_2/usb/usb_device_cdc.h \
+ ../src/config/Trinket_USB_2/usb/usb_common.h \
+ ../src/config/Trinket_USB_2/usb/usb_chapter_9.h \
+ ../src/config/Trinket_USB_2/usb/usb_device.h \
+ ../src/config/Trinket_USB_2/driver/driver_common.h \
+ ../src/config/Trinket_USB_2/driver/usb/drv_usb.h \
  ../src/config/Trinket_USB_2/usb/usb_host_client_driver.h \
  ../src/config/Trinket_USB_2/usb/usb_host.h \
  ../src/config/Trinket_USB_2/usb/usb_host_hub_interface.h \
@@ -104,10 +105,10 @@ build/Trinket_USB_2/production/_ext/1189347772/initialization.o: \
  ../src/config/Trinket_USB_2/osal/osal_definitions.h \
  ../src/config/Trinket_USB_2/osal/osal_impl_basic.h \
  ../src/config/Trinket_USB_2/system/debug/sys_debug.h \
- ../src/config/Trinket_USB_2/system/time/sys_time.h \
- ../src/config/Trinket_USB_2/system/time/sys_time_definitions.h \
- ../src/app_usb.h ../src/config/Trinket_USB_2/definitions.h \
- ../src/app_sensor.h ../src/config/Trinket_USB_2/system/time/sys_time.h
+ ../src/config/Trinket_USB_2/system/time/sys_time.h ../src/app_usb.h \
+ ../src/app_sensor.h
+
+../src/app_sensor.h:
 
 ../src/config/Trinket_USB_2/configuration.h:
 
@@ -243,17 +244,7 @@ build/Trinket_USB_2/production/_ext/1189347772/initialization.o: \
 
 ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h:
 
-../src/config/Trinket_USB_2/definitions.h:
-
-../src/config/Trinket_USB_2/usb/usb_device_cdc.h:
-
-../src/config/Trinket_USB_2/configuration.h:
-
-../src/config/Trinket_USB_2/usb/usb_common.h:
-
-../src/config/Trinket_USB_2/usb/usb_chapter_9.h:
-
-../src/config/Trinket_USB_2/usb/usb_device.h:
+../src/config/Trinket_USB_2/system/time/sys_time.h:
 
 ../src/config/Trinket_USB_2/system/system.h:
 
@@ -263,15 +254,27 @@ build/Trinket_USB_2/production/_ext/1189347772/initialization.o: \
 
 ../src/config/Trinket_USB_2/system/system_common.h:
 
-../src/config/Trinket_USB_2/driver/driver_common.h:
-
-../src/config/Trinket_USB_2/driver/usb/drv_usb.h:
+../src/config/Trinket_USB_2/system/time/sys_time_definitions.h:
 
 ../src/config/Trinket_USB_2/system/int/sys_int.h:
 
 ../src/config/Trinket_USB_2/device.h:
 
 ../src/config/Trinket_USB_2/system/int/sys_int_mapping.h:
+
+../src/config/Trinket_USB_2/definitions.h:
+
+../src/config/Trinket_USB_2/usb/usb_device_cdc.h:
+
+../src/config/Trinket_USB_2/usb/usb_common.h:
+
+../src/config/Trinket_USB_2/usb/usb_chapter_9.h:
+
+../src/config/Trinket_USB_2/usb/usb_device.h:
+
+../src/config/Trinket_USB_2/driver/driver_common.h:
+
+../src/config/Trinket_USB_2/driver/usb/drv_usb.h:
 
 ../src/config/Trinket_USB_2/usb/usb_host_client_driver.h:
 
@@ -321,12 +324,6 @@ build/Trinket_USB_2/production/_ext/1189347772/initialization.o: \
 
 ../src/config/Trinket_USB_2/system/time/sys_time.h:
 
-../src/config/Trinket_USB_2/system/time/sys_time_definitions.h:
-
 ../src/app_usb.h:
 
-../src/config/Trinket_USB_2/definitions.h:
-
 ../src/app_sensor.h:
-
-../src/config/Trinket_USB_2/system/time/sys_time.h:

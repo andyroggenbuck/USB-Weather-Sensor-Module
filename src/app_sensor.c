@@ -28,6 +28,8 @@
 // *****************************************************************************
 
 #include "app_sensor.h"
+#include "configuration.h"
+#include "definitions.h"
 
 // *****************************************************************************
 // *****************************************************************************
@@ -72,9 +74,6 @@ void APP_SENSOR_TimerEventHandler( uintptr_t context )
 {
     /* Timer expired. */
     app_sensorData.isTimerExpired = true;
-    
-    /* Toggle LED*/
-    LED_Toggle();
 }
 
 // *****************************************************************************
@@ -135,10 +134,10 @@ void APP_SENSOR_Tasks ( void )
             /* Register Timer Expiry Event Handler with 
             * Time System Service. 
             */
-            SYS_TIME_CallbackRegisterMS(APP_SENSOR_TimerEventHandler, 0,
+            app_sensorData.sysTimeHandle = SYS_TIME_CallbackRegisterMS(
+                APP_SENSOR_TimerEventHandler, 0,
                 (1000*APP_SENSOR_SAMPLING_RATE_IN_HZ), 
                 SYS_TIME_PERIODIC);
-
 
             if (app_sensorData.sysTimeHandle != SYS_TIME_HANDLE_INVALID)
             {
@@ -155,13 +154,21 @@ void APP_SENSOR_Tasks ( void )
         {
             if (app_sensorData.isTimerExpired)
             {
+                /* advance to next state and reset timer flag */
                 app_sensorData.state = APP_SENSOR_STATE_READ_SENSORS;
+                app_sensorData.isTimerExpired = false;
             }
             break;
         }
         
         case APP_SENSOR_STATE_READ_SENSORS:
         {
+            
+            
+            LED_Toggle();
+            
+            /* go wait for timer again */
+            app_sensorData.state = APP_SENSOR_STATE_WAIT_FOR_TIMER;
             
             break;
         }

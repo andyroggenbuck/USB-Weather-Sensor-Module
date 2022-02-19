@@ -209,7 +209,6 @@ void SYS_Initialize ( void* data )
 
 
     APP_USB_Initialize();
-    APP_SENSOR_Initialize();
 
 
     NVIC_Initialize();

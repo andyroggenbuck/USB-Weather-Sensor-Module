@@ -106,8 +106,7 @@ build/Trinket_USB_2/debug/_ext/1360937237/main.o: ../src/main.c \
  ../src/config/Trinket_USB_2/osal/osal.h \
  ../src/config/Trinket_USB_2/osal/osal_definitions.h \
  ../src/config/Trinket_USB_2/osal/osal_impl_basic.h \
- ../src/config/Trinket_USB_2/system/debug/sys_debug.h ../src/app_usb.h \
- ../src/app_sensor.h ../src/config/Trinket_USB_2/system/time/sys_time.h
+ ../src/config/Trinket_USB_2/system/debug/sys_debug.h ../src/app_usb.h
 
 ../src/config/Trinket_USB_2/definitions.h:
 
@@ -326,7 +325,3 @@ build/Trinket_USB_2/debug/_ext/1360937237/main.o: ../src/main.c \
 ../src/config/Trinket_USB_2/system/debug/sys_debug.h:
 
 ../src/app_usb.h:
-
-../src/app_sensor.h:
-
-../src/config/Trinket_USB_2/system/time/sys_time.h:

@@ -29,7 +29,8 @@
 
 #include "app_usb.h"
 #include "common.h"
-
+#include "configuration.h"
+#include "definitions.h"
 // *****************************************************************************
 // *****************************************************************************
 // Section: Global Data Definitions
@@ -38,6 +39,8 @@
 
 uint8_t CACHE_ALIGN cdcReadBuffer[APP_USB_READ_BUFFER_SIZE];
 uint8_t CACHE_ALIGN cdcWriteBuffer[APP_USB_WRITE_BUFFER_SIZE];
+
+#define APP_SENSOR_SAMPLING_RATE_IN_HZ         1
 
 // *****************************************************************************
 /* Application Data
@@ -55,6 +58,7 @@ uint8_t CACHE_ALIGN cdcWriteBuffer[APP_USB_WRITE_BUFFER_SIZE];
 */
 
 APP_USB_DATA app_usbData;
+APP_SENSOR_DATA app_sensorData;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -276,6 +280,20 @@ void APP_USB_USBDeviceEventHandler
     }
 }
 
+/******************************************************************************
+  Function:
+    void APP_SENSOR_TimerEventHandler ( uintptr_t )
+
+  Remarks:
+    This function is called by the Timer System Service when the requested time
+    period has elapsed.
+ */
+void APP_SENSOR_TimerEventHandler( uintptr_t context )
+{
+    /* Timer expired. */
+    app_sensorData.isTimerExpired = true;
+}
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Application Local Functions
@@ -378,9 +396,7 @@ void APP_USB_Initialize ( void )
  */
 
 void APP_USB_Tasks ( void )
-{
-    extern bool usbWriteReady;
-    
+{    
     /* Update the application state machine based
      * on the current state 
      */
@@ -411,6 +427,23 @@ void APP_USB_Tasks ( void )
                  * again later. 
                  */
             }
+            
+            /* Register Timer Expiry Event Handler with 
+            * Time System Service. 
+            */
+            app_sensorData.sysTimeHandle = SYS_TIME_CallbackRegisterMS(
+                APP_SENSOR_TimerEventHandler, 0,
+                1000*APP_SENSOR_SAMPLING_RATE_IN_HZ, 
+                SYS_TIME_PERIODIC);
+            
+            /* check for valid time handle */
+            if (app_sensorData.sysTimeHandle == SYS_TIME_HANDLE_INVALID)
+            {
+                app_usbData.state = APP_USB_STATE_ERROR;
+            }
+            
+            /* Enable ADC converter */
+            ADC_Enable();
 
             break;
 
@@ -420,59 +453,48 @@ void APP_USB_Tasks ( void )
             if(app_usbData.isConfigured)
             {
                 /* If the device is configured then lets start reading */
-                app_usbData.state = APP_USB_STATE_SCHEDULE_READ;
+                app_usbData.state = APP_USB_STATE_WAIT_FOR_TIMER;
             }
             
             break;
 
-        case APP_USB_STATE_SCHEDULE_READ:
+        case APP_USB_STATE_WAIT_FOR_TIMER:
 
             if(APP_USB_StateReset())
             {
                 break;
             }
 
-            /* If a read is complete, then schedule a read
-             * else wait for the current read to complete 
-             */
-            app_usbData.state = APP_USB_STATE_WAIT_FOR_READ_COMPLETE;
-            
-            if(app_usbData.isReadComplete == true)
+            if (app_sensorData.isTimerExpired)
             {
-                app_usbData.isReadComplete = false;
-                app_usbData.readTransferHandle = 
-                        USB_DEVICE_CDC_TRANSFER_HANDLE_INVALID;
-
-                /* Schedule read */
-                USB_DEVICE_CDC_Read (USB_DEVICE_CDC_INDEX_0,
-                    &app_usbData.readTransferHandle,
-                    app_usbData.cdcReadBuffer,
-                    APP_USB_READ_BUFFER_SIZE);
-                
-                if(app_usbData.readTransferHandle ==
-                        USB_DEVICE_CDC_TRANSFER_HANDLE_INVALID)
-                {
-                    app_usbData.state = APP_USB_STATE_ERROR;
-                break;
-                }
+                /* if timer expired, go to next state and reset timer flag */
+                app_usbData.state = APP_USB_STATE_READ_SENSORS;
+                app_sensorData.isTimerExpired = false;
             }
-
             break;
 
-        case APP_USB_STATE_WAIT_FOR_READ_COMPLETE:
+        case APP_USB_STATE_READ_SENSORS:
 
             if(APP_USB_StateReset())
             {
                 break;
             }
 
-            /* Check if a character was received or sensor flag is set.
-             * The isReadComplete flag gets updated in the CDC event handler. 
-             */
-            if(app_usbData.isReadComplete || usbWriteReady)
-            {
-                app_usbData.state = APP_USB_STATE_SCHEDULE_WRITE;
-            }
+            /* start A/D conversion */
+            ADC_ConversionStart();
+            
+            /* wait for conversion to finish */
+            while( !ADC_ConversionStatusGet() );
+            
+            app_sensorData.rawADval = ADC_ConversionResultGet();
+            
+            /* convert raw value to temperature */
+            app_sensorData.temperature = (float) app_sensorData.rawADval * 223 / 4096;
+            
+            LED_Toggle();
+            
+            /* schedule USB write */
+            app_usbData.state = APP_USB_STATE_SCHEDULE_WRITE;
 
             break;
 
@@ -484,96 +506,26 @@ void APP_USB_Tasks ( void )
                 break;
             }
             
-            if(usbWriteReady)
-            {
-                usbWriteReady = false;
-                app_usbData.isCommand = true;
-                        
-                /* write sensor values to USB write buffer */
-                app_usbData.numBytesWrite = sprintf(
-                            (char*)app_usbData.cdcWriteBuffer,
-                            "%4.2g\r\n",
-                            app_sensorData.temperature);
-            }
-            else
-            {
-                /* Process received data and check if 
-                 * data matches a command and then process it.
-                 * Only the first character is considered.
-                 */
-                switch (app_usbData.cdcReadBuffer[0])
-                {
-                    /* h,H - Menu Command */
-                    case 'h':
-                    case 'H':
-                        app_usbData.isCommand = true;
-                        app_usbData.numBytesWrite =
-                                sprintf((char*)app_usbData.cdcWriteBuffer,
-                                "Getting Started Menu:\r\n"
-                                "1 - Toggle board LED\r\n"
-                                "2 - Read switch state\r\n"
-                                "h - Show this menu\r\n");
+            /* write sensor values to USB write buffer */
+            app_usbData.numBytesWrite = sprintf(
+                    (char*)app_usbData.cdcWriteBuffer,
+                    "%4.2g\r\n",
+                    app_sensorData.temperature);
+            
+            /* Schedule write */
+            app_usbData.isWriteComplete = false;
+            app_usbData.writeTransferHandle =
+                    USB_DEVICE_CDC_TRANSFER_HANDLE_INVALID;
 
-                        break;
+            /* Schedule write */
+            USB_DEVICE_CDC_Write(USB_DEVICE_CDC_INDEX_0,
+                &app_usbData.writeTransferHandle,
+                app_usbData.cdcWriteBuffer,
+                app_usbData.numBytesWrite,
+                USB_DEVICE_CDC_TRANSFER_FLAGS_DATA_COMPLETE);
 
-                    /* 1 - Led Toggle Command */
-                    case '1':
-                        app_usbData.isCommand = true;
-                        app_usbData.numBytesWrite =
-                            sprintf((char*)app_usbData.cdcWriteBuffer,
-                                "Toggled LED State\r\n");
-
-                        LED_Toggle();
-
-
-                        break;
-
-                    /* 2 - Read Switch State */
-                    case '2':
-                        app_usbData.isCommand = true;
-                        if ( BUTTON_Get() )
-                        {
-                            app_usbData.numBytesWrite = 
-                                sprintf((char*)app_usbData.cdcWriteBuffer,
-                                "The switch is pressed\r\n");
-                        }
-                        else
-                            app_usbData.numBytesWrite = 
-                                sprintf((char*)app_usbData.cdcWriteBuffer,
-                                "The switch is not pressed\r\n");
-
-                        break;
-
-                    /* Do nothing */
-                    default:
-                        /* Clear command flag */
-                        app_usbData.isCommand = false;
-
-                        break;
-                }
-            }
-            /* Schedule write only if a valid command was processed */
-            if(app_usbData.isCommand)
-            {
-                app_usbData.isWriteComplete = false;
-                app_usbData.isCommand = false;
-                app_usbData.writeTransferHandle =
-                        USB_DEVICE_CDC_TRANSFER_HANDLE_INVALID;
-                
-                /* Schedule write */
-                USB_DEVICE_CDC_Write(USB_DEVICE_CDC_INDEX_0,
-                    &app_usbData.writeTransferHandle,
-                    app_usbData.cdcWriteBuffer,
-                    app_usbData.numBytesWrite,
-                    USB_DEVICE_CDC_TRANSFER_FLAGS_DATA_COMPLETE);
-                
-                app_usbData.state = APP_USB_STATE_WAIT_FOR_WRITE_COMPLETE;
-            }
-            else
-            {
-                app_usbData.state = APP_USB_STATE_SCHEDULE_READ;
-            }
-
+            app_usbData.state = APP_USB_STATE_WAIT_FOR_WRITE_COMPLETE;
+            
             break;
 
         case APP_USB_STATE_WAIT_FOR_WRITE_COMPLETE:
@@ -589,7 +541,7 @@ void APP_USB_Tasks ( void )
 
             if(app_usbData.isWriteComplete == true)
             {
-                app_usbData.state = APP_USB_STATE_SCHEDULE_READ;
+                app_usbData.state = APP_USB_STATE_WAIT_FOR_TIMER;
             }
 
             break;

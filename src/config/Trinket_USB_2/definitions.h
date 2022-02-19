@@ -65,7 +65,6 @@
 #include "osal/osal.h"
 #include "system/debug/sys_debug.h"
 #include "app_usb.h"
-#include "app_sensor.h"
 
 
 

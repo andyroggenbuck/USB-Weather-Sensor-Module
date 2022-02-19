@@ -50,9 +50,7 @@ extern "C" {
 // *****************************************************************************
 #define APP_USB_READ_BUFFER_SIZE    512
 #define APP_USB_WRITE_BUFFER_SIZE   512
-    
-/* global flag variable */
-bool usbWriteReady;
+
 
 // *****************************************************************************
 /* Application states
@@ -72,12 +70,12 @@ typedef enum
 
     /* Application waits for device configuration*/
     APP_USB_STATE_WAIT_FOR_CONFIGURATION,
-
-    /* Wait for a character receive */
-    APP_USB_STATE_SCHEDULE_READ,
-
-    /* A character is received from host */
-    APP_USB_STATE_WAIT_FOR_READ_COMPLETE,
+            
+    /* Wait for timer to complete */
+    APP_USB_STATE_WAIT_FOR_TIMER,
+            
+    /* Get new values from sensors */
+    APP_USB_STATE_READ_SENSORS,
 
     /* Wait for the TX to get completed */
     APP_USB_STATE_SCHEDULE_WRITE,
@@ -156,6 +154,34 @@ typedef struct
     /* Command flag */
     bool isCommand;
 } APP_USB_DATA;
+
+// *****************************************************************************
+/* Sensor Data
+
+  Summary:
+    Holds application data related to reading sensors
+
+  Description:
+    This structure holds the application's data related to reading sensors
+
+  Remarks:
+    Application strings and buffers are be defined outside this structure.
+ */
+
+typedef struct
+{
+    /* handle for system time object */
+    SYS_TIME_HANDLE sysTimeHandle;
+    
+    /* timer expired flag */
+    volatile bool isTimerExpired;  
+    
+    /* decimal temperature value*/
+    float temperature;
+    
+    /* raw value from ADC */
+    int16_t rawADval;
+} APP_SENSOR_DATA;
 
 // *****************************************************************************
 // *****************************************************************************

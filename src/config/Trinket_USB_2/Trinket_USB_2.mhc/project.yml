@@ -1,13 +1,6 @@
 files:
 - generatedChecksum: null
   logicalPath: ''
-  name: app_sensor.c
-  physicalPath: ../..
-  security: NON_SECURE
-  type: SOURCE
-  userChecksum: null
-- generatedChecksum: null
-  logicalPath: ''
   name: app_usb.c
   physicalPath: ../..
   security: NON_SECURE
@@ -34,13 +27,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 0D18A719A1E40A8875895284967F66D0
-- generatedChecksum: 2BA2B5033BF49C28A5B6CB3C2DB5597F
+- generatedChecksum: AD3A9392ABAD7229BFB83F73A6B5CA81
   logicalPath: config/Trinket_USB_2
   name: initialization.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 2BA2B5033BF49C28A5B6CB3C2DB5597F
+  userChecksum: AD3A9392ABAD7229BFB83F73A6B5CA81
 - generatedChecksum: 42B408BB49F31E4BE10BF5F94955652C
   logicalPath: config/Trinket_USB_2
   name: interrupts.c
@@ -132,13 +125,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 83BDE663A1AAB20C9E52263F22E2ED3C
-- generatedChecksum: 6E9F77DBC134A09CA8F6C432197E4B41
+- generatedChecksum: D37E17C6C1211F5511E63E52DB7F439F
   logicalPath: config/Trinket_USB_2
   name: tasks.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 6E9F77DBC134A09CA8F6C432197E4B41
+  userChecksum: D37E17C6C1211F5511E63E52DB7F439F
 - generatedChecksum: BCCEF5B801FFD0CF22D0B454D2F25F1F
   logicalPath: config/Trinket_USB_2/usb/src
   name: usb_device.c
@@ -202,13 +195,6 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 35ABE5A146EF291395FAEFB4F1B44003
-- generatedChecksum: null
-  logicalPath: ''
-  name: app_sensor.h
-  physicalPath: ../..
-  security: NON_SECURE
-  type: HEADER
-  userChecksum: null
 - generatedChecksum: null
   logicalPath: ''
   name: app_usb.h
@@ -300,13 +286,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 2AD9700A41DC94A60C663A17CEDB2703
-- generatedChecksum: C554D08096D55C78DA203E4E3C33DB74
+- generatedChecksum: A9F53F99B4A67E97F58B323604D192B5
   logicalPath: config/Trinket_USB_2
   name: definitions.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: C554D08096D55C78DA203E4E3C33DB74
+  userChecksum: A9F53F99B4A67E97F58B323604D192B5
 - generatedChecksum: 4821302AA348DF2D25B60299A468C2D7
   logicalPath: config/Trinket_USB_2
   name: device.h

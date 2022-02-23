@@ -174,105 +174,105 @@ section                    address  length [bytes]      (dec)  Description
 .text.SYS_TIME_UpdateTi     0x472c           0x38          56   
 .text._USB_DEVICE_CDC_D     0x4764           0x38          56   
 .text.SYS_TIME_Resource     0x479c           0x34          52   
-.rodata.sd001               0x47d0           0x34          52   
+.rodata.sd002               0x47d0           0x34          52   
 .text.__aeabi_d2iz          0x4804           0x34          52   
 .text.__fmt_state           0x4838           0x34          52   
 .text.PORT_Initialize       0x486c           0x30          48   
 .text.SYS_TIME_Resource     0x489c           0x30          48   
-.rodata.sd002               0x48cc           0x30          48   
-.text.__aeabi_dcmpeq        0x48fc           0x30          48   
-.text.__aeabi_d2uiz         0x492c           0x30          48   
-.text.DRV_USBFSV1_DEVIC     0x495c           0x2e          46   
-.text._USB_DEVICE_Redir     0x498a           0x2c          44   
-.text.__dummy               0x49b6            0x2           2   
-.rodata.usbMasterDescri     0x49b8           0x2c          44   
-.rodata.APP_USB_USBDevi     0x49e4           0x2c          44   
-.text._DRV_USBFSV1_DEVI     0x4a10           0x2a          42   
-.text.USB_DEVICE_Endpoi     0x4a3a           0x2a          42   
-.text.__pop_float           0x4a64           0x2a          42   
-.text.DRV_USBFSV1_Open      0x4a90           0x28          40   
-.rodata._USB_DEVICE_Eve     0x4ab8           0x28          40   
-.text.USB_DEVICE_EventH     0x4ae0           0x28          40   
-.rodata.usbDevInitData      0x4b08           0x28          40   
-.text.APP_USB_StateRese     0x4b30           0x28          40   
-.text.__aeabi_i2f           0x4b58           0x28          40   
-.text.DRV_USBFSV1_DEVIC     0x4b80           0x26          38   
-.text.USB_DEVICE_Detach     0x4ba6           0x26          38   
-.text.USB_DEVICE_IRPSub     0x4bcc           0x26          38   
-.text.__string_out          0x4bf2           0x26          38   
-.text.TC3_TimerInterrup     0x4c18           0x24          36   
-.text.SYS_TIME_GetElaps     0x4c3c           0x24          36   
-.rodata.drvUSBInit          0x4c60           0x24          36   
-.rodata.APP_USB_USBDevi     0x4c84           0x24          36   
-.text.USB_DEVICE_Attach     0x4ca8           0x22          34   
-.text.USB_DEVICE_Endpoi     0x4cca           0x22          34   
-.text.USB_DEVICE_Contro     0x4cec           0x22          34   
-.text.USB_DEVICE_IRPCan     0x4d0e           0x22          34   
-.text._USB_DEVICE_CDC_E     0x4d30           0x22          34   
-.text.DRV_USBFSV1_DEVIC     0x4d54           0x20          32   
-.text.TC3_Timer16bitCou     0x4d74           0x20          32   
-.rodata._USB_DEVICE_Pro     0x4d94           0x20          32   
-.text.USB_DEVICE_CDC_Ev     0x4db4           0x20          32   
-.text.SYS_TIME_Counter6     0x4dd4           0x1c          28   
-.rodata.sysTimePlibAPI      0x4df0           0x1c          28   
-.text.SYS_Tasks             0x4e0c           0x1c          28   
-.rodata                     0x4e28           0x1c          28  Read-only const 
-.text.ADC_Enable            0x4e44           0x18          24   
-.text.ADC_ConversionSta     0x4e5c           0x18          24   
-.text.ADC_ConversionSta     0x4e74           0x18          24   
-.text.TC3_TimerStart        0x4e8c           0x18          24   
-.text.TC3_TimerStop         0x4ea4           0x18          24   
-.text._USB_DEVICE_Clien     0x4ebc           0x18          24   
-.text._USB_DEVICE_CDC_G     0x4ed4           0x18          24   
-.rodata.APP_USB_Tasks       0x4eec           0x18          24   
-.text.__vfprintf            0x4f04           0x18          24   
-.text                       0x4f1c           0x18          24  App's exec code 
-.text.__wrap_sprintf        0x4f34           0x16          22   
-.text.NVIC_INT_Restore      0x4f4a           0x14          20   
-.text.TC3_Timer16bitPer     0x4f60           0x14          20   
-.text.TC3_Timer16bitCom     0x4f74           0x14          20   
-.rodata.cdcFunctionDriv     0x4f88           0x14          20   
-.rodata.deviceDescripto     0x4f9c           0x14          20   
-.text.__vsprintf            0x4fb0           0x14          20   
-.text.DRV_USBFSV1_Close     0x4fc4           0x12          18   
-.text.DRV_USBFSV1_DEVIC     0x4fd6           0x12          18   
-.text.NVIC_INT_Disable      0x4fe8           0x12          18   
-.text.memcpy                0x4ffa           0x12          18   
-.text.stpcpy                0x500c           0x12          18   
-.text.DRV_USBFSV1_USB_H     0x5020           0x10          16   
-.text.DRV_USBFSV1_Clien     0x5030           0x10          16   
-.text.DRV_USBFSV1_DEVIC     0x5040           0x10          16   
-.rodata.funcRegistratio     0x5050           0x10          16   
-.rodata                     0x5060           0x10          16  Read-only const 
-.text.memset                0x5070           0x10          16   
-.text.strlen                0x5080           0x10          16   
-.text.fma                   0x5090           0x10          16   
-.text.DRV_USBFSV1_DEVIC     0x50a0            0xe          14   
-.text.DRV_USBFSV1_DEVIC     0x50ae            0xe          14   
-.text.main                  0x50bc            0xe          14   
-.text.tolower               0x50ca            0xe          14   
-.text.ADC_ConversionRes     0x50d8            0xc          12   
-.text.NVMCTRL_Initializ     0x50e4            0xc          12   
-.text.TC3_TimerCallback     0x50f0            0xc          12   
-.rodata.cdcInit0            0x50fc            0xc          12   
-.rodata.stringDescripto     0x5108            0xc          12   
-.text.APP_SENSOR_TimerE     0x5114            0xc          12   
-.text.strcpy                0x5120            0xc          12   
-.rodata.gDrvUSBFSV1Devi     0x512c            0x8           8   
-.text.TC3_TimerFrequenc     0x5134            0x8           8   
-.text.SYS_INT_Disable       0x513c            0x8           8   
-.text.SYS_INT_Restore       0x5144            0x8           8   
-.rodata.sysTimeInitData     0x514c            0x8           8   
-.rodata                     0x5154            0xf          15  Read-only const 
-.rodata.gDrvUSBFSV1Devi     0x5164            0x4           4   
-.rodata.fullSpeedConfig     0x5168            0x4           4   
-.rodata.sd000               0x516c            0x4           4   
-.text.__dummy_fmt3          0x5170            0x4           4   
-.text.__dummy_fmt4          0x5174            0x4           4   
-.text                       0x5178            0x4           4  App's exec code 
-      Total ROM used  :      0x5173       20851  8.0% of 0x40000
+.text.__aeabi_dcmpeq        0x48cc           0x30          48   
+.text.__aeabi_d2uiz         0x48fc           0x30          48   
+.text.DRV_USBFSV1_DEVIC     0x492c           0x2e          46   
+.text._USB_DEVICE_Redir     0x495a           0x2c          44   
+.text.__dummy               0x4986            0x2           2   
+.rodata.usbMasterDescri     0x4988           0x2c          44   
+.rodata.APP_USB_USBDevi     0x49b4           0x2c          44   
+.text._DRV_USBFSV1_DEVI     0x49e0           0x2a          42   
+.text.USB_DEVICE_Endpoi     0x4a0a           0x2a          42   
+.text.__pop_float           0x4a34           0x2a          42   
+.text.DRV_USBFSV1_Open      0x4a60           0x28          40   
+.rodata._USB_DEVICE_Eve     0x4a88           0x28          40   
+.text.USB_DEVICE_EventH     0x4ab0           0x28          40   
+.rodata.sd001               0x4ad8           0x28          40   
+.rodata.usbDevInitData      0x4b00           0x28          40   
+.text.APP_USB_StateRese     0x4b28           0x28          40   
+.text.__aeabi_i2f           0x4b50           0x28          40   
+.text.DRV_USBFSV1_DEVIC     0x4b78           0x26          38   
+.text.USB_DEVICE_Detach     0x4b9e           0x26          38   
+.text.USB_DEVICE_IRPSub     0x4bc4           0x26          38   
+.text.__string_out          0x4bea           0x26          38   
+.text.TC3_TimerInterrup     0x4c10           0x24          36   
+.text.SYS_TIME_GetElaps     0x4c34           0x24          36   
+.rodata.drvUSBInit          0x4c58           0x24          36   
+.rodata.APP_USB_USBDevi     0x4c7c           0x24          36   
+.text.USB_DEVICE_Attach     0x4ca0           0x22          34   
+.text.USB_DEVICE_Endpoi     0x4cc2           0x22          34   
+.text.USB_DEVICE_Contro     0x4ce4           0x22          34   
+.text.USB_DEVICE_IRPCan     0x4d06           0x22          34   
+.text._USB_DEVICE_CDC_E     0x4d28           0x22          34   
+.text.DRV_USBFSV1_DEVIC     0x4d4c           0x20          32   
+.text.TC3_Timer16bitCou     0x4d6c           0x20          32   
+.rodata._USB_DEVICE_Pro     0x4d8c           0x20          32   
+.text.USB_DEVICE_CDC_Ev     0x4dac           0x20          32   
+.text.SYS_TIME_Counter6     0x4dcc           0x1c          28   
+.rodata.sysTimePlibAPI      0x4de8           0x1c          28   
+.text.SYS_Tasks             0x4e04           0x1c          28   
+.rodata                     0x4e20           0x1c          28  Read-only const 
+.text.ADC_Enable            0x4e3c           0x18          24   
+.text.ADC_ConversionSta     0x4e54           0x18          24   
+.text.ADC_ConversionSta     0x4e6c           0x18          24   
+.text.TC3_TimerStart        0x4e84           0x18          24   
+.text.TC3_TimerStop         0x4e9c           0x18          24   
+.text._USB_DEVICE_Clien     0x4eb4           0x18          24   
+.text._USB_DEVICE_CDC_G     0x4ecc           0x18          24   
+.rodata.APP_USB_Tasks       0x4ee4           0x18          24   
+.text.__vfprintf            0x4efc           0x18          24   
+.text                       0x4f14           0x18          24  App's exec code 
+.text.__wrap_sprintf        0x4f2c           0x16          22   
+.text.NVIC_INT_Restore      0x4f42           0x14          20   
+.text.TC3_Timer16bitPer     0x4f58           0x14          20   
+.text.TC3_Timer16bitCom     0x4f6c           0x14          20   
+.rodata.cdcFunctionDriv     0x4f80           0x14          20   
+.rodata.deviceDescripto     0x4f94           0x14          20   
+.text.__vsprintf            0x4fa8           0x14          20   
+.text.DRV_USBFSV1_Close     0x4fbc           0x12          18   
+.text.DRV_USBFSV1_DEVIC     0x4fce           0x12          18   
+.text.NVIC_INT_Disable      0x4fe0           0x12          18   
+.text.memcpy                0x4ff2           0x12          18   
+.text.stpcpy                0x5004           0x12          18   
+.text.DRV_USBFSV1_USB_H     0x5018           0x10          16   
+.text.DRV_USBFSV1_Clien     0x5028           0x10          16   
+.text.DRV_USBFSV1_DEVIC     0x5038           0x10          16   
+.rodata.funcRegistratio     0x5048           0x10          16   
+.rodata                     0x5058           0x10          16  Read-only const 
+.text.memset                0x5068           0x10          16   
+.text.strlen                0x5078           0x10          16   
+.text.fma                   0x5088           0x10          16   
+.text.DRV_USBFSV1_DEVIC     0x5098            0xe          14   
+.text.DRV_USBFSV1_DEVIC     0x50a6            0xe          14   
+.text.main                  0x50b4            0xe          14   
+.text.tolower               0x50c2            0xe          14   
+.text.ADC_ConversionRes     0x50d0            0xc          12   
+.text.NVMCTRL_Initializ     0x50dc            0xc          12   
+.text.TC3_TimerCallback     0x50e8            0xc          12   
+.rodata.cdcInit0            0x50f4            0xc          12   
+.rodata.stringDescripto     0x5100            0xc          12   
+.text.APP_SENSOR_TimerE     0x510c            0xc          12   
+.text.strcpy                0x5118            0xc          12   
+.rodata.gDrvUSBFSV1Devi     0x5124            0x8           8   
+.text.TC3_TimerFrequenc     0x512c            0x8           8   
+.text.SYS_INT_Disable       0x5134            0x8           8   
+.text.SYS_INT_Restore       0x513c            0x8           8   
+.rodata.sysTimeInitData     0x5144            0x8           8   
+.rodata                     0x514c            0xf          15  Read-only const 
+.rodata.gDrvUSBFSV1Devi     0x515c            0x4           4   
+.rodata.fullSpeedConfig     0x5160            0x4           4   
+.rodata.sd000               0x5164            0x4           4   
+.text.__dummy_fmt3          0x5168            0x4           4   
+.text.__dummy_fmt4          0x516c            0x4           4   
+.text                       0x5170            0x4           4  App's exec code 
+      Total ROM used  :      0x516b       20843  8.0% of 0x40000
         --------------------------------------------------------------------------
-         Total Program Memory used  :      0x5173       20851  8.0% of 0x40000
+         Total Program Memory used  :      0x516b       20843  8.0% of 0x40000
         --------------------------------------------------------------------------
 
 
@@ -2530,10 +2530,10 @@ LOAD data_init
  .text.SYS_TIME_ResourceLock
                 0x0000479c       0x34 build/Trinket_USB_2/production/_ext/1909065425/sys_time.o
 
-.rodata.sd001%116
+.rodata.sd002%116
                 0x000047d0       0x34
- .rodata.sd001  0x000047d0       0x34 build/Trinket_USB_2/production/_ext/1189347772/usb_device_init_data.o
-                0x000047d0                sd001
+ .rodata.sd002  0x000047d0       0x34 build/Trinket_USB_2/production/_ext/1189347772/usb_device_init_data.o
+                0x000047d0                sd002
 
 .text.__aeabi_d2iz%117
                 0x00004804       0x34
@@ -2558,534 +2558,534 @@ LOAD data_init
  .text.SYS_TIME_ResourceUnlock
                 0x0000489c       0x30 build/Trinket_USB_2/production/_ext/1909065425/sys_time.o
 
-.rodata.sd002%121
+.text.__aeabi_dcmpeq%121
                 0x000048cc       0x30
- .rodata.sd002  0x000048cc       0x30 build/Trinket_USB_2/production/_ext/1189347772/usb_device_init_data.o
-                0x000048cc                sd002
-
-.text.__aeabi_dcmpeq%122
-                0x000048fc       0x30
  .text.__aeabi_dcmpeq
-                0x000048fc       0x30 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libm-emfloat.a(floatasmops_arm.o)
-                0x000048fc                __aeabi_dcmpeq
+                0x000048cc       0x30 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libm-emfloat.a(floatasmops_arm.o)
+                0x000048cc                __aeabi_dcmpeq
 
-.text.__aeabi_d2uiz%123
-                0x0000492c       0x30
+.text.__aeabi_d2uiz%122
+                0x000048fc       0x30
  .text.__aeabi_d2uiz
-                0x0000492c       0x30 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libm-emfloat.a(floatasmops_arm.o)
-                0x0000492c                __aeabi_d2uiz
+                0x000048fc       0x30 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libm-emfloat.a(floatasmops_arm.o)
+                0x000048fc                __aeabi_d2uiz
 
-.text.DRV_USBFSV1_DEVICE_EndpointIsEnabled%124
-                0x0000495c       0x2e
+.text.DRV_USBFSV1_DEVICE_EndpointIsEnabled%123
+                0x0000492c       0x2e
  .text.DRV_USBFSV1_DEVICE_EndpointIsEnabled
-                0x0000495c       0x2e build/Trinket_USB_2/production/_ext/2108104030/drv_usbfsv1_device.o
-                0x0000495c                DRV_USBFSV1_DEVICE_EndpointIsEnabled
+                0x0000492c       0x2e build/Trinket_USB_2/production/_ext/2108104030/drv_usbfsv1_device.o
+                0x0000492c                DRV_USBFSV1_DEVICE_EndpointIsEnabled
 
-.text._USB_DEVICE_RedirectControlXfrToClient%125
-                0x0000498a       0x2c
+.text._USB_DEVICE_RedirectControlXfrToClient%124
+                0x0000495a       0x2c
  .text._USB_DEVICE_RedirectControlXfrToClient
-                0x0000498a       0x2c build/Trinket_USB_2/production/_ext/1390297478/usb_device.o
-                0x0000498a                _USB_DEVICE_RedirectControlXfrToClient
+                0x0000495a       0x2c build/Trinket_USB_2/production/_ext/1390297478/usb_device.o
+                0x0000495a                _USB_DEVICE_RedirectControlXfrToClient
 
-.rodata.usbMasterDescriptor%126
-                0x000049b8       0x2c
+.rodata.usbMasterDescriptor%125
+                0x00004988       0x2c
  .rodata.usbMasterDescriptor
-                0x000049b8       0x2c build/Trinket_USB_2/production/_ext/1189347772/usb_device_init_data.o
-                0x000049b8                usbMasterDescriptor
+                0x00004988       0x2c build/Trinket_USB_2/production/_ext/1189347772/usb_device_init_data.o
+                0x00004988                usbMasterDescriptor
 
-.rodata.APP_USB_USBDeviceEventHandler%127
-                0x000049e4       0x2c
+.rodata.APP_USB_USBDeviceEventHandler%126
+                0x000049b4       0x2c
  .rodata.APP_USB_USBDeviceEventHandler
-                0x000049e4       0x2c build/Trinket_USB_2/production/_ext/1360937237/app_usb.o
+                0x000049b4       0x2c build/Trinket_USB_2/production/_ext/1360937237/app_usb.o
 
-.text._DRV_USBFSV1_DEVICE_IRPQueueFlush%128
-                0x00004a10       0x2a
+.text._DRV_USBFSV1_DEVICE_IRPQueueFlush%127
+                0x000049e0       0x2a
  .text._DRV_USBFSV1_DEVICE_IRPQueueFlush
-                0x00004a10       0x2a build/Trinket_USB_2/production/_ext/2108104030/drv_usbfsv1_device.o
-                0x00004a10                _DRV_USBFSV1_DEVICE_IRPQueueFlush
+                0x000049e0       0x2a build/Trinket_USB_2/production/_ext/2108104030/drv_usbfsv1_device.o
+                0x000049e0                _DRV_USBFSV1_DEVICE_IRPQueueFlush
 
-.text.USB_DEVICE_EndpointEnable%129
-                0x00004a3a       0x2a
+.text.USB_DEVICE_EndpointEnable%128
+                0x00004a0a       0x2a
  .text.USB_DEVICE_EndpointEnable
-                0x00004a3a       0x2a build/Trinket_USB_2/production/_ext/1390297478/usb_device.o
-                0x00004a3a                USB_DEVICE_EndpointEnable
+                0x00004a0a       0x2a build/Trinket_USB_2/production/_ext/1390297478/usb_device.o
+                0x00004a0a                USB_DEVICE_EndpointEnable
 
-.text.__pop_float%130
-                0x00004a64       0x2a
+.text.__pop_float%129
+                0x00004a34       0x2a
  .text.__pop_float
-                0x00004a64       0x2a c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libc-musl.a(__pop_float.o)
-                0x00004a64                __pop_float_needed
-                0x00004a64                __pop_float
+                0x00004a34       0x2a c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libc-musl.a(__pop_float.o)
+                0x00004a34                __pop_float_needed
+                0x00004a34                __pop_float
 
-.text.DRV_USBFSV1_Open%131
-                0x00004a90       0x28
+.text.DRV_USBFSV1_Open%130
+                0x00004a60       0x28
  .text.DRV_USBFSV1_Open
-                0x00004a90       0x28 build/Trinket_USB_2/production/_ext/2108104030/drv_usbfsv1.o
-                0x00004a90                DRV_USBFSV1_Open
+                0x00004a60       0x28 build/Trinket_USB_2/production/_ext/2108104030/drv_usbfsv1.o
+                0x00004a60                DRV_USBFSV1_Open
 
-.rodata._USB_DEVICE_EventHandler%132
-                0x00004ab8       0x28
+.rodata._USB_DEVICE_EventHandler%131
+                0x00004a88       0x28
  .rodata._USB_DEVICE_EventHandler
-                0x00004ab8       0x28 build/Trinket_USB_2/production/_ext/1390297478/usb_device.o
+                0x00004a88       0x28 build/Trinket_USB_2/production/_ext/1390297478/usb_device.o
 
-.text.USB_DEVICE_EventHandlerSet%133
-                0x00004ae0       0x28
+.text.USB_DEVICE_EventHandlerSet%132
+                0x00004ab0       0x28
  .text.USB_DEVICE_EventHandlerSet
-                0x00004ae0       0x28 build/Trinket_USB_2/production/_ext/1390297478/usb_device.o
-                0x00004ae0                USB_DEVICE_EventHandlerSet
+                0x00004ab0       0x28 build/Trinket_USB_2/production/_ext/1390297478/usb_device.o
+                0x00004ab0                USB_DEVICE_EventHandlerSet
+
+.rodata.sd001%133
+                0x00004ad8       0x28
+ .rodata.sd001  0x00004ad8       0x28 build/Trinket_USB_2/production/_ext/1189347772/usb_device_init_data.o
+                0x00004ad8                sd001
 
 .rodata.usbDevInitData%134
-                0x00004b08       0x28
+                0x00004b00       0x28
  .rodata.usbDevInitData
-                0x00004b08       0x28 build/Trinket_USB_2/production/_ext/1189347772/usb_device_init_data.o
-                0x00004b08                usbDevInitData
+                0x00004b00       0x28 build/Trinket_USB_2/production/_ext/1189347772/usb_device_init_data.o
+                0x00004b00                usbDevInitData
 
 .text.APP_USB_StateReset%135
-                0x00004b30       0x28
+                0x00004b28       0x28
  .text.APP_USB_StateReset
-                0x00004b30       0x28 build/Trinket_USB_2/production/_ext/1360937237/app_usb.o
-                0x00004b30                APP_USB_StateReset
+                0x00004b28       0x28 build/Trinket_USB_2/production/_ext/1360937237/app_usb.o
+                0x00004b28                APP_USB_StateReset
 
 .text.__aeabi_i2f%136
-                0x00004b58       0x28
+                0x00004b50       0x28
  .text.__aeabi_i2f
-                0x00004b58       0x28 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libm-emfloat.a(floatasmops_arm.o)
-                0x00004b58                __aeabi_i2f
+                0x00004b50       0x28 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libm-emfloat.a(floatasmops_arm.o)
+                0x00004b50                __aeabi_i2f
 
 .text.DRV_USBFSV1_DEVICE_EndpointIsStalled%137
-                0x00004b80       0x26
+                0x00004b78       0x26
  .text.DRV_USBFSV1_DEVICE_EndpointIsStalled
-                0x00004b80       0x26 build/Trinket_USB_2/production/_ext/2108104030/drv_usbfsv1_device.o
-                0x00004b80                DRV_USBFSV1_DEVICE_EndpointIsStalled
+                0x00004b78       0x26 build/Trinket_USB_2/production/_ext/2108104030/drv_usbfsv1_device.o
+                0x00004b78                DRV_USBFSV1_DEVICE_EndpointIsStalled
 
 .text.USB_DEVICE_Detach%138
-                0x00004ba6       0x26
+                0x00004b9e       0x26
  .text.USB_DEVICE_Detach
-                0x00004ba6       0x26 build/Trinket_USB_2/production/_ext/1390297478/usb_device.o
-                0x00004ba6                USB_DEVICE_Detach
+                0x00004b9e       0x26 build/Trinket_USB_2/production/_ext/1390297478/usb_device.o
+                0x00004b9e                USB_DEVICE_Detach
 
 .text.USB_DEVICE_IRPSubmit%139
-                0x00004bcc       0x26
+                0x00004bc4       0x26
  .text.USB_DEVICE_IRPSubmit
-                0x00004bcc       0x26 build/Trinket_USB_2/production/_ext/1390297478/usb_device.o
-                0x00004bcc                USB_DEVICE_IRPSubmit
+                0x00004bc4       0x26 build/Trinket_USB_2/production/_ext/1390297478/usb_device.o
+                0x00004bc4                USB_DEVICE_IRPSubmit
 
 .text.__string_out%140
-                0x00004bf2       0x26
+                0x00004bea       0x26
  .text.__string_out
-                0x00004bf2       0x26 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libc-musl.a(__printf_core.o)
-                0x00004bf2                __out
+                0x00004bea       0x26 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libc-musl.a(__printf_core.o)
+                0x00004bea                __out
 
 .text.TC3_TimerInterruptHandler%141
-                0x00004c18       0x24
+                0x00004c10       0x24
  .text.TC3_TimerInterruptHandler
-                0x00004c18       0x24 build/Trinket_USB_2/production/_ext/1390003407/plib_tc3.o
-                0x00004c18                TC3_TimerInterruptHandler
+                0x00004c10       0x24 build/Trinket_USB_2/production/_ext/1390003407/plib_tc3.o
+                0x00004c10                TC3_TimerInterruptHandler
 
 .text.SYS_TIME_GetElapsedCount%142
-                0x00004c3c       0x24
+                0x00004c34       0x24
  .text.SYS_TIME_GetElapsedCount
-                0x00004c3c       0x24 build/Trinket_USB_2/production/_ext/1909065425/sys_time.o
+                0x00004c34       0x24 build/Trinket_USB_2/production/_ext/1909065425/sys_time.o
 
 .rodata.drvUSBInit%143
-                0x00004c60       0x24
+                0x00004c58       0x24
  .rodata.drvUSBInit
-                0x00004c60       0x24 build/Trinket_USB_2/production/_ext/1189347772/initialization.o
-                0x00004c60                drvUSBInit
+                0x00004c58       0x24 build/Trinket_USB_2/production/_ext/1189347772/initialization.o
+                0x00004c58                drvUSBInit
 
 .rodata.APP_USB_USBDeviceCDCEventHandler%144
-                0x00004c84       0x24
+                0x00004c7c       0x24
  .rodata.APP_USB_USBDeviceCDCEventHandler
-                0x00004c84       0x24 build/Trinket_USB_2/production/_ext/1360937237/app_usb.o
+                0x00004c7c       0x24 build/Trinket_USB_2/production/_ext/1360937237/app_usb.o
 
 .text.USB_DEVICE_Attach%145
-                0x00004ca8       0x22
+                0x00004ca0       0x22
  .text.USB_DEVICE_Attach
-                0x00004ca8       0x22 build/Trinket_USB_2/production/_ext/1390297478/usb_device.o
-                0x00004ca8                USB_DEVICE_Attach
+                0x00004ca0       0x22 build/Trinket_USB_2/production/_ext/1390297478/usb_device.o
+                0x00004ca0                USB_DEVICE_Attach
 
 .text.USB_DEVICE_EndpointDisable%146
-                0x00004cca       0x22
+                0x00004cc2       0x22
  .text.USB_DEVICE_EndpointDisable
-                0x00004cca       0x22 build/Trinket_USB_2/production/_ext/1390297478/usb_device.o
-                0x00004cca                USB_DEVICE_EndpointDisable
+                0x00004cc2       0x22 build/Trinket_USB_2/production/_ext/1390297478/usb_device.o
+                0x00004cc2                USB_DEVICE_EndpointDisable
 
 .text.USB_DEVICE_ControlReceive%147
-                0x00004cec       0x22
+                0x00004ce4       0x22
  .text.USB_DEVICE_ControlReceive
-                0x00004cec       0x22 build/Trinket_USB_2/production/_ext/1390297478/usb_device.o
-                0x00004cec                USB_DEVICE_ControlReceive
+                0x00004ce4       0x22 build/Trinket_USB_2/production/_ext/1390297478/usb_device.o
+                0x00004ce4                USB_DEVICE_ControlReceive
 
 .text.USB_DEVICE_IRPCancelAll%148
-                0x00004d0e       0x22
+                0x00004d06       0x22
  .text.USB_DEVICE_IRPCancelAll
-                0x00004d0e       0x22 build/Trinket_USB_2/production/_ext/1390297478/usb_device.o
-                0x00004d0e                USB_DEVICE_IRPCancelAll
+                0x00004d06       0x22 build/Trinket_USB_2/production/_ext/1390297478/usb_device.o
+                0x00004d06                USB_DEVICE_IRPCancelAll
 
 .text._USB_DEVICE_CDC_EndpointDisable%149
-                0x00004d30       0x22
+                0x00004d28       0x22
  .text._USB_DEVICE_CDC_EndpointDisable
-                0x00004d30       0x22 build/Trinket_USB_2/production/_ext/1390297478/usb_device_cdc.o
-                0x00004d30                _USB_DEVICE_CDC_EndpointDisable
+                0x00004d28       0x22 build/Trinket_USB_2/production/_ext/1390297478/usb_device_cdc.o
+                0x00004d28                _USB_DEVICE_CDC_EndpointDisable
 
 .text.DRV_USBFSV1_DEVICE_Attach%150
-                0x00004d54       0x20
+                0x00004d4c       0x20
  .text.DRV_USBFSV1_DEVICE_Attach
-                0x00004d54       0x20 build/Trinket_USB_2/production/_ext/2108104030/drv_usbfsv1_device.o
-                0x00004d54                DRV_USBFSV1_DEVICE_Attach
+                0x00004d4c       0x20 build/Trinket_USB_2/production/_ext/2108104030/drv_usbfsv1_device.o
+                0x00004d4c                DRV_USBFSV1_DEVICE_Attach
 
 .text.TC3_Timer16bitCounterGet%151
-                0x00004d74       0x20
+                0x00004d6c       0x20
  .text.TC3_Timer16bitCounterGet
-                0x00004d74       0x20 build/Trinket_USB_2/production/_ext/1390003407/plib_tc3.o
-                0x00004d74                TC3_Timer16bitCounterGet
+                0x00004d6c       0x20 build/Trinket_USB_2/production/_ext/1390003407/plib_tc3.o
+                0x00004d6c                TC3_Timer16bitCounterGet
 
 .rodata._USB_DEVICE_ProcessStandardDeviceGetRequests%152
-                0x00004d94       0x20
+                0x00004d8c       0x20
  .rodata._USB_DEVICE_ProcessStandardDeviceGetRequests
-                0x00004d94       0x20 build/Trinket_USB_2/production/_ext/1390297478/usb_device.o
+                0x00004d8c       0x20 build/Trinket_USB_2/production/_ext/1390297478/usb_device.o
 
 .text.USB_DEVICE_CDC_EventHandlerSet%153
-                0x00004db4       0x20
+                0x00004dac       0x20
  .text.USB_DEVICE_CDC_EventHandlerSet
-                0x00004db4       0x20 build/Trinket_USB_2/production/_ext/1390297478/usb_device_cdc.o
-                0x00004db4                USB_DEVICE_CDC_EventHandlerSet
+                0x00004dac       0x20 build/Trinket_USB_2/production/_ext/1390297478/usb_device_cdc.o
+                0x00004dac                USB_DEVICE_CDC_EventHandlerSet
 
 .text.SYS_TIME_Counter64Update%154
-                0x00004dd4       0x1c
+                0x00004dcc       0x1c
  .text.SYS_TIME_Counter64Update
-                0x00004dd4       0x1c build/Trinket_USB_2/production/_ext/1909065425/sys_time.o
+                0x00004dcc       0x1c build/Trinket_USB_2/production/_ext/1909065425/sys_time.o
 
 .rodata.sysTimePlibAPI%155
-                0x00004df0       0x1c
+                0x00004de8       0x1c
  .rodata.sysTimePlibAPI
-                0x00004df0       0x1c build/Trinket_USB_2/production/_ext/1189347772/initialization.o
-                0x00004df0                sysTimePlibAPI
+                0x00004de8       0x1c build/Trinket_USB_2/production/_ext/1189347772/initialization.o
+                0x00004de8                sysTimePlibAPI
 
 .text.SYS_Tasks%156
-                0x00004e0c       0x1c
+                0x00004e04       0x1c
  .text.SYS_Tasks
-                0x00004e0c       0x1c build/Trinket_USB_2/production/_ext/1189347772/tasks.o
-                0x00004e0c                SYS_Tasks
+                0x00004e04       0x1c build/Trinket_USB_2/production/_ext/1189347772/tasks.o
+                0x00004e04                SYS_Tasks
 
-.rodata%157     0x00004e28       0x1c
- .rodata        0x00004e28       0x1c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libc-musl.a(__printf_core.o)
+.rodata%157     0x00004e20       0x1c
+ .rodata        0x00004e20       0x1c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libc-musl.a(__printf_core.o)
 
 .text.ADC_Enable%158
-                0x00004e44       0x18
+                0x00004e3c       0x18
  .text.ADC_Enable
-                0x00004e44       0x18 build/Trinket_USB_2/production/_ext/140414528/plib_adc.o
-                0x00004e44                ADC_Enable
+                0x00004e3c       0x18 build/Trinket_USB_2/production/_ext/140414528/plib_adc.o
+                0x00004e3c                ADC_Enable
 
 .text.ADC_ConversionStart%159
-                0x00004e5c       0x18
+                0x00004e54       0x18
  .text.ADC_ConversionStart
-                0x00004e5c       0x18 build/Trinket_USB_2/production/_ext/140414528/plib_adc.o
-                0x00004e5c                ADC_ConversionStart
+                0x00004e54       0x18 build/Trinket_USB_2/production/_ext/140414528/plib_adc.o
+                0x00004e54                ADC_ConversionStart
 
 .text.ADC_ConversionStatusGet%160
-                0x00004e74       0x18
+                0x00004e6c       0x18
  .text.ADC_ConversionStatusGet
-                0x00004e74       0x18 build/Trinket_USB_2/production/_ext/140414528/plib_adc.o
-                0x00004e74                ADC_ConversionStatusGet
+                0x00004e6c       0x18 build/Trinket_USB_2/production/_ext/140414528/plib_adc.o
+                0x00004e6c                ADC_ConversionStatusGet
 
 .text.TC3_TimerStart%161
-                0x00004e8c       0x18
+                0x00004e84       0x18
  .text.TC3_TimerStart
-                0x00004e8c       0x18 build/Trinket_USB_2/production/_ext/1390003407/plib_tc3.o
-                0x00004e8c                TC3_TimerStart
+                0x00004e84       0x18 build/Trinket_USB_2/production/_ext/1390003407/plib_tc3.o
+                0x00004e84                TC3_TimerStart
 
 .text.TC3_TimerStop%162
-                0x00004ea4       0x18
+                0x00004e9c       0x18
  .text.TC3_TimerStop
-                0x00004ea4       0x18 build/Trinket_USB_2/production/_ext/1390003407/plib_tc3.o
-                0x00004ea4                TC3_TimerStop
+                0x00004e9c       0x18 build/Trinket_USB_2/production/_ext/1390003407/plib_tc3.o
+                0x00004e9c                TC3_TimerStop
 
 .text._USB_DEVICE_ClientHandleValidate%163
-                0x00004ebc       0x18
+                0x00004eb4       0x18
  .text._USB_DEVICE_ClientHandleValidate
-                0x00004ebc       0x18 build/Trinket_USB_2/production/_ext/1390297478/usb_device.o
-                0x00004ebc                _USB_DEVICE_ClientHandleValidate
+                0x00004eb4       0x18 build/Trinket_USB_2/production/_ext/1390297478/usb_device.o
+                0x00004eb4                _USB_DEVICE_ClientHandleValidate
 
 .text._USB_DEVICE_CDC_GlobalInitialize%164
-                0x00004ed4       0x18
+                0x00004ecc       0x18
  .text._USB_DEVICE_CDC_GlobalInitialize
-                0x00004ed4       0x18 build/Trinket_USB_2/production/_ext/1390297478/usb_device_cdc.o
-                0x00004ed4                _USB_DEVICE_CDC_GlobalInitialize
+                0x00004ecc       0x18 build/Trinket_USB_2/production/_ext/1390297478/usb_device_cdc.o
+                0x00004ecc                _USB_DEVICE_CDC_GlobalInitialize
 
 .rodata.APP_USB_Tasks%165
-                0x00004eec       0x18
+                0x00004ee4       0x18
  .rodata.APP_USB_Tasks
-                0x00004eec       0x18 build/Trinket_USB_2/production/_ext/1360937237/app_usb.o
+                0x00004ee4       0x18 build/Trinket_USB_2/production/_ext/1360937237/app_usb.o
 
 .text.__vfprintf%166
-                0x00004f04       0x18
+                0x00004efc       0x18
  .text.__vfprintf
-                0x00004f04       0x18 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libc-musl.a(__int_vfprintf.o)
-                0x00004f04                __vfprintf
+                0x00004efc       0x18 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libc-musl.a(__int_vfprintf.o)
+                0x00004efc                __vfprintf
 
-.text%167       0x00004f1c       0x18
- .text          0x00004f1c       0x18 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/thumb/v6-m/nofp\libgcc.a(_clzdi2.o)
-                0x00004f1c                __clzdi2
+.text%167       0x00004f14       0x18
+ .text          0x00004f14       0x18 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/thumb/v6-m/nofp\libgcc.a(_clzdi2.o)
+                0x00004f14                __clzdi2
 
 .text.__wrap_sprintf%168
-                0x00004f34       0x16
+                0x00004f2c       0x16
  .text.__wrap_sprintf
-                0x00004f34       0x16 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libc-musl.a(__sio_sprintf_fs.o)
-                0x00004f34                _dsprintf_eEgGs
-                0x00004f34                _sprintf_gGs
-                0x00004f34                _dsprintf_fFs
-                0x00004f34                _dsprintf_fFgGs
-                0x00004f34                _dsprintf_gGs
-                0x00004f34                _dsprintf_eEs
-                0x00004f34                _sprintf_eEfFs
-                0x00004f34                _sprintf_fFgGs
-                0x00004f34                _sprintf_eEs
-                0x00004f34                _dsprintf_eEfFs
-                0x00004f34                _sprintf_fFs
-                0x00004f34                __sprintf_fgG
-                0x00004f34                _sprintf_eEgGs
-                0x00004f34                _sprintf_eEfFgGs
-                0x00004f34                _dsprintf_eEfFgGs
+                0x00004f2c       0x16 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libc-musl.a(__sio_sprintf_fs.o)
+                0x00004f2c                _dsprintf_eEgGs
+                0x00004f2c                _sprintf_gGs
+                0x00004f2c                _dsprintf_fFs
+                0x00004f2c                _dsprintf_fFgGs
+                0x00004f2c                _dsprintf_gGs
+                0x00004f2c                _dsprintf_eEs
+                0x00004f2c                _sprintf_eEfFs
+                0x00004f2c                _sprintf_fFgGs
+                0x00004f2c                _sprintf_eEs
+                0x00004f2c                _dsprintf_eEfFs
+                0x00004f2c                _sprintf_fFs
+                0x00004f2c                __sprintf_fgG
+                0x00004f2c                _sprintf_eEgGs
+                0x00004f2c                _sprintf_eEfFgGs
+                0x00004f2c                _dsprintf_eEfFgGs
 
 .text.NVIC_INT_Restore%169
-                0x00004f4a       0x14
+                0x00004f42       0x14
  .text.NVIC_INT_Restore
-                0x00004f4a       0x14 build/Trinket_USB_2/production/_ext/58287938/plib_nvic.o
-                0x00004f4a                NVIC_INT_Restore
+                0x00004f42       0x14 build/Trinket_USB_2/production/_ext/58287938/plib_nvic.o
+                0x00004f42                NVIC_INT_Restore
 
 .text.TC3_Timer16bitPeriodSet%170
-                0x00004f60       0x14
+                0x00004f58       0x14
  .text.TC3_Timer16bitPeriodSet
-                0x00004f60       0x14 build/Trinket_USB_2/production/_ext/1390003407/plib_tc3.o
-                0x00004f60                TC3_Timer16bitPeriodSet
+                0x00004f58       0x14 build/Trinket_USB_2/production/_ext/1390003407/plib_tc3.o
+                0x00004f58                TC3_Timer16bitPeriodSet
 
 .text.TC3_Timer16bitCompareSet%171
-                0x00004f74       0x14
+                0x00004f6c       0x14
  .text.TC3_Timer16bitCompareSet
-                0x00004f74       0x14 build/Trinket_USB_2/production/_ext/1390003407/plib_tc3.o
-                0x00004f74                TC3_Timer16bitCompareSet
+                0x00004f6c       0x14 build/Trinket_USB_2/production/_ext/1390003407/plib_tc3.o
+                0x00004f6c                TC3_Timer16bitCompareSet
 
 .rodata.cdcFunctionDriver%172
-                0x00004f88       0x14
+                0x00004f80       0x14
  .rodata.cdcFunctionDriver
-                0x00004f88       0x14 build/Trinket_USB_2/production/_ext/1390297478/usb_device_cdc.o
-                0x00004f88                cdcFunctionDriver
+                0x00004f80       0x14 build/Trinket_USB_2/production/_ext/1390297478/usb_device_cdc.o
+                0x00004f80                cdcFunctionDriver
 
 .rodata.deviceDescriptor%173
-                0x00004f9c       0x14
+                0x00004f94       0x14
  .rodata.deviceDescriptor
-                0x00004f9c       0x14 build/Trinket_USB_2/production/_ext/1189347772/usb_device_init_data.o
-                0x00004f9c                deviceDescriptor
+                0x00004f94       0x14 build/Trinket_USB_2/production/_ext/1189347772/usb_device_init_data.o
+                0x00004f94                deviceDescriptor
 
 .text.__vsprintf%174
-                0x00004fb0       0x14
+                0x00004fa8       0x14
  .text.__vsprintf
-                0x00004fb0       0x14 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libc-musl.a(__int_vsprintf.o)
-                0x00004fb0                __vsprintf
+                0x00004fa8       0x14 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libc-musl.a(__int_vsprintf.o)
+                0x00004fa8                __vsprintf
 
 .text.DRV_USBFSV1_Close%175
-                0x00004fc4       0x12
+                0x00004fbc       0x12
  .text.DRV_USBFSV1_Close
-                0x00004fc4       0x12 build/Trinket_USB_2/production/_ext/2108104030/drv_usbfsv1.o
-                0x00004fc4                DRV_USBFSV1_Close
+                0x00004fbc       0x12 build/Trinket_USB_2/production/_ext/2108104030/drv_usbfsv1.o
+                0x00004fbc                DRV_USBFSV1_Close
 
 .text.DRV_USBFSV1_DEVICE_SOFNumberGet%176
-                0x00004fd6       0x12
+                0x00004fce       0x12
  .text.DRV_USBFSV1_DEVICE_SOFNumberGet
-                0x00004fd6       0x12 build/Trinket_USB_2/production/_ext/2108104030/drv_usbfsv1_device.o
-                0x00004fd6                DRV_USBFSV1_DEVICE_SOFNumberGet
+                0x00004fce       0x12 build/Trinket_USB_2/production/_ext/2108104030/drv_usbfsv1_device.o
+                0x00004fce                DRV_USBFSV1_DEVICE_SOFNumberGet
 
 .text.NVIC_INT_Disable%177
-                0x00004fe8       0x12
+                0x00004fe0       0x12
  .text.NVIC_INT_Disable
-                0x00004fe8       0x12 build/Trinket_USB_2/production/_ext/58287938/plib_nvic.o
-                0x00004fe8                NVIC_INT_Disable
+                0x00004fe0       0x12 build/Trinket_USB_2/production/_ext/58287938/plib_nvic.o
+                0x00004fe0                NVIC_INT_Disable
 
 .text.memcpy%178
-                0x00004ffa       0x12
- .text.memcpy   0x00004ffa       0x12 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libc-musl.a(memcpy.o)
-                0x00004ffa                memcpy
+                0x00004ff2       0x12
+ .text.memcpy   0x00004ff2       0x12 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libc-musl.a(memcpy.o)
+                0x00004ff2                memcpy
 
 .text.stpcpy%179
-                0x0000500c       0x12
- .text.stpcpy   0x0000500c       0x12 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libc-musl.a(stpcpy.o)
-                0x0000500c                __stpcpy
-                0x0000500c                stpcpy
+                0x00005004       0x12
+ .text.stpcpy   0x00005004       0x12 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libc-musl.a(stpcpy.o)
+                0x00005004                __stpcpy
+                0x00005004                stpcpy
 
 .text.DRV_USBFSV1_USB_Handler%180
-                0x00005020       0x10
+                0x00005018       0x10
  .text.DRV_USBFSV1_USB_Handler
-                0x00005020       0x10 build/Trinket_USB_2/production/_ext/2108104030/drv_usbfsv1.o
-                0x00005020                DRV_USBFSV1_USB_Handler
+                0x00005018       0x10 build/Trinket_USB_2/production/_ext/2108104030/drv_usbfsv1.o
+                0x00005018                DRV_USBFSV1_USB_Handler
 
 .text.DRV_USBFSV1_ClientEventCallBackSet%181
-                0x00005030       0x10
+                0x00005028       0x10
  .text.DRV_USBFSV1_ClientEventCallBackSet
-                0x00005030       0x10 build/Trinket_USB_2/production/_ext/2108104030/drv_usbfsv1.o
-                0x00005030                DRV_USBFSV1_ClientEventCallBackSet
+                0x00005028       0x10 build/Trinket_USB_2/production/_ext/2108104030/drv_usbfsv1.o
+                0x00005028                DRV_USBFSV1_ClientEventCallBackSet
 
 .text.DRV_USBFSV1_DEVICE_RemoteWakeupStart%182
-                0x00005040       0x10
+                0x00005038       0x10
  .text.DRV_USBFSV1_DEVICE_RemoteWakeupStart
-                0x00005040       0x10 build/Trinket_USB_2/production/_ext/2108104030/drv_usbfsv1_device.o
-                0x00005040                DRV_USBFSV1_DEVICE_RemoteWakeupStart
+                0x00005038       0x10 build/Trinket_USB_2/production/_ext/2108104030/drv_usbfsv1_device.o
+                0x00005038                DRV_USBFSV1_DEVICE_RemoteWakeupStart
 
 .rodata.funcRegistrationTable%183
-                0x00005050       0x10
+                0x00005048       0x10
  .rodata.funcRegistrationTable
-                0x00005050       0x10 build/Trinket_USB_2/production/_ext/1189347772/usb_device_init_data.o
-                0x00005050                funcRegistrationTable
+                0x00005048       0x10 build/Trinket_USB_2/production/_ext/1189347772/usb_device_init_data.o
+                0x00005048                funcRegistrationTable
 
-.rodata%184     0x00005060       0x10
- .rodata        0x00005060       0x10 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libc-musl.a(__fmt_fp.o)
+.rodata%184     0x00005058       0x10
+ .rodata        0x00005058       0x10 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libc-musl.a(__fmt_fp.o)
 
 .text.memset%185
-                0x00005070       0x10
- .text.memset   0x00005070       0x10 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libc-musl.a(memset.o)
-                0x00005070                memset
+                0x00005068       0x10
+ .text.memset   0x00005068       0x10 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libc-musl.a(memset.o)
+                0x00005068                memset
 
 .text.strlen%186
-                0x00005080       0x10
- .text.strlen   0x00005080       0x10 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libc-musl.a(strlen.o)
-                0x00005080                strlen
+                0x00005078       0x10
+ .text.strlen   0x00005078       0x10 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libc-musl.a(strlen.o)
+                0x00005078                strlen
 
-.text.fma%187   0x00005090       0x10
- .text.fma      0x00005090       0x10 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libm-emfloat.a(lib_a-_FMA.o)
-                0x00005090                fma
+.text.fma%187   0x00005088       0x10
+ .text.fma      0x00005088       0x10 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libm-emfloat.a(lib_a-_FMA.o)
+                0x00005088                fma
 
 .text.DRV_USBFSV1_DEVICE_AddressSet%188
-                0x000050a0        0xe
+                0x00005098        0xe
  .text.DRV_USBFSV1_DEVICE_AddressSet
-                0x000050a0        0xe build/Trinket_USB_2/production/_ext/2108104030/drv_usbfsv1_device.o
-                0x000050a0                DRV_USBFSV1_DEVICE_AddressSet
+                0x00005098        0xe build/Trinket_USB_2/production/_ext/2108104030/drv_usbfsv1_device.o
+                0x00005098                DRV_USBFSV1_DEVICE_AddressSet
 
 .text.DRV_USBFSV1_DEVICE_CurrentSpeedGet%189
-                0x000050ae        0xe
+                0x000050a6        0xe
  .text.DRV_USBFSV1_DEVICE_CurrentSpeedGet
-                0x000050ae        0xe build/Trinket_USB_2/production/_ext/2108104030/drv_usbfsv1_device.o
-                0x000050ae                DRV_USBFSV1_DEVICE_CurrentSpeedGet
+                0x000050a6        0xe build/Trinket_USB_2/production/_ext/2108104030/drv_usbfsv1_device.o
+                0x000050a6                DRV_USBFSV1_DEVICE_CurrentSpeedGet
 
-.text.main%190  0x000050bc        0xe
- .text.main     0x000050bc        0xe build/Trinket_USB_2/production/_ext/1360937237/main.o
-                0x000050bc                main
+.text.main%190  0x000050b4        0xe
+ .text.main     0x000050b4        0xe build/Trinket_USB_2/production/_ext/1360937237/main.o
+                0x000050b4                main
 
 .text.tolower%191
-                0x000050ca        0xe
- .text.tolower  0x000050ca        0xe c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libc-musl.a(tolower.o)
-                0x000050ca                tolower
+                0x000050c2        0xe
+ .text.tolower  0x000050c2        0xe c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libc-musl.a(tolower.o)
+                0x000050c2                tolower
 
 .text.ADC_ConversionResultGet%192
-                0x000050d8        0xc
+                0x000050d0        0xc
  .text.ADC_ConversionResultGet
-                0x000050d8        0xc build/Trinket_USB_2/production/_ext/140414528/plib_adc.o
-                0x000050d8                ADC_ConversionResultGet
+                0x000050d0        0xc build/Trinket_USB_2/production/_ext/140414528/plib_adc.o
+                0x000050d0                ADC_ConversionResultGet
 
 .text.NVMCTRL_Initialize%193
-                0x000050e4        0xc
+                0x000050dc        0xc
  .text.NVMCTRL_Initialize
-                0x000050e4        0xc build/Trinket_USB_2/production/_ext/1292982576/plib_nvmctrl.o
-                0x000050e4                NVMCTRL_Initialize
+                0x000050dc        0xc build/Trinket_USB_2/production/_ext/1292982576/plib_nvmctrl.o
+                0x000050dc                NVMCTRL_Initialize
 
 .text.TC3_TimerCallbackRegister%194
-                0x000050f0        0xc
+                0x000050e8        0xc
  .text.TC3_TimerCallbackRegister
-                0x000050f0        0xc build/Trinket_USB_2/production/_ext/1390003407/plib_tc3.o
-                0x000050f0                TC3_TimerCallbackRegister
+                0x000050e8        0xc build/Trinket_USB_2/production/_ext/1390003407/plib_tc3.o
+                0x000050e8                TC3_TimerCallbackRegister
 
 .rodata.cdcInit0%195
-                0x000050fc        0xc
+                0x000050f4        0xc
  .rodata.cdcInit0
-                0x000050fc        0xc build/Trinket_USB_2/production/_ext/1189347772/usb_device_init_data.o
-                0x000050fc                cdcInit0
+                0x000050f4        0xc build/Trinket_USB_2/production/_ext/1189347772/usb_device_init_data.o
+                0x000050f4                cdcInit0
 
 .rodata.stringDescriptors%196
-                0x00005108        0xc
+                0x00005100        0xc
  .rodata.stringDescriptors
-                0x00005108        0xc build/Trinket_USB_2/production/_ext/1189347772/usb_device_init_data.o
-                0x00005108                stringDescriptors
+                0x00005100        0xc build/Trinket_USB_2/production/_ext/1189347772/usb_device_init_data.o
+                0x00005100                stringDescriptors
 
 .text.APP_SENSOR_TimerEventHandler%197
-                0x00005114        0xc
+                0x0000510c        0xc
  .text.APP_SENSOR_TimerEventHandler
-                0x00005114        0xc build/Trinket_USB_2/production/_ext/1360937237/app_usb.o
-                0x00005114                APP_SENSOR_TimerEventHandler
+                0x0000510c        0xc build/Trinket_USB_2/production/_ext/1360937237/app_usb.o
+                0x0000510c                APP_SENSOR_TimerEventHandler
 
 .text.strcpy%198
-                0x00005120        0xc
- .text.strcpy   0x00005120        0xc c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libc-musl.a(strcpy.o)
-                0x00005120                strcpy
+                0x00005118        0xc
+ .text.strcpy   0x00005118        0xc c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libc-musl.a(strcpy.o)
+                0x00005118                strcpy
 
 .rodata.gDrvUSBFSV1DeviceEndpointTypeMap%199
-                0x0000512c        0x8
+                0x00005124        0x8
  .rodata.gDrvUSBFSV1DeviceEndpointTypeMap
-                0x0000512c        0x8 build/Trinket_USB_2/production/_ext/2108104030/drv_usbfsv1_device.o
-                0x0000512c                gDrvUSBFSV1DeviceEndpointTypeMap
+                0x00005124        0x8 build/Trinket_USB_2/production/_ext/2108104030/drv_usbfsv1_device.o
+                0x00005124                gDrvUSBFSV1DeviceEndpointTypeMap
 
 .text.TC3_TimerFrequencyGet%200
-                0x00005134        0x8
+                0x0000512c        0x8
  .text.TC3_TimerFrequencyGet
-                0x00005134        0x8 build/Trinket_USB_2/production/_ext/1390003407/plib_tc3.o
-                0x00005134                TC3_TimerFrequencyGet
+                0x0000512c        0x8 build/Trinket_USB_2/production/_ext/1390003407/plib_tc3.o
+                0x0000512c                TC3_TimerFrequencyGet
 
 .text.SYS_INT_Disable%201
-                0x0000513c        0x8
+                0x00005134        0x8
  .text.SYS_INT_Disable
-                0x0000513c        0x8 build/Trinket_USB_2/production/_ext/1961919639/sys_int.o
-                0x0000513c                SYS_INT_Disable
+                0x00005134        0x8 build/Trinket_USB_2/production/_ext/1961919639/sys_int.o
+                0x00005134                SYS_INT_Disable
 
 .text.SYS_INT_Restore%202
-                0x00005144        0x8
+                0x0000513c        0x8
  .text.SYS_INT_Restore
-                0x00005144        0x8 build/Trinket_USB_2/production/_ext/1961919639/sys_int.o
-                0x00005144                SYS_INT_Restore
+                0x0000513c        0x8 build/Trinket_USB_2/production/_ext/1961919639/sys_int.o
+                0x0000513c                SYS_INT_Restore
 
 .rodata.sysTimeInitData%203
-                0x0000514c        0x8
+                0x00005144        0x8
  .rodata.sysTimeInitData
-                0x0000514c        0x8 build/Trinket_USB_2/production/_ext/1189347772/initialization.o
-                0x0000514c                sysTimeInitData
+                0x00005144        0x8 build/Trinket_USB_2/production/_ext/1189347772/initialization.o
+                0x00005144                sysTimeInitData
 
-.rodata%204     0x00005154        0xf
- .rodata        0x00005154        0x8 build/Trinket_USB_2/production/_ext/1360937237/app_usb.o
- .rodata        0x0000515c        0x7 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libc-musl.a(__fmt_s.o)
+.rodata%204     0x0000514c        0xf
+ .rodata        0x0000514c        0x8 build/Trinket_USB_2/production/_ext/1360937237/app_usb.o
+ .rodata        0x00005154        0x7 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libc-musl.a(__fmt_s.o)
 
 .rodata.gDrvUSBFSV1DeviceSpeedMap%206
-                0x00005164        0x4
+                0x0000515c        0x4
  .rodata.gDrvUSBFSV1DeviceSpeedMap
-                0x00005164        0x4 build/Trinket_USB_2/production/_ext/2108104030/drv_usbfsv1_device.o
-                0x00005164                gDrvUSBFSV1DeviceSpeedMap
+                0x0000515c        0x4 build/Trinket_USB_2/production/_ext/2108104030/drv_usbfsv1_device.o
+                0x0000515c                gDrvUSBFSV1DeviceSpeedMap
 
 .rodata.fullSpeedConfigDescSet%207
-                0x00005168        0x4
+                0x00005160        0x4
  .rodata.fullSpeedConfigDescSet
-                0x00005168        0x4 build/Trinket_USB_2/production/_ext/1189347772/usb_device_init_data.o
-                0x00005168                fullSpeedConfigDescSet
+                0x00005160        0x4 build/Trinket_USB_2/production/_ext/1189347772/usb_device_init_data.o
+                0x00005160                fullSpeedConfigDescSet
 
 .rodata.sd000%208
-                0x0000516c        0x4
- .rodata.sd000  0x0000516c        0x4 build/Trinket_USB_2/production/_ext/1189347772/usb_device_init_data.o
-                0x0000516c                sd000
+                0x00005164        0x4
+ .rodata.sd000  0x00005164        0x4 build/Trinket_USB_2/production/_ext/1189347772/usb_device_init_data.o
+                0x00005164                sd000
 
 .text.__dummy_fmt3%209
-                0x00005170        0x4
+                0x00005168        0x4
  .text.__dummy_fmt3
-                0x00005170        0x4 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libc-musl.a(__printf_core.o)
-                0x00005170                __fmt_o
-                0x00005170                __fmt_d
-                0x00005170                __fmt_u
+                0x00005168        0x4 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libc-musl.a(__printf_core.o)
+                0x00005168                __fmt_o
+                0x00005168                __fmt_d
+                0x00005168                __fmt_u
 
 .text.__dummy_fmt4%210
-                0x00005174        0x4
+                0x0000516c        0x4
  .text.__dummy_fmt4
-                0x00005174        0x4 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libc-musl.a(__printf_core.o)
-                0x00005174                __fmt_x
-                0x00005174                __fmt_a
+                0x0000516c        0x4 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libc-musl.a(__printf_core.o)
+                0x0000516c                __fmt_x
+                0x0000516c                __fmt_a
 
-.text%211       0x00005178        0x4
- .text          0x00005178        0x4 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/thumb/v6-m/nofp\libgcc.a(_dvmd_tls.o)
-                0x00005178                __aeabi_idiv0
-                0x00005178                __aeabi_ldiv0
+.text%211       0x00005170        0x4
+ .text          0x00005170        0x4 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/thumb/v6-m/nofp\libgcc.a(_dvmd_tls.o)
+                0x00005170                __aeabi_idiv0
+                0x00005170                __aeabi_ldiv0
 
 .text.DRV_USBFSV1_DEVICE_RemoteWakeupStop%212
                 0x00001b12        0x2
@@ -3153,7 +3153,7 @@ LOAD data_init
                 0x00004332                __xc32_on_bootstrap
 
 .text.__dummy%218
-                0x000049b6        0x2
- .text.__dummy  0x000049b6        0x2 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libc-musl.a(__libc_start_main.o)
-                0x000049b6                __init_stdio
-                0x000049b6                __init_host
+                0x00004986        0x2
+ .text.__dummy  0x00004986        0x2 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libc-musl.a(__libc_start_main.o)
+                0x00004986                __init_stdio
+                0x00004986                __init_host

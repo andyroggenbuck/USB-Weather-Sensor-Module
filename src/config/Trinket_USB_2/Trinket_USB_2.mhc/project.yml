@@ -153,13 +153,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: ABA41F10EA872DBEBB285D03A009BC51
-- generatedChecksum: BA652FA62CAAB37623F80E8C847630AE
+- generatedChecksum: B196394A504A6BE2F26655461462A76E
   logicalPath: config/Trinket_USB_2
   name: usb_device_init_data.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: BA652FA62CAAB37623F80E8C847630AE
+  userChecksum: B196394A504A6BE2F26655461462A76E
 - generatedChecksum: 7806B30ECAE0D18D08CD583D8775530D
   logicalPath: config/Trinket_USB_2/stdio
   name: xc32_monitor.c

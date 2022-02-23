@@ -3,14 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/andy_/HarmonyProjects/USB_2/firmware/src/config/Trinket_USB_2/tasks.c</file>
-            <file>file:/C:/Users/andy_/HarmonyProjects/USB_2/firmware/src/USB_example_files/app_usb.c</file>
+            <file>file:/C:/Users/andy_/HarmonyProjects/USB_2/firmware/src/config/Trinket_USB_2/driver/usb/usbfsv1/src/drv_usbfsv1.c</file>
             <file>file:/C:/Users/andy_/HarmonyProjects/USB_2/firmware/src/config/Trinket_USB_2/usb/src/usb_device.c</file>
-            <file>file:/C:/Users/andy_/HarmonyProjects/USB_2/firmware/src/config/Trinket_USB_2/initialization.c</file>
             <file>file:/C:/Users/andy_/HarmonyProjects/USB_2/firmware/src/app_usb.c</file>
             <file>file:/C:/Users/andy_/HarmonyProjects/USB_2/firmware/src/main.c</file>
             <file>file:/C:/Users/andy_/HarmonyProjects/USB_2/firmware/src/config/Trinket_USB_2/startup_xc32.c</file>
-            <file>file:/C:/Users/andy_/HarmonyProjects/USB_2/firmware/src/app_usb.h</file>
         </group>
     </open-files>
 </project-private>

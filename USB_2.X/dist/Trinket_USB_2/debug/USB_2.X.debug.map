@@ -57,7 +57,7 @@ c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../.
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/thumb/v6-m/nofp\libgcc.a(_udivsi3.o)
                               build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o (__aeabi_uidiv)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/thumb/v6-m/nofp\libgcc.a(_divsi3.o)
-                              build/Trinket_USB_2/debug/_ext/1390297478/usb_device.o (__aeabi_idiv)
+                              build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o (__aeabi_idiv)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/thumb/v6-m/nofp\libgcc.a(_dvmd_tls.o)
                               c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/thumb/v6-m/nofp\libgcc.a(_udivsi3.o) (__aeabi_idiv0)
 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/thumb/v6-m/nofp\libgcc.a(_aeabi_uldivmod.o)
@@ -126,8 +126,8 @@ section                    address  length [bytes]      (dec)  Description
 .text.DRV_USBFSV1_DEVIC     0x37f4           0x88         136   
 .text._USB_DEVICE_Proce     0x387c           0x86         134   
 .text.Dummy_App_Func        0x3902            0x2           2   
-.text.APP_USB_USBDevice     0x3904           0x84         132   
-.text.ADC_Initialize        0x3988           0x84         132   
+.text.ADC_Initialize        0x3904           0x84         132   
+.text.APP_USB_USBDevice     0x3988           0x84         132   
 .text.DRV_USBFSV1_Tasks     0x3a0c           0x7c         124   
 .text._USB_DEVICE_Confi     0x3a88           0x7c         124   
 .text.APP_USB_USBDevice     0x3b04           0x7c         124   
@@ -137,9 +137,9 @@ section                    address  length [bytes]      (dec)  Description
 .text._USB_DEVICE_Ep0Tr     0x3cd8           0x68         104   
 .text._USB_DEVICE_CDC_A     0x3d40           0x68         104   
 .text.__pop_ptr             0x3da8           0x68         104   
-.text.SYS_Initialize        0x3e10           0x60          96   
-.text.SYS_TIME_RemoveFr     0x3e70           0x60          96   
-.text.SYS_TIME_TimerSta     0x3ed0           0x60          96   
+.text.SYS_TIME_RemoveFr     0x3e10           0x60          96   
+.text.SYS_TIME_TimerSta     0x3e70           0x60          96   
+.text.SYS_Initialize        0x3ed0           0x60          96   
 .text.__libc_start_init     0x3f30           0x5c          92   
 .text.SYS_TIME_Callback     0x3f8c           0x58          88   
 .text                       0x3fe4           0x54          84  App's exec code 
@@ -154,14 +154,14 @@ section                    address  length [bytes]      (dec)  Description
 .text                       0x425c           0x48          72  App's exec code 
 .text.Reset_Handler         0x42a4           0x48          72   
 .text.USB_DEVICE_Contro     0x42ec           0x46          70   
-.rodata.fullSpeedConfig     0x4334           0x44          68   
-.text.SYS_TIME_TimerAdd     0x4378           0x44          68   
+.text.SYS_TIME_TimerAdd     0x4334           0x44          68   
+.rodata.fullSpeedConfig     0x4378           0x44          68   
 .text.__aeabi_f2d           0x43bc           0x44          68   
 .text.NVIC_Initialize       0x4400           0x40          64   
-.text._USB_DEVICE_FindE     0x4440           0x40          64   
-.text.TC3_TimerInitiali     0x4480           0x40          64   
-.text.SYS_TIME_GetTimer     0x44c0           0x40          64   
-.text.SYS_TIME_TimerDes     0x4500           0x40          64   
+.text.TC3_TimerInitiali     0x4440           0x40          64   
+.text.SYS_TIME_GetTimer     0x4480           0x40          64   
+.text.SYS_TIME_TimerDes     0x44c0           0x40          64   
+.text._USB_DEVICE_FindE     0x4500           0x40          64   
 .text.__aeabi_dcmpgt        0x4540           0x40          64   
 .text.__aeabi_dcmplt        0x4580           0x40          64   
 .text.atoi                  0x45c0           0x40          64   
@@ -170,15 +170,15 @@ section                    address  length [bytes]      (dec)  Description
 .text.USB_DEVICE_Open       0x467c           0x3c          60   
 .text                       0x46b8           0x3c          60  App's exec code 
 .text._DRV_USBFSV1_DEVI     0x46f4           0x38          56   
-.text._USB_DEVICE_CDC_D     0x472c           0x38          56   
-.text.SYS_TIME_UpdateTi     0x4764           0x38          56   
-.rodata.sd001               0x479c           0x34          52   
-.text.SYS_TIME_Resource     0x47d0           0x34          52   
+.text.SYS_TIME_UpdateTi     0x472c           0x38          56   
+.text._USB_DEVICE_CDC_D     0x4764           0x38          56   
+.text.SYS_TIME_Resource     0x479c           0x34          52   
+.rodata.sd001               0x47d0           0x34          52   
 .text.__aeabi_d2iz          0x4804           0x34          52   
 .text.__fmt_state           0x4838           0x34          52   
 .text.PORT_Initialize       0x486c           0x30          48   
-.rodata.sd002               0x489c           0x30          48   
-.text.SYS_TIME_Resource     0x48cc           0x30          48   
+.text.SYS_TIME_Resource     0x489c           0x30          48   
+.rodata.sd002               0x48cc           0x30          48   
 .text.__aeabi_dcmpeq        0x48fc           0x30          48   
 .text.__aeabi_d2uiz         0x492c           0x30          48   
 .text.DRV_USBFSV1_DEVIC     0x495c           0x2e          46   
@@ -198,39 +198,39 @@ section                    address  length [bytes]      (dec)  Description
 .text.USB_DEVICE_Detach     0x4ba6           0x26          38   
 .text.USB_DEVICE_IRPSub     0x4bcc           0x26          38   
 .text.__string_out          0x4bf2           0x26          38   
-.rodata.drvUSBInit          0x4c18           0x24          36   
-.rodata.APP_USB_USBDevi     0x4c3c           0x24          36   
-.text.TC3_TimerInterrup     0x4c60           0x24          36   
-.text.SYS_TIME_GetElaps     0x4c84           0x24          36   
+.text.TC3_TimerInterrup     0x4c18           0x24          36   
+.text.SYS_TIME_GetElaps     0x4c3c           0x24          36   
+.rodata.drvUSBInit          0x4c60           0x24          36   
+.rodata.APP_USB_USBDevi     0x4c84           0x24          36   
 .text.USB_DEVICE_Attach     0x4ca8           0x22          34   
 .text.USB_DEVICE_Endpoi     0x4cca           0x22          34   
 .text.USB_DEVICE_Contro     0x4cec           0x22          34   
 .text.USB_DEVICE_IRPCan     0x4d0e           0x22          34   
 .text._USB_DEVICE_CDC_E     0x4d30           0x22          34   
 .text.DRV_USBFSV1_DEVIC     0x4d54           0x20          32   
-.rodata._USB_DEVICE_Pro     0x4d74           0x20          32   
-.text.USB_DEVICE_CDC_Ev     0x4d94           0x20          32   
-.text.TC3_Timer16bitCou     0x4db4           0x20          32   
-.rodata.sysTimePlibAPI      0x4dd4           0x1c          28   
-.text.SYS_Tasks             0x4df0           0x1c          28   
-.text.SYS_TIME_Counter6     0x4e0c           0x1c          28   
+.text.TC3_Timer16bitCou     0x4d74           0x20          32   
+.rodata._USB_DEVICE_Pro     0x4d94           0x20          32   
+.text.USB_DEVICE_CDC_Ev     0x4db4           0x20          32   
+.text.SYS_TIME_Counter6     0x4dd4           0x1c          28   
+.rodata.sysTimePlibAPI      0x4df0           0x1c          28   
+.text.SYS_Tasks             0x4e0c           0x1c          28   
 .rodata                     0x4e28           0x1c          28  Read-only const 
-.text._USB_DEVICE_Clien     0x4e44           0x18          24   
-.text._USB_DEVICE_CDC_G     0x4e5c           0x18          24   
-.rodata.APP_USB_Tasks       0x4e74           0x18          24   
-.text.ADC_Enable            0x4e8c           0x18          24   
-.text.ADC_ConversionSta     0x4ea4           0x18          24   
-.text.ADC_ConversionSta     0x4ebc           0x18          24   
-.text.TC3_TimerStart        0x4ed4           0x18          24   
-.text.TC3_TimerStop         0x4eec           0x18          24   
+.text.ADC_Enable            0x4e44           0x18          24   
+.text.ADC_ConversionSta     0x4e5c           0x18          24   
+.text.ADC_ConversionSta     0x4e74           0x18          24   
+.text.TC3_TimerStart        0x4e8c           0x18          24   
+.text.TC3_TimerStop         0x4ea4           0x18          24   
+.text._USB_DEVICE_Clien     0x4ebc           0x18          24   
+.text._USB_DEVICE_CDC_G     0x4ed4           0x18          24   
+.rodata.APP_USB_Tasks       0x4eec           0x18          24   
 .text.__vfprintf            0x4f04           0x18          24   
 .text                       0x4f1c           0x18          24  App's exec code 
 .text.__wrap_sprintf        0x4f34           0x16          22   
 .text.NVIC_INT_Restore      0x4f4a           0x14          20   
-.rodata.cdcFunctionDriv     0x4f60           0x14          20   
-.rodata.deviceDescripto     0x4f74           0x14          20   
-.text.TC3_Timer16bitPer     0x4f88           0x14          20   
-.text.TC3_Timer16bitCom     0x4f9c           0x14          20   
+.text.TC3_Timer16bitPer     0x4f60           0x14          20   
+.text.TC3_Timer16bitCom     0x4f74           0x14          20   
+.rodata.cdcFunctionDriv     0x4f88           0x14          20   
+.rodata.deviceDescripto     0x4f9c           0x14          20   
 .text.__vsprintf            0x4fb0           0x14          20   
 .text.DRV_USBFSV1_Close     0x4fc4           0x12          18   
 .text.DRV_USBFSV1_DEVIC     0x4fd6           0x12          18   
@@ -249,20 +249,19 @@ section                    address  length [bytes]      (dec)  Description
 .text.DRV_USBFSV1_DEVIC     0x50ae            0xe          14   
 .text.main                  0x50bc            0xe          14   
 .text.tolower               0x50ca            0xe          14   
-.text.NVMCTRL_Initializ     0x50d8            0xc          12   
-.rodata.cdcInit0            0x50e4            0xc          12   
-.rodata.stringDescripto     0x50f0            0xc          12   
-.text.APP_SENSOR_TimerE     0x50fc            0xc          12   
-.text.ADC_ConversionRes     0x5108            0xc          12   
-.text.TC3_TimerCallback     0x5114            0xc          12   
+.text.ADC_ConversionRes     0x50d8            0xc          12   
+.text.NVMCTRL_Initializ     0x50e4            0xc          12   
+.text.TC3_TimerCallback     0x50f0            0xc          12   
+.rodata.cdcInit0            0x50fc            0xc          12   
+.rodata.stringDescripto     0x5108            0xc          12   
+.text.APP_SENSOR_TimerE     0x5114            0xc          12   
 .text.strcpy                0x5120            0xc          12   
 .rodata.gDrvUSBFSV1Devi     0x512c            0x8           8   
-.text.SYS_INT_Disable       0x5134            0x8           8   
-.text.SYS_INT_Restore       0x513c            0x8           8   
-.rodata.sysTimeInitData     0x5144            0x8           8   
-.rodata                     0x514c            0x8           8  Read-only const 
-.text.TC3_TimerFrequenc     0x5154            0x8           8   
-.rodata                     0x515c            0x7           7  Read-only const 
+.text.TC3_TimerFrequenc     0x5134            0x8           8   
+.text.SYS_INT_Disable       0x513c            0x8           8   
+.text.SYS_INT_Restore       0x5144            0x8           8   
+.rodata.sysTimeInitData     0x514c            0x8           8   
+.rodata                     0x5154            0xf          15  Read-only const 
 .rodata.gDrvUSBFSV1Devi     0x5164            0x4           4   
 .text.NonMaskableInt_Ha     0x5168            0x4           4   
 .text.HardFault_Handler     0x516c            0x4           4   
@@ -350,6 +349,23 @@ Discarded input sections
  .bss           0x00000000        0x0 build/Trinket_USB_2/debug/_ext/2108104030/drv_usbfsv1_device.o
  .text._DRV_USBFSV1_DEVICE_EndpointObjectEnable
                 0x00000000       0x12 build/Trinket_USB_2/debug/_ext/2108104030/drv_usbfsv1_device.o
+ .text          0x00000000        0x0 build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
+ .data          0x00000000        0x0 build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
+ .bss           0x00000000        0x0 build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
+ .text.ADC_Disable
+                0x00000000       0x18 build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
+ .text.ADC_ChannelSelect
+                0x00000000       0x24 build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
+ .text.ADC_ComparisonWindowSet
+                0x00000000       0x24 build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
+ .text.ADC_WindowModeSet
+                0x00000000       0x14 build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
+ .text.ADC_InterruptsClear
+                0x00000000        0xc build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
+ .text.ADC_InterruptsEnable
+                0x00000000        0xc build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
+ .text.ADC_InterruptsDisable
+                0x00000000        0xc build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
  .text          0x00000000        0x0 build/Trinket_USB_2/debug/_ext/1796475310/plib_clock.o
  .data          0x00000000        0x0 build/Trinket_USB_2/debug/_ext/1796475310/plib_clock.o
  .bss           0x00000000        0x0 build/Trinket_USB_2/debug/_ext/1796475310/plib_clock.o
@@ -407,6 +423,15 @@ Discarded input sections
                 0x00000000       0x48 build/Trinket_USB_2/debug/_ext/58341089/plib_port.o
  .text.PORT_PinGPIOConfig
                 0x00000000       0x20 build/Trinket_USB_2/debug/_ext/58341089/plib_port.o
+ .text          0x00000000        0x0 build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
+ .data          0x00000000        0x0 build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
+ .bss           0x00000000        0x0 build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
+ .text.TC3_TimerCommandSet
+                0x00000000       0x18 build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
+ .text.TC3_Timer16bitCounterSet
+                0x00000000       0x14 build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
+ .text.TC3_Timer16bitPeriodGet
+                0x00000000       0x20 build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
  .text          0x00000000        0x0 build/Trinket_USB_2/debug/_ext/1578018698/xc32_monitor.o
  .data          0x00000000        0x0 build/Trinket_USB_2/debug/_ext/1578018698/xc32_monitor.o
  .bss           0x00000000        0x0 build/Trinket_USB_2/debug/_ext/1578018698/xc32_monitor.o
@@ -433,6 +458,47 @@ Discarded input sections
                 0x00000000        0x8 build/Trinket_USB_2/debug/_ext/1961919639/sys_int.o
  .text.SYS_INT_SourceRestore
                 0x00000000       0x1c build/Trinket_USB_2/debug/_ext/1961919639/sys_int.o
+ .text          0x00000000        0x0 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+ .data          0x00000000        0x0 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+ .bss           0x00000000        0x0 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+ .text.SYS_TIME_Deinitialize
+                0x00000000       0x30 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+ .text.SYS_TIME_Status
+                0x00000000       0x18 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+ .text.SYS_TIME_FrequencyGet
+                0x00000000        0xc build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+ .text.SYS_TIME_Counter64Get
+                0x00000000       0x50 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+ .text.SYS_TIME_CounterGet
+                0x00000000        0x8 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+ .text.SYS_TIME_CounterSet
+                0x00000000       0x20 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+ .text.SYS_TIME_CountToUS
+                0x00000000       0x3c build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+ .text.SYS_TIME_CountToMS
+                0x00000000       0x20 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+ .text.SYS_TIME_USToCount
+                0x00000000       0x24 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+ .text.SYS_TIME_MSToCount
+                0x00000000       0x20 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+ .text.SYS_TIME_TimerCreate
+                0x00000000       0x20 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+ .text.SYS_TIME_TimerReload
+                0x00000000       0x9c build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+ .text.SYS_TIME_TimerStop
+                0x00000000       0x40 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+ .text.SYS_TIME_TimerCounterGet
+                0x00000000       0x88 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+ .text.SYS_TIME_TimerPeriodHasExpired
+                0x00000000       0x2a build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+ .text.SYS_TIME_DelayUS
+                0x00000000       0x54 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+ .text.SYS_TIME_DelayMS
+                0x00000000       0x54 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+ .text.SYS_TIME_DelayIsComplete
+                0x00000000       0x18 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+ .text.SYS_TIME_CallbackRegisterUS
+                0x00000000       0x5c build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
  .text          0x00000000        0x0 build/Trinket_USB_2/debug/_ext/1390297478/usb_device.o
  .data          0x00000000        0x0 build/Trinket_USB_2/debug/_ext/1390297478/usb_device.o
  .bss           0x00000000        0x0 build/Trinket_USB_2/debug/_ext/1390297478/usb_device.o
@@ -535,73 +601,6 @@ Discarded input sections
  .text          0x00000000        0x0 build/Trinket_USB_2/debug/_ext/1360937237/app_usb.o
  .data          0x00000000        0x0 build/Trinket_USB_2/debug/_ext/1360937237/app_usb.o
  .bss           0x00000000        0x0 build/Trinket_USB_2/debug/_ext/1360937237/app_usb.o
- .text          0x00000000        0x0 build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
- .data          0x00000000        0x0 build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
- .bss           0x00000000        0x0 build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
- .text.ADC_Disable
-                0x00000000       0x18 build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
- .text.ADC_ChannelSelect
-                0x00000000       0x24 build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
- .text.ADC_ComparisonWindowSet
-                0x00000000       0x24 build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
- .text.ADC_WindowModeSet
-                0x00000000       0x14 build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
- .text.ADC_InterruptsClear
-                0x00000000        0xc build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
- .text.ADC_InterruptsEnable
-                0x00000000        0xc build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
- .text.ADC_InterruptsDisable
-                0x00000000        0xc build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
- .text          0x00000000        0x0 build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
- .data          0x00000000        0x0 build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
- .bss           0x00000000        0x0 build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
- .text.TC3_TimerCommandSet
-                0x00000000       0x18 build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
- .text.TC3_Timer16bitCounterSet
-                0x00000000       0x14 build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
- .text.TC3_Timer16bitPeriodGet
-                0x00000000       0x20 build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
- .text          0x00000000        0x0 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
- .data          0x00000000        0x0 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
- .bss           0x00000000        0x0 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
- .text.SYS_TIME_Deinitialize
-                0x00000000       0x30 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
- .text.SYS_TIME_Status
-                0x00000000       0x18 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
- .text.SYS_TIME_FrequencyGet
-                0x00000000        0xc build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
- .text.SYS_TIME_Counter64Get
-                0x00000000       0x50 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
- .text.SYS_TIME_CounterGet
-                0x00000000        0x8 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
- .text.SYS_TIME_CounterSet
-                0x00000000       0x20 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
- .text.SYS_TIME_CountToUS
-                0x00000000       0x3c build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
- .text.SYS_TIME_CountToMS
-                0x00000000       0x20 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
- .text.SYS_TIME_USToCount
-                0x00000000       0x24 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
- .text.SYS_TIME_MSToCount
-                0x00000000       0x20 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
- .text.SYS_TIME_TimerCreate
-                0x00000000       0x20 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
- .text.SYS_TIME_TimerReload
-                0x00000000       0x9c build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
- .text.SYS_TIME_TimerStop
-                0x00000000       0x40 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
- .text.SYS_TIME_TimerCounterGet
-                0x00000000       0x88 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
- .text.SYS_TIME_TimerPeriodHasExpired
-                0x00000000       0x2a build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
- .text.SYS_TIME_DelayUS
-                0x00000000       0x54 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
- .text.SYS_TIME_DelayMS
-                0x00000000       0x54 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
- .text.SYS_TIME_DelayIsComplete
-                0x00000000       0x18 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
- .text.SYS_TIME_CallbackRegisterUS
-                0x00000000       0x5c build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
  .text          0x00000000        0x0 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libpic32c.a(data_init.o)
  .data          0x00000000        0x0 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libpic32c.a(data_init.o)
  .xc_stack_usage
@@ -1082,13 +1081,16 @@ LOAD c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/th
 LOAD c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/thumb/v6-m/nofp/crtbegin.o
 LOAD build/Trinket_USB_2/debug/_ext/2108104030/drv_usbfsv1.o
 LOAD build/Trinket_USB_2/debug/_ext/2108104030/drv_usbfsv1_device.o
+LOAD build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
 LOAD build/Trinket_USB_2/debug/_ext/1796475310/plib_clock.o
 LOAD build/Trinket_USB_2/debug/_ext/1798624796/plib_evsys.o
 LOAD build/Trinket_USB_2/debug/_ext/58287938/plib_nvic.o
 LOAD build/Trinket_USB_2/debug/_ext/1292982576/plib_nvmctrl.o
 LOAD build/Trinket_USB_2/debug/_ext/58341089/plib_port.o
+LOAD build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
 LOAD build/Trinket_USB_2/debug/_ext/1578018698/xc32_monitor.o
 LOAD build/Trinket_USB_2/debug/_ext/1961919639/sys_int.o
+LOAD build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
 LOAD build/Trinket_USB_2/debug/_ext/1390297478/usb_device.o
 LOAD build/Trinket_USB_2/debug/_ext/1390297478/usb_device_cdc.o
 LOAD build/Trinket_USB_2/debug/_ext/1390297478/usb_device_cdc_acm.o
@@ -1101,9 +1103,6 @@ LOAD build/Trinket_USB_2/debug/_ext/1189347772/usb_device_init_data.o
 LOAD build/Trinket_USB_2/debug/_ext/1189347772/tasks.o
 LOAD build/Trinket_USB_2/debug/_ext/1360937237/main.o
 LOAD build/Trinket_USB_2/debug/_ext/1360937237/app_usb.o
-LOAD build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
-LOAD build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
-LOAD build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
                 0x00000001                __MPLAB_BUILD = 0x1
                 0x00040000                __rom_end = (ORIGIN (rom) + LENGTH (rom))
                 0x20008000                __ram_end = (ORIGIN (ram) + LENGTH (ram))
@@ -1221,45 +1220,45 @@ LOAD data_init
  .ARM.attributes
                 0x00000076       0x2c build/Trinket_USB_2/debug/_ext/2108104030/drv_usbfsv1_device.o
  .ARM.attributes
-                0x000000a2       0x2c build/Trinket_USB_2/debug/_ext/1796475310/plib_clock.o
+                0x000000a2       0x2c build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
  .ARM.attributes
-                0x000000ce       0x2c build/Trinket_USB_2/debug/_ext/1798624796/plib_evsys.o
+                0x000000ce       0x2c build/Trinket_USB_2/debug/_ext/1796475310/plib_clock.o
  .ARM.attributes
-                0x000000fa       0x2c build/Trinket_USB_2/debug/_ext/58287938/plib_nvic.o
+                0x000000fa       0x2c build/Trinket_USB_2/debug/_ext/1798624796/plib_evsys.o
  .ARM.attributes
-                0x00000126       0x2c build/Trinket_USB_2/debug/_ext/1292982576/plib_nvmctrl.o
+                0x00000126       0x2c build/Trinket_USB_2/debug/_ext/58287938/plib_nvic.o
  .ARM.attributes
-                0x00000152       0x2c build/Trinket_USB_2/debug/_ext/58341089/plib_port.o
+                0x00000152       0x2c build/Trinket_USB_2/debug/_ext/1292982576/plib_nvmctrl.o
  .ARM.attributes
-                0x0000017e       0x2c build/Trinket_USB_2/debug/_ext/1961919639/sys_int.o
+                0x0000017e       0x2c build/Trinket_USB_2/debug/_ext/58341089/plib_port.o
  .ARM.attributes
-                0x000001aa       0x2c build/Trinket_USB_2/debug/_ext/1390297478/usb_device.o
+                0x000001aa       0x2c build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
  .ARM.attributes
-                0x000001d6       0x2c build/Trinket_USB_2/debug/_ext/1390297478/usb_device_cdc.o
+                0x000001d6       0x2c build/Trinket_USB_2/debug/_ext/1961919639/sys_int.o
  .ARM.attributes
-                0x00000202       0x2c build/Trinket_USB_2/debug/_ext/1390297478/usb_device_cdc_acm.o
+                0x00000202       0x2c build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
  .ARM.attributes
-                0x0000022e       0x2c build/Trinket_USB_2/debug/_ext/1189347772/initialization.o
+                0x0000022e       0x2c build/Trinket_USB_2/debug/_ext/1390297478/usb_device.o
  .ARM.attributes
-                0x0000025a       0x2c build/Trinket_USB_2/debug/_ext/1189347772/interrupts.o
+                0x0000025a       0x2c build/Trinket_USB_2/debug/_ext/1390297478/usb_device_cdc.o
  .ARM.attributes
-                0x00000286       0x2c build/Trinket_USB_2/debug/_ext/1189347772/exceptions.o
+                0x00000286       0x2c build/Trinket_USB_2/debug/_ext/1390297478/usb_device_cdc_acm.o
  .ARM.attributes
-                0x000002b2       0x2c build/Trinket_USB_2/debug/_ext/1189347772/startup_xc32.o
+                0x000002b2       0x2c build/Trinket_USB_2/debug/_ext/1189347772/initialization.o
  .ARM.attributes
-                0x000002de       0x32 build/Trinket_USB_2/debug/_ext/1189347772/usb_device_init_data.o
+                0x000002de       0x2c build/Trinket_USB_2/debug/_ext/1189347772/interrupts.o
  .ARM.attributes
-                0x00000310       0x2c build/Trinket_USB_2/debug/_ext/1189347772/tasks.o
+                0x0000030a       0x2c build/Trinket_USB_2/debug/_ext/1189347772/exceptions.o
  .ARM.attributes
-                0x0000033c       0x2c build/Trinket_USB_2/debug/_ext/1360937237/main.o
+                0x00000336       0x2c build/Trinket_USB_2/debug/_ext/1189347772/startup_xc32.o
  .ARM.attributes
-                0x00000368       0x2c build/Trinket_USB_2/debug/_ext/1360937237/app_usb.o
+                0x00000362       0x32 build/Trinket_USB_2/debug/_ext/1189347772/usb_device_init_data.o
  .ARM.attributes
-                0x00000394       0x2c build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
+                0x00000394       0x2c build/Trinket_USB_2/debug/_ext/1189347772/tasks.o
  .ARM.attributes
-                0x000003c0       0x2c build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
+                0x000003c0       0x2c build/Trinket_USB_2/debug/_ext/1360937237/main.o
  .ARM.attributes
-                0x000003ec       0x2c build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+                0x000003ec       0x2c build/Trinket_USB_2/debug/_ext/1360937237/app_usb.o
  .ARM.attributes
                 0x00000418       0x2c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libpic32c.a(data_init.o)
  .ARM.attributes
@@ -1334,12 +1333,15 @@ LOAD data_init
                                  0x54 (size before relaxing)
  .comment       0x00000053       0x54 build/Trinket_USB_2/debug/_ext/2108104030/drv_usbfsv1.o
  .comment       0x00000053       0x54 build/Trinket_USB_2/debug/_ext/2108104030/drv_usbfsv1_device.o
+ .comment       0x00000053       0x54 build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
  .comment       0x00000053       0x54 build/Trinket_USB_2/debug/_ext/1796475310/plib_clock.o
  .comment       0x00000053       0x54 build/Trinket_USB_2/debug/_ext/1798624796/plib_evsys.o
  .comment       0x00000053       0x54 build/Trinket_USB_2/debug/_ext/58287938/plib_nvic.o
  .comment       0x00000053       0x54 build/Trinket_USB_2/debug/_ext/1292982576/plib_nvmctrl.o
  .comment       0x00000053       0x54 build/Trinket_USB_2/debug/_ext/58341089/plib_port.o
+ .comment       0x00000053       0x54 build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
  .comment       0x00000053       0x54 build/Trinket_USB_2/debug/_ext/1961919639/sys_int.o
+ .comment       0x00000053       0x54 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
  .comment       0x00000053       0x54 build/Trinket_USB_2/debug/_ext/1390297478/usb_device.o
  .comment       0x00000053       0x54 build/Trinket_USB_2/debug/_ext/1390297478/usb_device_cdc.o
  .comment       0x00000053       0x54 build/Trinket_USB_2/debug/_ext/1390297478/usb_device_cdc_acm.o
@@ -1351,9 +1353,6 @@ LOAD data_init
  .comment       0x00000053       0x54 build/Trinket_USB_2/debug/_ext/1189347772/tasks.o
  .comment       0x00000053       0x54 build/Trinket_USB_2/debug/_ext/1360937237/main.o
  .comment       0x00000053       0x54 build/Trinket_USB_2/debug/_ext/1360937237/app_usb.o
- .comment       0x00000053       0x54 build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
- .comment       0x00000053       0x54 build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
- .comment       0x00000053       0x54 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
  .comment       0x00000053       0x54 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libpic32c.a(data_init.o)
  .comment       0x00000053       0x54 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libg-musl.a(__libc_start_main.o)
  .comment       0x00000053       0x54 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libg-musl.a(libc.o)
@@ -1384,26 +1383,26 @@ LOAD data_init
 .debug_info     0x00000000    0x4358c
  .debug_info    0x00000000     0x56a9 build/Trinket_USB_2/debug/_ext/2108104030/drv_usbfsv1.o
  .debug_info    0x000056a9     0x6704 build/Trinket_USB_2/debug/_ext/2108104030/drv_usbfsv1_device.o
- .debug_info    0x0000bdad      0xa5d build/Trinket_USB_2/debug/_ext/1796475310/plib_clock.o
- .debug_info    0x0000c80a      0x343 build/Trinket_USB_2/debug/_ext/1798624796/plib_evsys.o
- .debug_info    0x0000cb4d      0xa59 build/Trinket_USB_2/debug/_ext/58287938/plib_nvic.o
- .debug_info    0x0000d5a6      0x8d4 build/Trinket_USB_2/debug/_ext/1292982576/plib_nvmctrl.o
- .debug_info    0x0000de7a      0xbe4 build/Trinket_USB_2/debug/_ext/58341089/plib_port.o
- .debug_info    0x0000ea5e      0x99d build/Trinket_USB_2/debug/_ext/1961919639/sys_int.o
- .debug_info    0x0000f3fb     0x5de9 build/Trinket_USB_2/debug/_ext/1390297478/usb_device.o
- .debug_info    0x000151e4     0x3e7d build/Trinket_USB_2/debug/_ext/1390297478/usb_device_cdc.o
- .debug_info    0x00019061     0x1948 build/Trinket_USB_2/debug/_ext/1390297478/usb_device_cdc_acm.o
- .debug_info    0x0001a9a9     0x4111 build/Trinket_USB_2/debug/_ext/1189347772/initialization.o
- .debug_info    0x0001eaba     0x3465 build/Trinket_USB_2/debug/_ext/1189347772/interrupts.o
- .debug_info    0x00021f1f     0x2eee build/Trinket_USB_2/debug/_ext/1189347772/exceptions.o
- .debug_info    0x00024e0d      0x4d7 build/Trinket_USB_2/debug/_ext/1189347772/startup_xc32.o
- .debug_info    0x000252e4     0x3968 build/Trinket_USB_2/debug/_ext/1189347772/usb_device_init_data.o
- .debug_info    0x00028c4c     0x2f04 build/Trinket_USB_2/debug/_ext/1189347772/tasks.o
- .debug_info    0x0002bb50     0x2edd build/Trinket_USB_2/debug/_ext/1360937237/main.o
- .debug_info    0x0002ea2d     0x4098 build/Trinket_USB_2/debug/_ext/1360937237/app_usb.o
- .debug_info    0x00032ac5      0xde7 build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
- .debug_info    0x000338ac      0xc71 build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
- .debug_info    0x0003451d     0x2a8a build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+ .debug_info    0x0000bdad      0xde7 build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
+ .debug_info    0x0000cb94      0xa5d build/Trinket_USB_2/debug/_ext/1796475310/plib_clock.o
+ .debug_info    0x0000d5f1      0x343 build/Trinket_USB_2/debug/_ext/1798624796/plib_evsys.o
+ .debug_info    0x0000d934      0xa59 build/Trinket_USB_2/debug/_ext/58287938/plib_nvic.o
+ .debug_info    0x0000e38d      0x8d4 build/Trinket_USB_2/debug/_ext/1292982576/plib_nvmctrl.o
+ .debug_info    0x0000ec61      0xbe4 build/Trinket_USB_2/debug/_ext/58341089/plib_port.o
+ .debug_info    0x0000f845      0xc71 build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
+ .debug_info    0x000104b6      0x99d build/Trinket_USB_2/debug/_ext/1961919639/sys_int.o
+ .debug_info    0x00010e53     0x2a8a build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+ .debug_info    0x000138dd     0x5de9 build/Trinket_USB_2/debug/_ext/1390297478/usb_device.o
+ .debug_info    0x000196c6     0x3e7d build/Trinket_USB_2/debug/_ext/1390297478/usb_device_cdc.o
+ .debug_info    0x0001d543     0x1948 build/Trinket_USB_2/debug/_ext/1390297478/usb_device_cdc_acm.o
+ .debug_info    0x0001ee8b     0x4111 build/Trinket_USB_2/debug/_ext/1189347772/initialization.o
+ .debug_info    0x00022f9c     0x3465 build/Trinket_USB_2/debug/_ext/1189347772/interrupts.o
+ .debug_info    0x00026401     0x2eee build/Trinket_USB_2/debug/_ext/1189347772/exceptions.o
+ .debug_info    0x000292ef      0x4d7 build/Trinket_USB_2/debug/_ext/1189347772/startup_xc32.o
+ .debug_info    0x000297c6     0x3968 build/Trinket_USB_2/debug/_ext/1189347772/usb_device_init_data.o
+ .debug_info    0x0002d12e     0x2f04 build/Trinket_USB_2/debug/_ext/1189347772/tasks.o
+ .debug_info    0x00030032     0x2edd build/Trinket_USB_2/debug/_ext/1360937237/main.o
+ .debug_info    0x00032f0f     0x4098 build/Trinket_USB_2/debug/_ext/1360937237/app_usb.o
  .debug_info    0x00036fa7      0x2d1 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libpic32c.a(data_init.o)
  .debug_info    0x00037278      0x6a9 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libg-musl.a(__libc_start_main.o)
  .debug_info    0x00037921      0x5d5 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libg-musl.a(libc.o)
@@ -1438,26 +1437,26 @@ LOAD data_init
 .debug_abbrev   0x00000000     0x566c
  .debug_abbrev  0x00000000      0x4e5 build/Trinket_USB_2/debug/_ext/2108104030/drv_usbfsv1.o
  .debug_abbrev  0x000004e5      0x5ed build/Trinket_USB_2/debug/_ext/2108104030/drv_usbfsv1_device.o
- .debug_abbrev  0x00000ad2      0x13e build/Trinket_USB_2/debug/_ext/1796475310/plib_clock.o
- .debug_abbrev  0x00000c10       0x3b build/Trinket_USB_2/debug/_ext/1798624796/plib_evsys.o
- .debug_abbrev  0x00000c4b      0x1e1 build/Trinket_USB_2/debug/_ext/58287938/plib_nvic.o
- .debug_abbrev  0x00000e2c      0x1b1 build/Trinket_USB_2/debug/_ext/1292982576/plib_nvmctrl.o
- .debug_abbrev  0x00000fdd      0x1d6 build/Trinket_USB_2/debug/_ext/58341089/plib_port.o
- .debug_abbrev  0x000011b3      0x246 build/Trinket_USB_2/debug/_ext/1961919639/sys_int.o
- .debug_abbrev  0x000013f9      0x4e6 build/Trinket_USB_2/debug/_ext/1390297478/usb_device.o
- .debug_abbrev  0x000018df      0x505 build/Trinket_USB_2/debug/_ext/1390297478/usb_device_cdc.o
- .debug_abbrev  0x00001de4      0x205 build/Trinket_USB_2/debug/_ext/1390297478/usb_device_cdc_acm.o
- .debug_abbrev  0x00001fe9      0x2df build/Trinket_USB_2/debug/_ext/1189347772/initialization.o
- .debug_abbrev  0x000022c8      0x21d build/Trinket_USB_2/debug/_ext/1189347772/interrupts.o
- .debug_abbrev  0x000024e5      0x1ff build/Trinket_USB_2/debug/_ext/1189347772/exceptions.o
- .debug_abbrev  0x000026e4      0x110 build/Trinket_USB_2/debug/_ext/1189347772/startup_xc32.o
- .debug_abbrev  0x000027f4      0x248 build/Trinket_USB_2/debug/_ext/1189347772/usb_device_init_data.o
- .debug_abbrev  0x00002a3c      0x21d build/Trinket_USB_2/debug/_ext/1189347772/tasks.o
- .debug_abbrev  0x00002c59      0x238 build/Trinket_USB_2/debug/_ext/1360937237/main.o
- .debug_abbrev  0x00002e91      0x39e build/Trinket_USB_2/debug/_ext/1360937237/app_usb.o
- .debug_abbrev  0x0000322f      0x1c0 build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
- .debug_abbrev  0x000033ef      0x1e8 build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
- .debug_abbrev  0x000035d7      0x5da build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+ .debug_abbrev  0x00000ad2      0x1c0 build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
+ .debug_abbrev  0x00000c92      0x13e build/Trinket_USB_2/debug/_ext/1796475310/plib_clock.o
+ .debug_abbrev  0x00000dd0       0x3b build/Trinket_USB_2/debug/_ext/1798624796/plib_evsys.o
+ .debug_abbrev  0x00000e0b      0x1e1 build/Trinket_USB_2/debug/_ext/58287938/plib_nvic.o
+ .debug_abbrev  0x00000fec      0x1b1 build/Trinket_USB_2/debug/_ext/1292982576/plib_nvmctrl.o
+ .debug_abbrev  0x0000119d      0x1d6 build/Trinket_USB_2/debug/_ext/58341089/plib_port.o
+ .debug_abbrev  0x00001373      0x1e8 build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
+ .debug_abbrev  0x0000155b      0x246 build/Trinket_USB_2/debug/_ext/1961919639/sys_int.o
+ .debug_abbrev  0x000017a1      0x5da build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+ .debug_abbrev  0x00001d7b      0x4e6 build/Trinket_USB_2/debug/_ext/1390297478/usb_device.o
+ .debug_abbrev  0x00002261      0x505 build/Trinket_USB_2/debug/_ext/1390297478/usb_device_cdc.o
+ .debug_abbrev  0x00002766      0x205 build/Trinket_USB_2/debug/_ext/1390297478/usb_device_cdc_acm.o
+ .debug_abbrev  0x0000296b      0x2df build/Trinket_USB_2/debug/_ext/1189347772/initialization.o
+ .debug_abbrev  0x00002c4a      0x21d build/Trinket_USB_2/debug/_ext/1189347772/interrupts.o
+ .debug_abbrev  0x00002e67      0x1ff build/Trinket_USB_2/debug/_ext/1189347772/exceptions.o
+ .debug_abbrev  0x00003066      0x110 build/Trinket_USB_2/debug/_ext/1189347772/startup_xc32.o
+ .debug_abbrev  0x00003176      0x248 build/Trinket_USB_2/debug/_ext/1189347772/usb_device_init_data.o
+ .debug_abbrev  0x000033be      0x21d build/Trinket_USB_2/debug/_ext/1189347772/tasks.o
+ .debug_abbrev  0x000035db      0x238 build/Trinket_USB_2/debug/_ext/1360937237/main.o
+ .debug_abbrev  0x00003813      0x39e build/Trinket_USB_2/debug/_ext/1360937237/app_usb.o
  .debug_abbrev  0x00003bb1       0x2e c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libpic32c.a(data_init.o)
  .debug_abbrev  0x00003bdf      0x126 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libg-musl.a(__libc_start_main.o)
  .debug_abbrev  0x00003d05       0xc7 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libg-musl.a(libc.o)
@@ -1492,22 +1491,22 @@ LOAD data_init
 .debug_loc      0x00000000     0xda94
  .debug_loc     0x00000000      0x7f5 build/Trinket_USB_2/debug/_ext/2108104030/drv_usbfsv1.o
  .debug_loc     0x000007f5     0x2c1d build/Trinket_USB_2/debug/_ext/2108104030/drv_usbfsv1_device.o
- .debug_loc     0x00003412       0x8e build/Trinket_USB_2/debug/_ext/1796475310/plib_clock.o
- .debug_loc     0x000034a0       0xb2 build/Trinket_USB_2/debug/_ext/58287938/plib_nvic.o
- .debug_loc     0x00003552      0x2f9 build/Trinket_USB_2/debug/_ext/1292982576/plib_nvmctrl.o
- .debug_loc     0x0000384b      0x226 build/Trinket_USB_2/debug/_ext/58341089/plib_port.o
- .debug_loc     0x00003a71      0x17d build/Trinket_USB_2/debug/_ext/1961919639/sys_int.o
- .debug_loc     0x00003bee     0x2fc0 build/Trinket_USB_2/debug/_ext/1390297478/usb_device.o
- .debug_loc     0x00006bae     0x17ca build/Trinket_USB_2/debug/_ext/1390297478/usb_device_cdc.o
- .debug_loc     0x00008378      0x260 build/Trinket_USB_2/debug/_ext/1390297478/usb_device_cdc_acm.o
- .debug_loc     0x000085d8       0x45 build/Trinket_USB_2/debug/_ext/1189347772/initialization.o
- .debug_loc     0x0000861d       0x20 build/Trinket_USB_2/debug/_ext/1189347772/startup_xc32.o
- .debug_loc     0x0000863d       0x20 build/Trinket_USB_2/debug/_ext/1189347772/tasks.o
- .debug_loc     0x0000865d       0x20 build/Trinket_USB_2/debug/_ext/1360937237/main.o
- .debug_loc     0x0000867d      0x4eb build/Trinket_USB_2/debug/_ext/1360937237/app_usb.o
- .debug_loc     0x00008b68      0x1a9 build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
- .debug_loc     0x00008d11       0x5f build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
- .debug_loc     0x00008d70     0x25c7 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+ .debug_loc     0x00003412      0x1a9 build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
+ .debug_loc     0x000035bb       0x8e build/Trinket_USB_2/debug/_ext/1796475310/plib_clock.o
+ .debug_loc     0x00003649       0xb2 build/Trinket_USB_2/debug/_ext/58287938/plib_nvic.o
+ .debug_loc     0x000036fb      0x2f9 build/Trinket_USB_2/debug/_ext/1292982576/plib_nvmctrl.o
+ .debug_loc     0x000039f4      0x226 build/Trinket_USB_2/debug/_ext/58341089/plib_port.o
+ .debug_loc     0x00003c1a       0x5f build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
+ .debug_loc     0x00003c79      0x17d build/Trinket_USB_2/debug/_ext/1961919639/sys_int.o
+ .debug_loc     0x00003df6     0x25c7 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+ .debug_loc     0x000063bd     0x2fc0 build/Trinket_USB_2/debug/_ext/1390297478/usb_device.o
+ .debug_loc     0x0000937d     0x17ca build/Trinket_USB_2/debug/_ext/1390297478/usb_device_cdc.o
+ .debug_loc     0x0000ab47      0x260 build/Trinket_USB_2/debug/_ext/1390297478/usb_device_cdc_acm.o
+ .debug_loc     0x0000ada7       0x45 build/Trinket_USB_2/debug/_ext/1189347772/initialization.o
+ .debug_loc     0x0000adec       0x20 build/Trinket_USB_2/debug/_ext/1189347772/startup_xc32.o
+ .debug_loc     0x0000ae0c       0x20 build/Trinket_USB_2/debug/_ext/1189347772/tasks.o
+ .debug_loc     0x0000ae2c       0x20 build/Trinket_USB_2/debug/_ext/1360937237/main.o
+ .debug_loc     0x0000ae4c      0x4eb build/Trinket_USB_2/debug/_ext/1360937237/app_usb.o
  .debug_loc     0x0000b337       0x14 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libpic32c.a(data_init.o)
  .debug_loc     0x0000b34b       0x5e c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libg-musl.a(__libc_start_main.o)
  .debug_loc     0x0000b3a9       0x86 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libg-musl.a(__sio_sprintf_fs.o)
@@ -1536,45 +1535,45 @@ LOAD data_init
  .debug_aranges
                 0x00000080       0xb8 build/Trinket_USB_2/debug/_ext/2108104030/drv_usbfsv1_device.o
  .debug_aranges
-                0x00000138       0x20 build/Trinket_USB_2/debug/_ext/1796475310/plib_clock.o
+                0x00000138       0x78 build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
  .debug_aranges
-                0x00000158       0x20 build/Trinket_USB_2/debug/_ext/1798624796/plib_evsys.o
+                0x000001b0       0x20 build/Trinket_USB_2/debug/_ext/1796475310/plib_clock.o
  .debug_aranges
-                0x00000178       0x38 build/Trinket_USB_2/debug/_ext/58287938/plib_nvic.o
+                0x000001d0       0x20 build/Trinket_USB_2/debug/_ext/1798624796/plib_evsys.o
  .debug_aranges
-                0x000001b0       0x70 build/Trinket_USB_2/debug/_ext/1292982576/plib_nvmctrl.o
+                0x000001f0       0x38 build/Trinket_USB_2/debug/_ext/58287938/plib_nvic.o
  .debug_aranges
-                0x00000220       0x70 build/Trinket_USB_2/debug/_ext/58341089/plib_port.o
+                0x00000228       0x70 build/Trinket_USB_2/debug/_ext/1292982576/plib_nvmctrl.o
  .debug_aranges
-                0x00000290       0x40 build/Trinket_USB_2/debug/_ext/1961919639/sys_int.o
+                0x00000298       0x70 build/Trinket_USB_2/debug/_ext/58341089/plib_port.o
  .debug_aranges
-                0x000002d0      0x1a0 build/Trinket_USB_2/debug/_ext/1390297478/usb_device.o
+                0x00000308       0x78 build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
  .debug_aranges
-                0x00000470       0x88 build/Trinket_USB_2/debug/_ext/1390297478/usb_device_cdc.o
+                0x00000380       0x40 build/Trinket_USB_2/debug/_ext/1961919639/sys_int.o
  .debug_aranges
-                0x000004f8       0x20 build/Trinket_USB_2/debug/_ext/1390297478/usb_device_cdc_acm.o
+                0x000003c0      0x130 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
  .debug_aranges
-                0x00000518       0x20 build/Trinket_USB_2/debug/_ext/1189347772/initialization.o
+                0x000004f0      0x1a0 build/Trinket_USB_2/debug/_ext/1390297478/usb_device.o
  .debug_aranges
-                0x00000538       0x20 build/Trinket_USB_2/debug/_ext/1189347772/interrupts.o
+                0x00000690       0x88 build/Trinket_USB_2/debug/_ext/1390297478/usb_device_cdc.o
  .debug_aranges
-                0x00000558       0x28 build/Trinket_USB_2/debug/_ext/1189347772/exceptions.o
+                0x00000718       0x20 build/Trinket_USB_2/debug/_ext/1390297478/usb_device_cdc_acm.o
  .debug_aranges
-                0x00000580       0x28 build/Trinket_USB_2/debug/_ext/1189347772/startup_xc32.o
+                0x00000738       0x20 build/Trinket_USB_2/debug/_ext/1189347772/initialization.o
  .debug_aranges
-                0x000005a8       0x18 build/Trinket_USB_2/debug/_ext/1189347772/usb_device_init_data.o
+                0x00000758       0x20 build/Trinket_USB_2/debug/_ext/1189347772/interrupts.o
  .debug_aranges
-                0x000005c0       0x20 build/Trinket_USB_2/debug/_ext/1189347772/tasks.o
+                0x00000778       0x28 build/Trinket_USB_2/debug/_ext/1189347772/exceptions.o
  .debug_aranges
-                0x000005e0       0x20 build/Trinket_USB_2/debug/_ext/1360937237/main.o
+                0x000007a0       0x28 build/Trinket_USB_2/debug/_ext/1189347772/startup_xc32.o
  .debug_aranges
-                0x00000600       0x48 build/Trinket_USB_2/debug/_ext/1360937237/app_usb.o
+                0x000007c8       0x18 build/Trinket_USB_2/debug/_ext/1189347772/usb_device_init_data.o
  .debug_aranges
-                0x00000648       0x78 build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
+                0x000007e0       0x20 build/Trinket_USB_2/debug/_ext/1189347772/tasks.o
  .debug_aranges
-                0x000006c0       0x78 build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
+                0x00000800       0x20 build/Trinket_USB_2/debug/_ext/1360937237/main.o
  .debug_aranges
-                0x00000738      0x130 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+                0x00000820       0x48 build/Trinket_USB_2/debug/_ext/1360937237/app_usb.o
  .debug_aranges
                 0x00000868       0x20 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libpic32c.a(data_init.o)
  .debug_aranges
@@ -1639,25 +1638,25 @@ LOAD data_init
 .debug_ranges   0x00000000      0xa98
  .debug_ranges  0x00000000       0x70 build/Trinket_USB_2/debug/_ext/2108104030/drv_usbfsv1.o
  .debug_ranges  0x00000070      0x168 build/Trinket_USB_2/debug/_ext/2108104030/drv_usbfsv1_device.o
- .debug_ranges  0x000001d8       0x28 build/Trinket_USB_2/debug/_ext/1796475310/plib_clock.o
- .debug_ranges  0x00000200       0x10 build/Trinket_USB_2/debug/_ext/1798624796/plib_evsys.o
- .debug_ranges  0x00000210       0x28 build/Trinket_USB_2/debug/_ext/58287938/plib_nvic.o
- .debug_ranges  0x00000238       0x60 build/Trinket_USB_2/debug/_ext/1292982576/plib_nvmctrl.o
- .debug_ranges  0x00000298       0x60 build/Trinket_USB_2/debug/_ext/58341089/plib_port.o
- .debug_ranges  0x000002f8       0x48 build/Trinket_USB_2/debug/_ext/1961919639/sys_int.o
- .debug_ranges  0x00000340      0x190 build/Trinket_USB_2/debug/_ext/1390297478/usb_device.o
- .debug_ranges  0x000004d0       0xc0 build/Trinket_USB_2/debug/_ext/1390297478/usb_device_cdc.o
- .debug_ranges  0x00000590       0x10 build/Trinket_USB_2/debug/_ext/1390297478/usb_device_cdc_acm.o
- .debug_ranges  0x000005a0       0x10 build/Trinket_USB_2/debug/_ext/1189347772/initialization.o
- .debug_ranges  0x000005b0       0x10 build/Trinket_USB_2/debug/_ext/1189347772/interrupts.o
- .debug_ranges  0x000005c0       0x18 build/Trinket_USB_2/debug/_ext/1189347772/exceptions.o
- .debug_ranges  0x000005d8       0x18 build/Trinket_USB_2/debug/_ext/1189347772/startup_xc32.o
- .debug_ranges  0x000005f0       0x10 build/Trinket_USB_2/debug/_ext/1189347772/tasks.o
- .debug_ranges  0x00000600       0x10 build/Trinket_USB_2/debug/_ext/1360937237/main.o
- .debug_ranges  0x00000610       0x38 build/Trinket_USB_2/debug/_ext/1360937237/app_usb.o
- .debug_ranges  0x00000648       0x68 build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
- .debug_ranges  0x000006b0       0x68 build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
- .debug_ranges  0x00000718      0x1a8 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+ .debug_ranges  0x000001d8       0x68 build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
+ .debug_ranges  0x00000240       0x28 build/Trinket_USB_2/debug/_ext/1796475310/plib_clock.o
+ .debug_ranges  0x00000268       0x10 build/Trinket_USB_2/debug/_ext/1798624796/plib_evsys.o
+ .debug_ranges  0x00000278       0x28 build/Trinket_USB_2/debug/_ext/58287938/plib_nvic.o
+ .debug_ranges  0x000002a0       0x60 build/Trinket_USB_2/debug/_ext/1292982576/plib_nvmctrl.o
+ .debug_ranges  0x00000300       0x60 build/Trinket_USB_2/debug/_ext/58341089/plib_port.o
+ .debug_ranges  0x00000360       0x68 build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
+ .debug_ranges  0x000003c8       0x48 build/Trinket_USB_2/debug/_ext/1961919639/sys_int.o
+ .debug_ranges  0x00000410      0x1a8 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+ .debug_ranges  0x000005b8      0x190 build/Trinket_USB_2/debug/_ext/1390297478/usb_device.o
+ .debug_ranges  0x00000748       0xc0 build/Trinket_USB_2/debug/_ext/1390297478/usb_device_cdc.o
+ .debug_ranges  0x00000808       0x10 build/Trinket_USB_2/debug/_ext/1390297478/usb_device_cdc_acm.o
+ .debug_ranges  0x00000818       0x10 build/Trinket_USB_2/debug/_ext/1189347772/initialization.o
+ .debug_ranges  0x00000828       0x10 build/Trinket_USB_2/debug/_ext/1189347772/interrupts.o
+ .debug_ranges  0x00000838       0x18 build/Trinket_USB_2/debug/_ext/1189347772/exceptions.o
+ .debug_ranges  0x00000850       0x18 build/Trinket_USB_2/debug/_ext/1189347772/startup_xc32.o
+ .debug_ranges  0x00000868       0x10 build/Trinket_USB_2/debug/_ext/1189347772/tasks.o
+ .debug_ranges  0x00000878       0x10 build/Trinket_USB_2/debug/_ext/1360937237/main.o
+ .debug_ranges  0x00000888       0x38 build/Trinket_USB_2/debug/_ext/1360937237/app_usb.o
  .debug_ranges  0x000008c0       0x10 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libpic32c.a(data_init.o)
  .debug_ranges  0x000008d0       0x30 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libg-musl.a(__libc_start_main.o)
  .debug_ranges  0x00000900       0x18 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libg-musl.a(__sio_sprintf_fs.o)
@@ -1682,26 +1681,26 @@ LOAD data_init
 .debug_line     0x00000000     0xd306
  .debug_line    0x00000000      0x9b8 build/Trinket_USB_2/debug/_ext/2108104030/drv_usbfsv1.o
  .debug_line    0x000009b8     0x1eeb build/Trinket_USB_2/debug/_ext/2108104030/drv_usbfsv1_device.o
- .debug_line    0x000028a3      0x1f2 build/Trinket_USB_2/debug/_ext/1796475310/plib_clock.o
- .debug_line    0x00002a95       0x6c build/Trinket_USB_2/debug/_ext/1798624796/plib_evsys.o
- .debug_line    0x00002b01      0x2e8 build/Trinket_USB_2/debug/_ext/58287938/plib_nvic.o
- .debug_line    0x00002de9      0x2f0 build/Trinket_USB_2/debug/_ext/1292982576/plib_nvmctrl.o
- .debug_line    0x000030d9      0x2b0 build/Trinket_USB_2/debug/_ext/58341089/plib_port.o
- .debug_line    0x00003389      0x2d7 build/Trinket_USB_2/debug/_ext/1961919639/sys_int.o
- .debug_line    0x00003660     0x18f2 build/Trinket_USB_2/debug/_ext/1390297478/usb_device.o
- .debug_line    0x00004f52      0xcd8 build/Trinket_USB_2/debug/_ext/1390297478/usb_device_cdc.o
- .debug_line    0x00005c2a      0x252 build/Trinket_USB_2/debug/_ext/1390297478/usb_device_cdc_acm.o
- .debug_line    0x00005e7c      0x5dc build/Trinket_USB_2/debug/_ext/1189347772/initialization.o
- .debug_line    0x00006458      0x365 build/Trinket_USB_2/debug/_ext/1189347772/interrupts.o
- .debug_line    0x000067bd      0x368 build/Trinket_USB_2/debug/_ext/1189347772/exceptions.o
- .debug_line    0x00006b25      0x160 build/Trinket_USB_2/debug/_ext/1189347772/startup_xc32.o
- .debug_line    0x00006c85      0x352 build/Trinket_USB_2/debug/_ext/1189347772/usb_device_init_data.o
- .debug_line    0x00006fd7      0x367 build/Trinket_USB_2/debug/_ext/1189347772/tasks.o
- .debug_line    0x0000733e      0x354 build/Trinket_USB_2/debug/_ext/1360937237/main.o
- .debug_line    0x00007692      0x72d build/Trinket_USB_2/debug/_ext/1360937237/app_usb.o
- .debug_line    0x00007dbf      0x380 build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
- .debug_line    0x0000813f      0x340 build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
- .debug_line    0x0000847f     0x12a6 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+ .debug_line    0x000028a3      0x380 build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
+ .debug_line    0x00002c23      0x1f2 build/Trinket_USB_2/debug/_ext/1796475310/plib_clock.o
+ .debug_line    0x00002e15       0x6c build/Trinket_USB_2/debug/_ext/1798624796/plib_evsys.o
+ .debug_line    0x00002e81      0x2e8 build/Trinket_USB_2/debug/_ext/58287938/plib_nvic.o
+ .debug_line    0x00003169      0x2f0 build/Trinket_USB_2/debug/_ext/1292982576/plib_nvmctrl.o
+ .debug_line    0x00003459      0x2b0 build/Trinket_USB_2/debug/_ext/58341089/plib_port.o
+ .debug_line    0x00003709      0x340 build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
+ .debug_line    0x00003a49      0x2d7 build/Trinket_USB_2/debug/_ext/1961919639/sys_int.o
+ .debug_line    0x00003d20     0x12a6 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+ .debug_line    0x00004fc6     0x18f2 build/Trinket_USB_2/debug/_ext/1390297478/usb_device.o
+ .debug_line    0x000068b8      0xcd8 build/Trinket_USB_2/debug/_ext/1390297478/usb_device_cdc.o
+ .debug_line    0x00007590      0x252 build/Trinket_USB_2/debug/_ext/1390297478/usb_device_cdc_acm.o
+ .debug_line    0x000077e2      0x5dc build/Trinket_USB_2/debug/_ext/1189347772/initialization.o
+ .debug_line    0x00007dbe      0x365 build/Trinket_USB_2/debug/_ext/1189347772/interrupts.o
+ .debug_line    0x00008123      0x368 build/Trinket_USB_2/debug/_ext/1189347772/exceptions.o
+ .debug_line    0x0000848b      0x160 build/Trinket_USB_2/debug/_ext/1189347772/startup_xc32.o
+ .debug_line    0x000085eb      0x352 build/Trinket_USB_2/debug/_ext/1189347772/usb_device_init_data.o
+ .debug_line    0x0000893d      0x367 build/Trinket_USB_2/debug/_ext/1189347772/tasks.o
+ .debug_line    0x00008ca4      0x354 build/Trinket_USB_2/debug/_ext/1360937237/main.o
+ .debug_line    0x00008ff8      0x72d build/Trinket_USB_2/debug/_ext/1360937237/app_usb.o
  .debug_line    0x00009725      0x132 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libpic32c.a(data_init.o)
  .debug_line    0x00009857      0x241 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libg-musl.a(__libc_start_main.o)
  .debug_line    0x00009a98      0x132 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libg-musl.a(libc.o)
@@ -1736,26 +1735,26 @@ LOAD data_init
 .debug_str      0x00000000     0x1bff
  .debug_str     0x00000000      0x325 build/Trinket_USB_2/debug/_ext/2108104030/drv_usbfsv1.o
  .debug_str     0x00000325      0x2f4 build/Trinket_USB_2/debug/_ext/2108104030/drv_usbfsv1_device.o
- .debug_str     0x00000619       0x28 build/Trinket_USB_2/debug/_ext/1796475310/plib_clock.o
- .debug_str     0x00000641        0x0 build/Trinket_USB_2/debug/_ext/1798624796/plib_evsys.o
- .debug_str     0x00000641        0xa build/Trinket_USB_2/debug/_ext/58287938/plib_nvic.o
- .debug_str     0x0000064b       0x11 build/Trinket_USB_2/debug/_ext/1292982576/plib_nvmctrl.o
- .debug_str     0x0000065c        0xb build/Trinket_USB_2/debug/_ext/58341089/plib_port.o
- .debug_str     0x00000667       0x32 build/Trinket_USB_2/debug/_ext/1961919639/sys_int.o
- .debug_str     0x00000699      0x2cc build/Trinket_USB_2/debug/_ext/1390297478/usb_device.o
- .debug_str     0x00000965      0x1f5 build/Trinket_USB_2/debug/_ext/1390297478/usb_device_cdc.o
- .debug_str     0x00000b5a       0x27 build/Trinket_USB_2/debug/_ext/1390297478/usb_device_cdc_acm.o
- .debug_str     0x00000b81      0x283 build/Trinket_USB_2/debug/_ext/1189347772/initialization.o
- .debug_str     0x00000e04       0x9c build/Trinket_USB_2/debug/_ext/1189347772/interrupts.o
- .debug_str     0x00000ea0       0x9c build/Trinket_USB_2/debug/_ext/1189347772/exceptions.o
- .debug_str     0x00000f3c       0x2f build/Trinket_USB_2/debug/_ext/1189347772/startup_xc32.o
- .debug_str     0x00000f6b       0xd9 build/Trinket_USB_2/debug/_ext/1189347772/usb_device_init_data.o
- .debug_str     0x00001044       0xcd build/Trinket_USB_2/debug/_ext/1189347772/tasks.o
- .debug_str     0x00001111       0xb5 build/Trinket_USB_2/debug/_ext/1360937237/main.o
- .debug_str     0x000011c6      0x22e build/Trinket_USB_2/debug/_ext/1360937237/app_usb.o
- .debug_str     0x000013f4       0x19 build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
- .debug_str     0x0000140d       0xa7 build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
- .debug_str     0x000014b4      0x140 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+ .debug_str     0x00000619       0x19 build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
+ .debug_str     0x00000632       0x28 build/Trinket_USB_2/debug/_ext/1796475310/plib_clock.o
+ .debug_str     0x0000065a        0x0 build/Trinket_USB_2/debug/_ext/1798624796/plib_evsys.o
+ .debug_str     0x0000065a        0xa build/Trinket_USB_2/debug/_ext/58287938/plib_nvic.o
+ .debug_str     0x00000664       0x11 build/Trinket_USB_2/debug/_ext/1292982576/plib_nvmctrl.o
+ .debug_str     0x00000675        0xb build/Trinket_USB_2/debug/_ext/58341089/plib_port.o
+ .debug_str     0x00000680       0xa7 build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
+ .debug_str     0x00000727       0x32 build/Trinket_USB_2/debug/_ext/1961919639/sys_int.o
+ .debug_str     0x00000759      0x140 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+ .debug_str     0x00000899      0x2cc build/Trinket_USB_2/debug/_ext/1390297478/usb_device.o
+ .debug_str     0x00000b65      0x1f5 build/Trinket_USB_2/debug/_ext/1390297478/usb_device_cdc.o
+ .debug_str     0x00000d5a       0x27 build/Trinket_USB_2/debug/_ext/1390297478/usb_device_cdc_acm.o
+ .debug_str     0x00000d81      0x283 build/Trinket_USB_2/debug/_ext/1189347772/initialization.o
+ .debug_str     0x00001004       0x9c build/Trinket_USB_2/debug/_ext/1189347772/interrupts.o
+ .debug_str     0x000010a0       0x9c build/Trinket_USB_2/debug/_ext/1189347772/exceptions.o
+ .debug_str     0x0000113c       0x2f build/Trinket_USB_2/debug/_ext/1189347772/startup_xc32.o
+ .debug_str     0x0000116b       0xd9 build/Trinket_USB_2/debug/_ext/1189347772/usb_device_init_data.o
+ .debug_str     0x00001244       0xcd build/Trinket_USB_2/debug/_ext/1189347772/tasks.o
+ .debug_str     0x00001311       0xb5 build/Trinket_USB_2/debug/_ext/1360937237/main.o
+ .debug_str     0x000013c6      0x22e build/Trinket_USB_2/debug/_ext/1360937237/app_usb.o
  .debug_str     0x000015f4        0x0 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libpic32c.a(data_init.o)
  .debug_str     0x000015f4        0x0 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libg-musl.a(__libc_start_main.o)
  .debug_str     0x000015f4        0x0 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libg-musl.a(libc.o)
@@ -1790,25 +1789,25 @@ LOAD data_init
 .debug_frame    0x00000000     0x1820
  .debug_frame   0x00000000      0x128 build/Trinket_USB_2/debug/_ext/2108104030/drv_usbfsv1.o
  .debug_frame   0x00000128      0x21c build/Trinket_USB_2/debug/_ext/2108104030/drv_usbfsv1_device.o
- .debug_frame   0x00000344       0x20 build/Trinket_USB_2/debug/_ext/1796475310/plib_clock.o
- .debug_frame   0x00000364       0x20 build/Trinket_USB_2/debug/_ext/1798624796/plib_evsys.o
- .debug_frame   0x00000384       0x50 build/Trinket_USB_2/debug/_ext/58287938/plib_nvic.o
- .debug_frame   0x000003d4       0xd4 build/Trinket_USB_2/debug/_ext/1292982576/plib_nvmctrl.o
- .debug_frame   0x000004a8       0xcc build/Trinket_USB_2/debug/_ext/58341089/plib_port.o
- .debug_frame   0x00000574       0x84 build/Trinket_USB_2/debug/_ext/1961919639/sys_int.o
- .debug_frame   0x000005f8      0x524 build/Trinket_USB_2/debug/_ext/1390297478/usb_device.o
- .debug_frame   0x00000b1c      0x174 build/Trinket_USB_2/debug/_ext/1390297478/usb_device_cdc.o
- .debug_frame   0x00000c90       0x28 build/Trinket_USB_2/debug/_ext/1390297478/usb_device_cdc_acm.o
- .debug_frame   0x00000cb8       0x28 build/Trinket_USB_2/debug/_ext/1189347772/initialization.o
- .debug_frame   0x00000ce0       0x20 build/Trinket_USB_2/debug/_ext/1189347772/interrupts.o
- .debug_frame   0x00000d00       0x30 build/Trinket_USB_2/debug/_ext/1189347772/exceptions.o
- .debug_frame   0x00000d30       0x38 build/Trinket_USB_2/debug/_ext/1189347772/startup_xc32.o
- .debug_frame   0x00000d68       0x28 build/Trinket_USB_2/debug/_ext/1189347772/tasks.o
- .debug_frame   0x00000d90       0x28 build/Trinket_USB_2/debug/_ext/1360937237/main.o
- .debug_frame   0x00000db8       0x94 build/Trinket_USB_2/debug/_ext/1360937237/app_usb.o
- .debug_frame   0x00000e4c       0xd8 build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
- .debug_frame   0x00000f24       0xd8 build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
- .debug_frame   0x00000ffc      0x3a0 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+ .debug_frame   0x00000344       0xd8 build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
+ .debug_frame   0x0000041c       0x20 build/Trinket_USB_2/debug/_ext/1796475310/plib_clock.o
+ .debug_frame   0x0000043c       0x20 build/Trinket_USB_2/debug/_ext/1798624796/plib_evsys.o
+ .debug_frame   0x0000045c       0x50 build/Trinket_USB_2/debug/_ext/58287938/plib_nvic.o
+ .debug_frame   0x000004ac       0xd4 build/Trinket_USB_2/debug/_ext/1292982576/plib_nvmctrl.o
+ .debug_frame   0x00000580       0xcc build/Trinket_USB_2/debug/_ext/58341089/plib_port.o
+ .debug_frame   0x0000064c       0xd8 build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
+ .debug_frame   0x00000724       0x84 build/Trinket_USB_2/debug/_ext/1961919639/sys_int.o
+ .debug_frame   0x000007a8      0x3a0 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+ .debug_frame   0x00000b48      0x524 build/Trinket_USB_2/debug/_ext/1390297478/usb_device.o
+ .debug_frame   0x0000106c      0x174 build/Trinket_USB_2/debug/_ext/1390297478/usb_device_cdc.o
+ .debug_frame   0x000011e0       0x28 build/Trinket_USB_2/debug/_ext/1390297478/usb_device_cdc_acm.o
+ .debug_frame   0x00001208       0x28 build/Trinket_USB_2/debug/_ext/1189347772/initialization.o
+ .debug_frame   0x00001230       0x20 build/Trinket_USB_2/debug/_ext/1189347772/interrupts.o
+ .debug_frame   0x00001250       0x30 build/Trinket_USB_2/debug/_ext/1189347772/exceptions.o
+ .debug_frame   0x00001280       0x38 build/Trinket_USB_2/debug/_ext/1189347772/startup_xc32.o
+ .debug_frame   0x000012b8       0x28 build/Trinket_USB_2/debug/_ext/1189347772/tasks.o
+ .debug_frame   0x000012e0       0x28 build/Trinket_USB_2/debug/_ext/1360937237/main.o
+ .debug_frame   0x00001308       0x94 build/Trinket_USB_2/debug/_ext/1360937237/app_usb.o
  .debug_frame   0x0000139c       0x34 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libpic32c.a(data_init.o)
  .debug_frame   0x000013d0       0x38 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libg-musl.a(__libc_start_main.o)
  .debug_frame   0x00001408       0x44 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libg-musl.a(__sio_sprintf_fs.o)
@@ -2273,17 +2272,17 @@ LOAD data_init
                 0x0000387c       0x86 build/Trinket_USB_2/debug/_ext/1390297478/usb_device.o
                 0x0000387c                _USB_DEVICE_ProcessStandardEndpointRequest
 
-.text.APP_USB_USBDeviceCDCEventHandler%70
+.text.ADC_Initialize%70
                 0x00003904       0x84
- .text.APP_USB_USBDeviceCDCEventHandler
-                0x00003904       0x84 build/Trinket_USB_2/debug/_ext/1360937237/app_usb.o
-                0x00003904                APP_USB_USBDeviceCDCEventHandler
-
-.text.ADC_Initialize%71
-                0x00003988       0x84
  .text.ADC_Initialize
-                0x00003988       0x84 build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
-                0x00003988                ADC_Initialize
+                0x00003904       0x84 build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
+                0x00003904                ADC_Initialize
+
+.text.APP_USB_USBDeviceCDCEventHandler%71
+                0x00003988       0x84
+ .text.APP_USB_USBDeviceCDCEventHandler
+                0x00003988       0x84 build/Trinket_USB_2/debug/_ext/1360937237/app_usb.o
+                0x00003988                APP_USB_USBDeviceCDCEventHandler
 
 .text.DRV_USBFSV1_Tasks_ISR%72
                 0x00003a0c       0x7c
@@ -2338,22 +2337,22 @@ LOAD data_init
                 0x00003da8                __pop_ptr
                 0x00003da8                __pop_ptr_needed
 
-.text.SYS_Initialize%81
+.text.SYS_TIME_RemoveFromList%81
                 0x00003e10       0x60
- .text.SYS_Initialize
-                0x00003e10       0x60 build/Trinket_USB_2/debug/_ext/1189347772/initialization.o
-                0x00003e10                SYS_Initialize
-
-.text.SYS_TIME_RemoveFromList%82
-                0x00003e70       0x60
  .text.SYS_TIME_RemoveFromList
-                0x00003e70       0x60 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+                0x00003e10       0x60 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
 
-.text.SYS_TIME_TimerStart%83
-                0x00003ed0       0x60
+.text.SYS_TIME_TimerStart%82
+                0x00003e70       0x60
  .text.SYS_TIME_TimerStart
-                0x00003ed0       0x60 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
-                0x00003ed0                SYS_TIME_TimerStart
+                0x00003e70       0x60 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+                0x00003e70                SYS_TIME_TimerStart
+
+.text.SYS_Initialize%83
+                0x00003ed0       0x60
+ .text.SYS_Initialize
+                0x00003ed0       0x60 build/Trinket_USB_2/debug/_ext/1189347772/initialization.o
+                0x00003ed0                SYS_Initialize
 
 .text.__libc_start_init%84
                 0x00003f30       0x5c
@@ -2430,16 +2429,16 @@ LOAD data_init
                 0x000042ec       0x46 build/Trinket_USB_2/debug/_ext/1390297478/usb_device.o
                 0x000042ec                USB_DEVICE_ControlSend
 
-.rodata.fullSpeedConfigurationDescriptor%97
+.text.SYS_TIME_TimerAdd%97
                 0x00004334       0x44
- .rodata.fullSpeedConfigurationDescriptor
-                0x00004334       0x44 build/Trinket_USB_2/debug/_ext/1189347772/usb_device_init_data.o
-                0x00004334                fullSpeedConfigurationDescriptor
-
-.text.SYS_TIME_TimerAdd%98
-                0x00004378       0x44
  .text.SYS_TIME_TimerAdd
-                0x00004378       0x44 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+                0x00004334       0x44 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+
+.rodata.fullSpeedConfigurationDescriptor%98
+                0x00004378       0x44
+ .rodata.fullSpeedConfigurationDescriptor
+                0x00004378       0x44 build/Trinket_USB_2/debug/_ext/1189347772/usb_device_init_data.o
+                0x00004378                fullSpeedConfigurationDescriptor
 
 .text.__aeabi_f2d%99
                 0x000043bc       0x44
@@ -2453,28 +2452,28 @@ LOAD data_init
                 0x00004400       0x40 build/Trinket_USB_2/debug/_ext/58287938/plib_nvic.o
                 0x00004400                NVIC_Initialize
 
-.text._USB_DEVICE_FindEndpoint%101
+.text.TC3_TimerInitialize%101
                 0x00004440       0x40
- .text._USB_DEVICE_FindEndpoint
-                0x00004440       0x40 build/Trinket_USB_2/debug/_ext/1390297478/usb_device.o
-                0x00004440                _USB_DEVICE_FindEndpoint
-
-.text.TC3_TimerInitialize%102
-                0x00004480       0x40
  .text.TC3_TimerInitialize
-                0x00004480       0x40 build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
-                0x00004480                TC3_TimerInitialize
+                0x00004440       0x40 build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
+                0x00004440                TC3_TimerInitialize
 
-.text.SYS_TIME_GetTimerObject%103
-                0x000044c0       0x40
+.text.SYS_TIME_GetTimerObject%102
+                0x00004480       0x40
  .text.SYS_TIME_GetTimerObject
-                0x000044c0       0x40 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+                0x00004480       0x40 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
 
-.text.SYS_TIME_TimerDestroy%104
-                0x00004500       0x40
+.text.SYS_TIME_TimerDestroy%103
+                0x000044c0       0x40
  .text.SYS_TIME_TimerDestroy
-                0x00004500       0x40 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
-                0x00004500                SYS_TIME_TimerDestroy
+                0x000044c0       0x40 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+                0x000044c0                SYS_TIME_TimerDestroy
+
+.text._USB_DEVICE_FindEndpoint%104
+                0x00004500       0x40
+ .text._USB_DEVICE_FindEndpoint
+                0x00004500       0x40 build/Trinket_USB_2/debug/_ext/1390297478/usb_device.o
+                0x00004500                _USB_DEVICE_FindEndpoint
 
 .text.__aeabi_dcmpgt%105
                 0x00004540       0x40
@@ -2518,26 +2517,26 @@ LOAD data_init
                 0x000046f4       0x38 build/Trinket_USB_2/debug/_ext/2108104030/drv_usbfsv1_device.o
                 0x000046f4                _DRV_USBFSV1_DEVICE_Initialize
 
-.text._USB_DEVICE_CDC_Deinitialization%113
+.text.SYS_TIME_UpdateTimerList%113
                 0x0000472c       0x38
- .text._USB_DEVICE_CDC_Deinitialization
-                0x0000472c       0x38 build/Trinket_USB_2/debug/_ext/1390297478/usb_device_cdc.o
-                0x0000472c                _USB_DEVICE_CDC_Deinitialization
-
-.text.SYS_TIME_UpdateTimerList%114
-                0x00004764       0x38
  .text.SYS_TIME_UpdateTimerList
-                0x00004764       0x38 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+                0x0000472c       0x38 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
 
-.rodata.sd001%115
+.text._USB_DEVICE_CDC_Deinitialization%114
+                0x00004764       0x38
+ .text._USB_DEVICE_CDC_Deinitialization
+                0x00004764       0x38 build/Trinket_USB_2/debug/_ext/1390297478/usb_device_cdc.o
+                0x00004764                _USB_DEVICE_CDC_Deinitialization
+
+.text.SYS_TIME_ResourceLock%115
                 0x0000479c       0x34
- .rodata.sd001  0x0000479c       0x34 build/Trinket_USB_2/debug/_ext/1189347772/usb_device_init_data.o
-                0x0000479c                sd001
-
-.text.SYS_TIME_ResourceLock%116
-                0x000047d0       0x34
  .text.SYS_TIME_ResourceLock
-                0x000047d0       0x34 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+                0x0000479c       0x34 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+
+.rodata.sd001%116
+                0x000047d0       0x34
+ .rodata.sd001  0x000047d0       0x34 build/Trinket_USB_2/debug/_ext/1189347772/usb_device_init_data.o
+                0x000047d0                sd001
 
 .text.__aeabi_d2iz%117
                 0x00004804       0x34
@@ -2557,15 +2556,15 @@ LOAD data_init
                 0x0000486c       0x30 build/Trinket_USB_2/debug/_ext/58341089/plib_port.o
                 0x0000486c                PORT_Initialize
 
-.rodata.sd002%120
+.text.SYS_TIME_ResourceUnlock%120
                 0x0000489c       0x30
- .rodata.sd002  0x0000489c       0x30 build/Trinket_USB_2/debug/_ext/1189347772/usb_device_init_data.o
-                0x0000489c                sd002
-
-.text.SYS_TIME_ResourceUnlock%121
-                0x000048cc       0x30
  .text.SYS_TIME_ResourceUnlock
-                0x000048cc       0x30 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+                0x0000489c       0x30 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+
+.rodata.sd002%121
+                0x000048cc       0x30
+ .rodata.sd002  0x000048cc       0x30 build/Trinket_USB_2/debug/_ext/1189347772/usb_device_init_data.o
+                0x000048cc                sd002
 
 .text.__aeabi_dcmpeq%122
                 0x000048fc       0x30
@@ -2680,27 +2679,27 @@ LOAD data_init
                 0x00004bf2       0x26 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libg-musl.a(__printf_core.o)
                 0x00004bf2                __out
 
-.rodata.drvUSBInit%141
+.text.TC3_TimerInterruptHandler%141
                 0x00004c18       0x24
- .rodata.drvUSBInit
-                0x00004c18       0x24 build/Trinket_USB_2/debug/_ext/1189347772/initialization.o
-                0x00004c18                drvUSBInit
-
-.rodata.APP_USB_USBDeviceCDCEventHandler%142
-                0x00004c3c       0x24
- .rodata.APP_USB_USBDeviceCDCEventHandler
-                0x00004c3c       0x24 build/Trinket_USB_2/debug/_ext/1360937237/app_usb.o
-
-.text.TC3_TimerInterruptHandler%143
-                0x00004c60       0x24
  .text.TC3_TimerInterruptHandler
-                0x00004c60       0x24 build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
-                0x00004c60                TC3_TimerInterruptHandler
+                0x00004c18       0x24 build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
+                0x00004c18                TC3_TimerInterruptHandler
 
-.text.SYS_TIME_GetElapsedCount%144
-                0x00004c84       0x24
+.text.SYS_TIME_GetElapsedCount%142
+                0x00004c3c       0x24
  .text.SYS_TIME_GetElapsedCount
-                0x00004c84       0x24 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+                0x00004c3c       0x24 build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+
+.rodata.drvUSBInit%143
+                0x00004c60       0x24
+ .rodata.drvUSBInit
+                0x00004c60       0x24 build/Trinket_USB_2/debug/_ext/1189347772/initialization.o
+                0x00004c60                drvUSBInit
+
+.rodata.APP_USB_USBDeviceCDCEventHandler%144
+                0x00004c84       0x24
+ .rodata.APP_USB_USBDeviceCDCEventHandler
+                0x00004c84       0x24 build/Trinket_USB_2/debug/_ext/1360937237/app_usb.o
 
 .text.USB_DEVICE_Attach%145
                 0x00004ca8       0x22
@@ -2738,89 +2737,89 @@ LOAD data_init
                 0x00004d54       0x20 build/Trinket_USB_2/debug/_ext/2108104030/drv_usbfsv1_device.o
                 0x00004d54                DRV_USBFSV1_DEVICE_Attach
 
-.rodata._USB_DEVICE_ProcessStandardDeviceGetRequests%151
+.text.TC3_Timer16bitCounterGet%151
                 0x00004d74       0x20
- .rodata._USB_DEVICE_ProcessStandardDeviceGetRequests
-                0x00004d74       0x20 build/Trinket_USB_2/debug/_ext/1390297478/usb_device.o
-
-.text.USB_DEVICE_CDC_EventHandlerSet%152
-                0x00004d94       0x20
- .text.USB_DEVICE_CDC_EventHandlerSet
-                0x00004d94       0x20 build/Trinket_USB_2/debug/_ext/1390297478/usb_device_cdc.o
-                0x00004d94                USB_DEVICE_CDC_EventHandlerSet
-
-.text.TC3_Timer16bitCounterGet%153
-                0x00004db4       0x20
  .text.TC3_Timer16bitCounterGet
-                0x00004db4       0x20 build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
-                0x00004db4                TC3_Timer16bitCounterGet
+                0x00004d74       0x20 build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
+                0x00004d74                TC3_Timer16bitCounterGet
 
-.rodata.sysTimePlibAPI%154
+.rodata._USB_DEVICE_ProcessStandardDeviceGetRequests%152
+                0x00004d94       0x20
+ .rodata._USB_DEVICE_ProcessStandardDeviceGetRequests
+                0x00004d94       0x20 build/Trinket_USB_2/debug/_ext/1390297478/usb_device.o
+
+.text.USB_DEVICE_CDC_EventHandlerSet%153
+                0x00004db4       0x20
+ .text.USB_DEVICE_CDC_EventHandlerSet
+                0x00004db4       0x20 build/Trinket_USB_2/debug/_ext/1390297478/usb_device_cdc.o
+                0x00004db4                USB_DEVICE_CDC_EventHandlerSet
+
+.text.SYS_TIME_Counter64Update%154
                 0x00004dd4       0x1c
- .rodata.sysTimePlibAPI
-                0x00004dd4       0x1c build/Trinket_USB_2/debug/_ext/1189347772/initialization.o
-                0x00004dd4                sysTimePlibAPI
-
-.text.SYS_Tasks%155
-                0x00004df0       0x1c
- .text.SYS_Tasks
-                0x00004df0       0x1c build/Trinket_USB_2/debug/_ext/1189347772/tasks.o
-                0x00004df0                SYS_Tasks
-
-.text.SYS_TIME_Counter64Update%156
-                0x00004e0c       0x1c
  .text.SYS_TIME_Counter64Update
-                0x00004e0c       0x1c build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+                0x00004dd4       0x1c build/Trinket_USB_2/debug/_ext/1909065425/sys_time.o
+
+.rodata.sysTimePlibAPI%155
+                0x00004df0       0x1c
+ .rodata.sysTimePlibAPI
+                0x00004df0       0x1c build/Trinket_USB_2/debug/_ext/1189347772/initialization.o
+                0x00004df0                sysTimePlibAPI
+
+.text.SYS_Tasks%156
+                0x00004e0c       0x1c
+ .text.SYS_Tasks
+                0x00004e0c       0x1c build/Trinket_USB_2/debug/_ext/1189347772/tasks.o
+                0x00004e0c                SYS_Tasks
 
 .rodata%157     0x00004e28       0x1c
  .rodata        0x00004e28       0x1c c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libg-musl.a(__printf_core.o)
 
-.text._USB_DEVICE_ClientHandleValidate%158
+.text.ADC_Enable%158
                 0x00004e44       0x18
- .text._USB_DEVICE_ClientHandleValidate
-                0x00004e44       0x18 build/Trinket_USB_2/debug/_ext/1390297478/usb_device.o
-                0x00004e44                _USB_DEVICE_ClientHandleValidate
-
-.text._USB_DEVICE_CDC_GlobalInitialize%159
-                0x00004e5c       0x18
- .text._USB_DEVICE_CDC_GlobalInitialize
-                0x00004e5c       0x18 build/Trinket_USB_2/debug/_ext/1390297478/usb_device_cdc.o
-                0x00004e5c                _USB_DEVICE_CDC_GlobalInitialize
-
-.rodata.APP_USB_Tasks%160
-                0x00004e74       0x18
- .rodata.APP_USB_Tasks
-                0x00004e74       0x18 build/Trinket_USB_2/debug/_ext/1360937237/app_usb.o
-
-.text.ADC_Enable%161
-                0x00004e8c       0x18
  .text.ADC_Enable
-                0x00004e8c       0x18 build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
-                0x00004e8c                ADC_Enable
+                0x00004e44       0x18 build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
+                0x00004e44                ADC_Enable
 
-.text.ADC_ConversionStart%162
-                0x00004ea4       0x18
+.text.ADC_ConversionStart%159
+                0x00004e5c       0x18
  .text.ADC_ConversionStart
-                0x00004ea4       0x18 build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
-                0x00004ea4                ADC_ConversionStart
+                0x00004e5c       0x18 build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
+                0x00004e5c                ADC_ConversionStart
 
-.text.ADC_ConversionStatusGet%163
-                0x00004ebc       0x18
+.text.ADC_ConversionStatusGet%160
+                0x00004e74       0x18
  .text.ADC_ConversionStatusGet
-                0x00004ebc       0x18 build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
-                0x00004ebc                ADC_ConversionStatusGet
+                0x00004e74       0x18 build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
+                0x00004e74                ADC_ConversionStatusGet
 
-.text.TC3_TimerStart%164
-                0x00004ed4       0x18
+.text.TC3_TimerStart%161
+                0x00004e8c       0x18
  .text.TC3_TimerStart
-                0x00004ed4       0x18 build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
-                0x00004ed4                TC3_TimerStart
+                0x00004e8c       0x18 build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
+                0x00004e8c                TC3_TimerStart
 
-.text.TC3_TimerStop%165
-                0x00004eec       0x18
+.text.TC3_TimerStop%162
+                0x00004ea4       0x18
  .text.TC3_TimerStop
-                0x00004eec       0x18 build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
-                0x00004eec                TC3_TimerStop
+                0x00004ea4       0x18 build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
+                0x00004ea4                TC3_TimerStop
+
+.text._USB_DEVICE_ClientHandleValidate%163
+                0x00004ebc       0x18
+ .text._USB_DEVICE_ClientHandleValidate
+                0x00004ebc       0x18 build/Trinket_USB_2/debug/_ext/1390297478/usb_device.o
+                0x00004ebc                _USB_DEVICE_ClientHandleValidate
+
+.text._USB_DEVICE_CDC_GlobalInitialize%164
+                0x00004ed4       0x18
+ .text._USB_DEVICE_CDC_GlobalInitialize
+                0x00004ed4       0x18 build/Trinket_USB_2/debug/_ext/1390297478/usb_device_cdc.o
+                0x00004ed4                _USB_DEVICE_CDC_GlobalInitialize
+
+.rodata.APP_USB_Tasks%165
+                0x00004eec       0x18
+ .rodata.APP_USB_Tasks
+                0x00004eec       0x18 build/Trinket_USB_2/debug/_ext/1360937237/app_usb.o
 
 .text.__vfprintf%166
                 0x00004f04       0x18
@@ -2858,29 +2857,29 @@ LOAD data_init
                 0x00004f4a       0x14 build/Trinket_USB_2/debug/_ext/58287938/plib_nvic.o
                 0x00004f4a                NVIC_INT_Restore
 
-.rodata.cdcFunctionDriver%170
+.text.TC3_Timer16bitPeriodSet%170
                 0x00004f60       0x14
- .rodata.cdcFunctionDriver
-                0x00004f60       0x14 build/Trinket_USB_2/debug/_ext/1390297478/usb_device_cdc.o
-                0x00004f60                cdcFunctionDriver
-
-.rodata.deviceDescriptor%171
-                0x00004f74       0x14
- .rodata.deviceDescriptor
-                0x00004f74       0x14 build/Trinket_USB_2/debug/_ext/1189347772/usb_device_init_data.o
-                0x00004f74                deviceDescriptor
-
-.text.TC3_Timer16bitPeriodSet%172
-                0x00004f88       0x14
  .text.TC3_Timer16bitPeriodSet
-                0x00004f88       0x14 build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
-                0x00004f88                TC3_Timer16bitPeriodSet
+                0x00004f60       0x14 build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
+                0x00004f60                TC3_Timer16bitPeriodSet
 
-.text.TC3_Timer16bitCompareSet%173
-                0x00004f9c       0x14
+.text.TC3_Timer16bitCompareSet%171
+                0x00004f74       0x14
  .text.TC3_Timer16bitCompareSet
-                0x00004f9c       0x14 build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
-                0x00004f9c                TC3_Timer16bitCompareSet
+                0x00004f74       0x14 build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
+                0x00004f74                TC3_Timer16bitCompareSet
+
+.rodata.cdcFunctionDriver%172
+                0x00004f88       0x14
+ .rodata.cdcFunctionDriver
+                0x00004f88       0x14 build/Trinket_USB_2/debug/_ext/1390297478/usb_device_cdc.o
+                0x00004f88                cdcFunctionDriver
+
+.rodata.deviceDescriptor%173
+                0x00004f9c       0x14
+ .rodata.deviceDescriptor
+                0x00004f9c       0x14 build/Trinket_USB_2/debug/_ext/1189347772/usb_device_init_data.o
+                0x00004f9c                deviceDescriptor
 
 .text.__vsprintf%174
                 0x00004fb0       0x14
@@ -2979,41 +2978,41 @@ LOAD data_init
  .text.tolower  0x000050ca        0xe c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libg-musl.a(tolower.o)
                 0x000050ca                tolower
 
-.text.NVMCTRL_Initialize%192
+.text.ADC_ConversionResultGet%192
                 0x000050d8        0xc
- .text.NVMCTRL_Initialize
-                0x000050d8        0xc build/Trinket_USB_2/debug/_ext/1292982576/plib_nvmctrl.o
-                0x000050d8                NVMCTRL_Initialize
-
-.rodata.cdcInit0%193
-                0x000050e4        0xc
- .rodata.cdcInit0
-                0x000050e4        0xc build/Trinket_USB_2/debug/_ext/1189347772/usb_device_init_data.o
-                0x000050e4                cdcInit0
-
-.rodata.stringDescriptors%194
-                0x000050f0        0xc
- .rodata.stringDescriptors
-                0x000050f0        0xc build/Trinket_USB_2/debug/_ext/1189347772/usb_device_init_data.o
-                0x000050f0                stringDescriptors
-
-.text.APP_SENSOR_TimerEventHandler%195
-                0x000050fc        0xc
- .text.APP_SENSOR_TimerEventHandler
-                0x000050fc        0xc build/Trinket_USB_2/debug/_ext/1360937237/app_usb.o
-                0x000050fc                APP_SENSOR_TimerEventHandler
-
-.text.ADC_ConversionResultGet%196
-                0x00005108        0xc
  .text.ADC_ConversionResultGet
-                0x00005108        0xc build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
-                0x00005108                ADC_ConversionResultGet
+                0x000050d8        0xc build/Trinket_USB_2/debug/_ext/140414528/plib_adc.o
+                0x000050d8                ADC_ConversionResultGet
 
-.text.TC3_TimerCallbackRegister%197
-                0x00005114        0xc
+.text.NVMCTRL_Initialize%193
+                0x000050e4        0xc
+ .text.NVMCTRL_Initialize
+                0x000050e4        0xc build/Trinket_USB_2/debug/_ext/1292982576/plib_nvmctrl.o
+                0x000050e4                NVMCTRL_Initialize
+
+.text.TC3_TimerCallbackRegister%194
+                0x000050f0        0xc
  .text.TC3_TimerCallbackRegister
-                0x00005114        0xc build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
-                0x00005114                TC3_TimerCallbackRegister
+                0x000050f0        0xc build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
+                0x000050f0                TC3_TimerCallbackRegister
+
+.rodata.cdcInit0%195
+                0x000050fc        0xc
+ .rodata.cdcInit0
+                0x000050fc        0xc build/Trinket_USB_2/debug/_ext/1189347772/usb_device_init_data.o
+                0x000050fc                cdcInit0
+
+.rodata.stringDescriptors%196
+                0x00005108        0xc
+ .rodata.stringDescriptors
+                0x00005108        0xc build/Trinket_USB_2/debug/_ext/1189347772/usb_device_init_data.o
+                0x00005108                stringDescriptors
+
+.text.APP_SENSOR_TimerEventHandler%197
+                0x00005114        0xc
+ .text.APP_SENSOR_TimerEventHandler
+                0x00005114        0xc build/Trinket_USB_2/debug/_ext/1360937237/app_usb.o
+                0x00005114                APP_SENSOR_TimerEventHandler
 
 .text.strcpy%198
                 0x00005120        0xc
@@ -3026,34 +3025,32 @@ LOAD data_init
                 0x0000512c        0x8 build/Trinket_USB_2/debug/_ext/2108104030/drv_usbfsv1_device.o
                 0x0000512c                gDrvUSBFSV1DeviceEndpointTypeMap
 
-.text.SYS_INT_Disable%200
+.text.TC3_TimerFrequencyGet%200
                 0x00005134        0x8
- .text.SYS_INT_Disable
-                0x00005134        0x8 build/Trinket_USB_2/debug/_ext/1961919639/sys_int.o
-                0x00005134                SYS_INT_Disable
-
-.text.SYS_INT_Restore%201
-                0x0000513c        0x8
- .text.SYS_INT_Restore
-                0x0000513c        0x8 build/Trinket_USB_2/debug/_ext/1961919639/sys_int.o
-                0x0000513c                SYS_INT_Restore
-
-.rodata.sysTimeInitData%202
-                0x00005144        0x8
- .rodata.sysTimeInitData
-                0x00005144        0x8 build/Trinket_USB_2/debug/_ext/1189347772/initialization.o
-                0x00005144                sysTimeInitData
-
-.rodata%203     0x0000514c        0x8
- .rodata        0x0000514c        0x8 build/Trinket_USB_2/debug/_ext/1360937237/app_usb.o
-
-.text.TC3_TimerFrequencyGet%204
-                0x00005154        0x8
  .text.TC3_TimerFrequencyGet
-                0x00005154        0x8 build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
-                0x00005154                TC3_TimerFrequencyGet
+                0x00005134        0x8 build/Trinket_USB_2/debug/_ext/1390003407/plib_tc3.o
+                0x00005134                TC3_TimerFrequencyGet
 
-.rodata%205     0x0000515c        0x7
+.text.SYS_INT_Disable%201
+                0x0000513c        0x8
+ .text.SYS_INT_Disable
+                0x0000513c        0x8 build/Trinket_USB_2/debug/_ext/1961919639/sys_int.o
+                0x0000513c                SYS_INT_Disable
+
+.text.SYS_INT_Restore%202
+                0x00005144        0x8
+ .text.SYS_INT_Restore
+                0x00005144        0x8 build/Trinket_USB_2/debug/_ext/1961919639/sys_int.o
+                0x00005144                SYS_INT_Restore
+
+.rodata.sysTimeInitData%203
+                0x0000514c        0x8
+ .rodata.sysTimeInitData
+                0x0000514c        0x8 build/Trinket_USB_2/debug/_ext/1189347772/initialization.o
+                0x0000514c                sysTimeInitData
+
+.rodata%204     0x00005154        0xf
+ .rodata        0x00005154        0x8 build/Trinket_USB_2/debug/_ext/1360937237/app_usb.o
  .rodata        0x0000515c        0x7 c:/program files/microchip/xc32/v4.00/bin/bin/../../lib/gcc/pic32c/8.3.1/../../../../pic32c/lib/thumb/v6-m/nofp\libg-musl.a(__fmt_s.o)
 
 .rodata.gDrvUSBFSV1DeviceSpeedMap%206

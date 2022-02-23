@@ -509,7 +509,7 @@ void APP_USB_Tasks ( void )
             /* write sensor values to USB write buffer */
             app_usbData.numBytesWrite = sprintf(
                     (char*)app_usbData.cdcWriteBuffer,
-                    "%.1f\r\n",
+                    "%4.2g\r\n",
                     app_sensorData.temperature);
             
             /* Schedule write */

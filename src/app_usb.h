@@ -71,6 +71,9 @@ typedef enum
     /* Application waits for device configuration*/
     APP_USB_STATE_WAIT_FOR_CONFIGURATION,
             
+    /* Schedule read */
+    APP_USB_STATE_SCHEDULE_READ,
+            
     /* Wait for timer to complete */
     APP_USB_STATE_WAIT_FOR_READ_COMPLETE_OR_TIMER,
             
@@ -153,6 +156,9 @@ typedef struct
     
     /* Command flag */
     bool isCommand;
+    
+    /* True if a ID request has been handled */
+    bool idRequestHandled;
 } APP_USB_DATA;
 
 // *****************************************************************************

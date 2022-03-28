@@ -32,6 +32,7 @@
 #include "configuration.h"
 #include "definitions.h"
 #include "ms8607.h"
+#include "peripheral/ADC/plib_adc_common.h"
 // *****************************************************************************
 // *****************************************************************************
 // Section: Global Data Definitions
@@ -414,6 +415,9 @@ void APP_USB_Initialize ( void )
 
     /* Set up the read buffer */
     app_usbData.cdcWriteBuffer = &cdcWriteBuffer[0];
+    
+    /* Initialize ID request handled flag */
+    app_usbData.idRequestHandled = false;
 }
 
 
@@ -489,24 +493,114 @@ void APP_USB_Tasks ( void )
             if(app_usbData.isConfigured)
             {
                 /* If the device is configured then lets start reading */
-                app_usbData.state = APP_USB_STATE_WAIT_FOR_TIMER;
+                app_usbData.state = APP_USB_STATE_SCHEDULE_READ;
             }
             
             break;
-
-        case APP_USB_STATE_WAIT_FOR_TIMER:
+            
+        case APP_USB_STATE_SCHEDULE_READ:
 
             if(APP_USB_StateReset())
             {
                 break;
             }
 
+            /* If a read is complete, then schedule a read
+             * else wait for the current read to complete 
+             */
+            app_usbData.state = APP_USB_STATE_WAIT_FOR_READ_COMPLETE_OR_TIMER;
+            
+            if(app_usbData.isReadComplete == true)
+            {
+                app_usbData.isReadComplete = false;
+                app_usbData.readTransferHandle = 
+                        USB_DEVICE_CDC_TRANSFER_HANDLE_INVALID;
+
+                /* Schedule read */
+                USB_DEVICE_CDC_Read (USB_DEVICE_CDC_INDEX_0,
+                    &app_usbData.readTransferHandle,
+                    app_usbData.cdcReadBuffer,
+                    APP_USB_READ_BUFFER_SIZE);
+                
+                if(app_usbData.readTransferHandle ==
+                        USB_DEVICE_CDC_TRANSFER_HANDLE_INVALID)
+                {
+                    app_usbData.state = APP_USB_STATE_ERROR;
+                break;
+                }
+            }
+            
+            /* be ready for ID request from host */
+            app_usbData.idRequestHandled = false;
+            
+            break;
+
+        case APP_USB_STATE_WAIT_FOR_READ_COMPLETE_OR_TIMER:
+
+            if(APP_USB_StateReset())
+            {
+                break;
+            }
+            
+            /* if USB read is complete */
+            if (app_usbData.isReadComplete)
+            {
+                /* if request for type identification is received */
+                if (app_usbData.cdcReadBuffer[0] == 't')
+                {
+                    /* respond with type number 1, weather device */
+                    app_usbData.numBytesWrite = sprintf(
+                            (char*)app_usbData.cdcWriteBuffer,
+                            "1\r\n");
+                    
+                    app_usbData.state = APP_USB_STATE_SCHEDULE_WRITE;
+                    
+                    app_usbData.idRequestHandled = true;
+                    
+                    break;
+                }
+            }
+            
+            /* if 1s timer is expired */
             if (app_sensorData.isTimerExpired)
             {
                 /* if timer expired, go to next state and reset timer flag */
                 app_usbData.state = APP_USB_STATE_READ_SENSORS;
                 app_sensorData.isTimerExpired = false;
+                
+                break;
             }
+            
+            /* if read completed */
+            if (app_usbData.isReadComplete)
+            {
+                /* if request for type identification is received */
+                if (app_usbData.cdcReadBuffer[0] == 't')
+                {
+                    /* if id request hasn't been handled yet */
+                    if (app_usbData.idRequestHandled != true)
+                    {
+                        /* respond with type number 1, weather device */
+                        app_usbData.numBytesWrite = sprintf(
+                                (char*)app_usbData.cdcWriteBuffer,
+                                "1\r\n");
+
+                        app_usbData.state = APP_USB_STATE_SCHEDULE_WRITE;
+
+                        app_usbData.idRequestHandled = true;
+                        
+                        break;
+                    }
+                }
+                
+                /* if read completed and ID request doesn't need to be handled,
+                 * schedule another read */
+                app_usbData.state = APP_USB_STATE_SCHEDULE_READ;
+                
+                break;
+            }
+            
+            /* if neither read completed nor timer completed, keep waiting */
             break;
 
         case APP_USB_STATE_READ_SENSORS:
@@ -533,11 +627,14 @@ void APP_USB_Tasks ( void )
             
             ms8607_read_temperature_pressure_humidity( &temperature, &pressure, &humidity );
             
+            /* convert celsius temp to fahrenheit*/
+            temperature = (temperature * 1.8) + 32;
+            
             /* write sensor values to USB write buffer */
             app_usbData.numBytesWrite = sprintf(
                     (char*)app_usbData.cdcWriteBuffer,
-                    "%.1f\r\n",
-                    humidity );
+                    "%.1f|%.1f|%.1f\r\n",
+                    pressure, temperature, humidity );
             
             // LED_Toggle();
             
@@ -553,8 +650,6 @@ void APP_USB_Tasks ( void )
             {
                 break;
             }
-            
-            
             
             /* Schedule write */
             app_usbData.isWriteComplete = false;
@@ -585,7 +680,40 @@ void APP_USB_Tasks ( void )
 
             if(app_usbData.isWriteComplete == true)
             {
-                app_usbData.state = APP_USB_STATE_WAIT_FOR_TIMER;
+                /* if read completed */
+                if (app_usbData.isReadComplete)
+                {
+                    /* if request for type identification is received */
+                    if (app_usbData.cdcReadBuffer[0] == 't')
+                    {
+                        /* if id request hasn't been handled yet */
+                        if (app_usbData.idRequestHandled != true)
+                        {
+                            /* respond with type number 1, weather device */
+                            app_usbData.numBytesWrite = sprintf(
+                                    (char*)app_usbData.cdcWriteBuffer,
+                                    "1\r\n");
+
+                            app_usbData.state = APP_USB_STATE_SCHEDULE_WRITE;
+
+                            app_usbData.idRequestHandled = true;
+
+                            break;
+                        }
+                    }
+
+                    /* if read completed and ID request doesn't need to be handled,
+                     * schedule another read */
+                    app_usbData.state = APP_USB_STATE_SCHEDULE_READ;
+
+                    break;
+                }
+                else
+                {
+                    /* if read not complete, go wait for read complete or timer */
+                    app_usbData.state = APP_USB_STATE_WAIT_FOR_READ_COMPLETE_OR_TIMER;
+                    break;
+                }
             }
 
             break;

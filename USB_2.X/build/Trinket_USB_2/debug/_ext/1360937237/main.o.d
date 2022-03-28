@@ -68,6 +68,8 @@ build/Trinket_USB_2/debug/_ext/1360937237/main.o: ../src/main.c \
  ../src/config/Trinket_USB_2/toolchain_specifics.h \
  ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h \
  ../src/config/Trinket_USB_2/peripheral/evsys/plib_evsys.h \
+ ../src/config/Trinket_USB_2/peripheral/sercom/i2c_master/plib_sercom0_i2c_master.h \
+ ../src/config/Trinket_USB_2/peripheral/sercom/i2c_master/plib_sercom_i2c_master_common.h \
  ../src/config/Trinket_USB_2/peripheral/port/plib_port.h \
  ../src/config/Trinket_USB_2/peripheral/clock/plib_clock.h \
  ../src/config/Trinket_USB_2/peripheral/nvic/plib_nvic.h \
@@ -245,6 +247,10 @@ build/Trinket_USB_2/debug/_ext/1360937237/main.o: ../src/main.c \
 ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h:
 
 ../src/config/Trinket_USB_2/peripheral/evsys/plib_evsys.h:
+
+../src/config/Trinket_USB_2/peripheral/sercom/i2c_master/plib_sercom0_i2c_master.h:
+
+../src/config/Trinket_USB_2/peripheral/sercom/i2c_master/plib_sercom_i2c_master_common.h:
 
 ../src/config/Trinket_USB_2/peripheral/port/plib_port.h:
 

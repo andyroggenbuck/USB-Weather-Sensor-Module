@@ -69,6 +69,8 @@ build/Trinket_USB_2/debug/_ext/1360937237/app_usb.o: ../src/app_usb.c \
  ../src/config/Trinket_USB_2/peripheral/nvmctrl/plib_nvmctrl.h \
  ../src/config/Trinket_USB_2/device.h \
  ../src/config/Trinket_USB_2/peripheral/evsys/plib_evsys.h \
+ ../src/config/Trinket_USB_2/peripheral/sercom/i2c_master/plib_sercom0_i2c_master.h \
+ ../src/config/Trinket_USB_2/peripheral/sercom/i2c_master/plib_sercom_i2c_master_common.h \
  ../src/config/Trinket_USB_2/peripheral/port/plib_port.h \
  ../src/config/Trinket_USB_2/peripheral/clock/plib_clock.h \
  ../src/config/Trinket_USB_2/peripheral/nvic/plib_nvic.h \
@@ -106,7 +108,7 @@ build/Trinket_USB_2/debug/_ext/1360937237/app_usb.o: ../src/app_usb.c \
  ../src/config/Trinket_USB_2/osal/osal_definitions.h \
  ../src/config/Trinket_USB_2/osal/osal_impl_basic.h \
  ../src/config/Trinket_USB_2/system/debug/sys_debug.h ../src/app_usb.h \
- ../src/common.h
+ ../src/common.h ../src/ms8607.h
 
 ../src/app_usb.h:
 
@@ -252,6 +254,10 @@ build/Trinket_USB_2/debug/_ext/1360937237/app_usb.o: ../src/app_usb.c \
 
 ../src/config/Trinket_USB_2/peripheral/evsys/plib_evsys.h:
 
+../src/config/Trinket_USB_2/peripheral/sercom/i2c_master/plib_sercom0_i2c_master.h:
+
+../src/config/Trinket_USB_2/peripheral/sercom/i2c_master/plib_sercom_i2c_master_common.h:
+
 ../src/config/Trinket_USB_2/peripheral/port/plib_port.h:
 
 ../src/config/Trinket_USB_2/peripheral/clock/plib_clock.h:
@@ -329,3 +335,5 @@ build/Trinket_USB_2/debug/_ext/1360937237/app_usb.o: ../src/app_usb.c \
 ../src/app_usb.h:
 
 ../src/common.h:
+
+../src/ms8607.h:

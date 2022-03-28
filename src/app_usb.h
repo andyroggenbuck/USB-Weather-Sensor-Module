@@ -72,7 +72,7 @@ typedef enum
     APP_USB_STATE_WAIT_FOR_CONFIGURATION,
             
     /* Wait for timer to complete */
-    APP_USB_STATE_WAIT_FOR_TIMER,
+    APP_USB_STATE_WAIT_FOR_READ_COMPLETE_OR_TIMER,
             
     /* Get new values from sensors */
     APP_USB_STATE_READ_SENSORS,

@@ -83,6 +83,14 @@
 #define BUTTON_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 7U)) & 0x01U)
 #define BUTTON_PIN                  PORT_PIN_PA07
 
+/*** Macros for I2C_SDA pin ***/
+#define I2C_SDA_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 8U)) & 0x01U)
+#define I2C_SDA_PIN                  PORT_PIN_PA08
+
+/*** Macros for I2C_SCL pin ***/
+#define I2C_SCL_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 9U)) & 0x01U)
+#define I2C_SCL_PIN                  PORT_PIN_PA09
+
 /*** Macros for USB_LED pin ***/
 #define USB_LED_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = ((uint32_t)1U << 10U))
 #define USB_LED_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = ((uint32_t)1U << 10U))

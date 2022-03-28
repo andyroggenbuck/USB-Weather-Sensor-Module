@@ -31,6 +31,7 @@
 #include "common.h"
 #include "configuration.h"
 #include "definitions.h"
+#include "ms8607.h"
 // *****************************************************************************
 // *****************************************************************************
 // Section: Global Data Definitions
@@ -41,6 +42,10 @@ uint8_t CACHE_ALIGN cdcReadBuffer[APP_USB_READ_BUFFER_SIZE];
 uint8_t CACHE_ALIGN cdcWriteBuffer[APP_USB_WRITE_BUFFER_SIZE];
 
 #define APP_SENSOR_SAMPLING_RATE_IN_HZ         1
+
+#define PT_SENSOR_SLAVE_ADDR            0x76
+#define H_SENSOR_SLAVE_ADDR             0x40
+
 
 // *****************************************************************************
 /* Application Data
@@ -59,6 +64,19 @@ uint8_t CACHE_ALIGN cdcWriteBuffer[APP_USB_WRITE_BUFFER_SIZE];
 
 APP_USB_DATA app_usbData;
 APP_SENSOR_DATA app_sensorData;
+
+/*******************************************************************************
+ * I2C Sensor Data
+ */
+
+static volatile bool isTemperatureRead = false;
+//static float temperatureVal;
+//static uint8_t i2cWrData = 0;
+//static uint8_t i2cRdData[3] = { 0,0,0 };
+
+float temperature;
+float pressure;
+float humidity;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -294,6 +312,18 @@ void APP_SENSOR_TimerEventHandler( uintptr_t context )
     app_sensorData.isTimerExpired = true;
 }
 
+/*******************************************************************************
+ * I2C event handler
+ * 
+ */
+static void i2cEventHandler(uintptr_t contextHandle)
+{
+    if (SERCOM0_I2C_ErrorGet() == SERCOM_I2C_ERROR_NONE)
+    {
+        isTemperatureRead = true;
+    }
+}
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Application Local Functions
@@ -444,6 +474,12 @@ void APP_USB_Tasks ( void )
             
             /* Enable ADC converter */
             ADC_Enable();
+            
+            /* Register I2C event callback handler */
+            SERCOM0_I2C_CallbackRegister(i2cEventHandler, 0);
+            
+            /* initialize PTH sensor */
+            ms8607_init();
 
             break;
 
@@ -480,18 +516,30 @@ void APP_USB_Tasks ( void )
                 break;
             }
 
+            
             /* start A/D conversion */
-            ADC_ConversionStart();
+            //ADC_ConversionStart();
             
             /* wait for conversion to finish */
-            while( !ADC_ConversionStatusGet() );
+            //while( !ADC_ConversionStatusGet() );
             
-            app_sensorData.rawADval = ADC_ConversionResultGet();
+            //app_sensorData.rawADval = ADC_ConversionResultGet();
             
             /* convert raw value to temperature */
-            app_sensorData.temperature = (float) app_sensorData.rawADval * 223 / 4096;
+            //app_sensorData.temperature = (float) app_sensorData.rawADval * 223 / 4096;
             
-            LED_Toggle();
+            
+            // SERCOM0_I2C_Read(PT_SENSOR_SLAVE_ADDR, i2cRdData, 3);
+            
+            ms8607_read_temperature_pressure_humidity( &temperature, &pressure, &humidity );
+            
+            /* write sensor values to USB write buffer */
+            app_usbData.numBytesWrite = sprintf(
+                    (char*)app_usbData.cdcWriteBuffer,
+                    "%.1f\r\n",
+                    humidity );
+            
+            // LED_Toggle();
             
             /* schedule USB write */
             app_usbData.state = APP_USB_STATE_SCHEDULE_WRITE;
@@ -506,11 +554,7 @@ void APP_USB_Tasks ( void )
                 break;
             }
             
-            /* write sensor values to USB write buffer */
-            app_usbData.numBytesWrite = sprintf(
-                    (char*)app_usbData.cdcWriteBuffer,
-                    "%.1f\r\n",
-                    app_sensorData.temperature);
+            
             
             /* Schedule write */
             app_usbData.isWriteComplete = false;

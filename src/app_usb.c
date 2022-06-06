@@ -33,6 +33,7 @@
 #include "definitions.h"
 #include "ms8607.h"
 #include "peripheral/ADC/plib_adc_common.h"
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Global Data Definitions
@@ -548,10 +549,10 @@ void APP_USB_Tasks ( void )
                 /* if request for type identification is received */
                 if (app_usbData.cdcReadBuffer[0] == 't')
                 {
-                    /* respond with type number 1, weather device */
+                    /* respond with "$1" to indicate weather device */
                     app_usbData.numBytesWrite = sprintf(
                             (char*)app_usbData.cdcWriteBuffer,
-                            "1\r\n");
+                            "$1\r\n");
                     
                     app_usbData.state = APP_USB_STATE_SCHEDULE_WRITE;
                     
@@ -580,10 +581,10 @@ void APP_USB_Tasks ( void )
                     /* if id request hasn't been handled yet */
                     if (app_usbData.idRequestHandled != true)
                     {
-                        /* respond with type number 1, weather device */
+                        /* respond with "$1" to indicate weather device */
                         app_usbData.numBytesWrite = sprintf(
                                 (char*)app_usbData.cdcWriteBuffer,
-                                "1\r\n");
+                                "$1\r\n");
 
                         app_usbData.state = APP_USB_STATE_SCHEDULE_WRITE;
 
@@ -609,21 +610,6 @@ void APP_USB_Tasks ( void )
             {
                 break;
             }
-
-            
-            /* start A/D conversion */
-            //ADC_ConversionStart();
-            
-            /* wait for conversion to finish */
-            //while( !ADC_ConversionStatusGet() );
-            
-            //app_sensorData.rawADval = ADC_ConversionResultGet();
-            
-            /* convert raw value to temperature */
-            //app_sensorData.temperature = (float) app_sensorData.rawADval * 223 / 4096;
-            
-            
-            // SERCOM0_I2C_Read(PT_SENSOR_SLAVE_ADDR, i2cRdData, 3);
             
             ms8607_read_temperature_pressure_humidity( &temperature, &pressure, &humidity );
             
@@ -635,8 +621,6 @@ void APP_USB_Tasks ( void )
                     (char*)app_usbData.cdcWriteBuffer,
                     "%.1f|%.1f|%.1f\r\n",
                     pressure, temperature, humidity );
-            
-            // LED_Toggle();
             
             /* schedule USB write */
             app_usbData.state = APP_USB_STATE_SCHEDULE_WRITE;
@@ -692,7 +676,7 @@ void APP_USB_Tasks ( void )
                             /* respond with type number 1, weather device */
                             app_usbData.numBytesWrite = sprintf(
                                     (char*)app_usbData.cdcWriteBuffer,
-                                    "1\r\n");
+                                    "$1\r\n");
 
                             app_usbData.state = APP_USB_STATE_SCHEDULE_WRITE;
 

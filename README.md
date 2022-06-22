@@ -13,7 +13,13 @@ The Weather Sensor Module uses an Adafruit Trinket M0 for USB communication (dev
   <i>Weather Sensor Module schematic</i></p>
 
 ## Software
-With USB communication established, the rest of the application software for this device is trivial.
+With USB communication established, the rest of the application software for this device is trivial. It handles two tasks:
+- Respond with its identification info when requested by the host, so the host knows which type of module is plugged in.
+- Read new pressure, temperature, and humidity values from the sensor and send them to the host once per second.
+
+The device and host transmit ASCII characters via USB to communicate commands and information.
+
+A generic C driver for the MS8607 sensor is provided by TE Connectivity, which only requires the implementation of an I2C layer so the driver can communicate with the target system's I2C hardware.
 
 The application is represented as a state machine in the diagram below.
 
